@@ -1,0 +1,158 @@
+body {
+	background-color: #f1f1f1;
+}
+
+#wpcontent {
+	padding-left: 0;
+	background-color: #F7F7F8;
+}
+
+#wpbody-content .notice {
+	margin: 20px 20px;
+}
+
+#wpbody-content .ot-control-container {
+	width: 100%;
+	max-width: 45rem;
+	margin: 0 auto;
+	overflow: auto;
+}
+
+#wpbody-content .ot-control-header {
+	background-color: #fff;
+	border-bottom: 1px solid #e8e9ec;
+	padding: 7px 0;
+}
+
+#wpbody-content .ot-control-header .ot-logo {
+	float: left;
+}
+
+#wpbody-content .ot-control-header .ot-logo img {
+	display: table;
+}
+
+#wpbody-content .ot-control-header .ot-submenu {
+	float: right;
+}
+
+#wpbody-content .ot-control-header .ot-submenu a {
+	padding: 0.625rem;
+	display: inline-block;
+}
+
+#wpbody-content .ot-control-panel {
+	margin-top: 30px;
+}
+
+#wpbody-content .ot-nav-tabs {
+	margin: 0 0 -1px;
+	padding: 0;
+}
+
+#wpbody-content .ot-nav-tabs li {
+	position: relative;
+	list-style: none;
+	display: inline-block;
+	margin: 0;
+}
+
+#wpbody-content .ot-nav-tabs li.ui-tabs-active {
+	background-color: #fff;
+	border-top: 1px solid #dfdfdf;
+	border-left: 1px solid #dfdfdf;
+	border-right: 1px solid #dfdfdf;
+}
+
+#wpbody-content .ot-nav-tabs li.ui-tabs-active a:focus, #wpbody-content .ot-nav-tabs li.ui-tabs-active a:active {
+-webkit-box-shadow: 0 0 0 1px #5b9dd9,0 0 2px 1px rgba(30,140,190,.8);
+box-shadow: none;
+}
+
+#wpbody-content .ot-nav-tabs .ot-actions-count {
+	position: absolute;
+	top: 0px;
+	right: -4px;
+	background-color: #da3939;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	font-size: 10px;
+	color: #fff;
+	border-radius: 15px;
+}
+
+#wpbody-content .ot-nav-tabs li a {
+	padding: 10px 18px;
+	display: block;
+	text-decoration: none;
+	color: #333333;
+	font-size: 12px;
+}
+
+#wpbody-content .ot-tab-content {
+	border: 1px solid #dfdfdf;
+	background-color: #fff;
+	padding: 20px 40px;
+}
+
+#wpbody-content .ot-tab-content .ot-center {
+	margin-bottom: 30px;
+}
+
+#wpbody-content .ot-tab-content h1 {
+	margin: 30px 0;
+}
+
+#wpbody-content .ot-tab-content sup {
+	font-size: 14px;
+}
+
+#wpbody-content .ot-tab-content hr {
+	border-top: 1px dotted #c5c7d2;
+	border-bottom: none;
+}
+
+#wpbody-content .ot-required {
+	font-weight: bold;
+}
+
+#wpbody-content .ot-done {
+	text-decoration: line-through;
+	color: #9e9e9e;	
+}
+#wpbody-content .ot-done a {
+	color: #9e9e9e;	
+	pointer-events: none;
+	cursor: default;
+}
+#wpbody-content .button.ot-disabled {
+	color: #ccc;
+	border-color: #ccc;
+	background: #f7f7f7;
+	-webkit-box-shadow: 0 1px 0 #ccc;
+	box-shadow: 0 1px 0 #ccc;
+	text-shadow: none;
+}
+
+#wpbody-content .ot-error {
+	border: 1px solid #808090;
+	border-radius: 7px;
+	text-align: center;
+	color: #1a1a1a;
+	margin: 0 150px;
+	padding: 5px;
+	-webkit-box-shadow: inset 0px -2px 0px 0px #e0dfe4;
+	-moz-box-shadow: inset 0px -2px 0px 0px #e0dfe4;
+	box-shadow: inset 0px -2px 0px 0px #e0dfe4;
+}
+
+#wpbody-content .ot-error h2 {
+	margin: 5px auto;
+	color: #b92a2a;
+	font-size: 1.4em;
+}
+
+#wpbody-content .ot-error p {
+	margin: 0 0 10px 0;
+}

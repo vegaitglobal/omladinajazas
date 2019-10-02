@@ -1,0 +1,887 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Asterion\n"
+"POT-Creation-Date: 2017-05-17 20:09+0200\n"
+"PO-Revision-Date: 2017-05-17 20:09+0200\n"
+"Last-Translator: Orange Themes <support@orange-themes.com>\n"
+"Language-Team: Orange Themes <support@orange-themes.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;__;esc_html_e;esc_html__;"
+"esc_attr__;esc_attr_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ./..\n"
+
+#: ../404.php:19
+msgid "Page not found"
+msgstr ""
+
+#: ../archive.php:27 ../front-page.php:38 ../index.php:33 ../search.php:28
+msgid "Previous page"
+msgstr ""
+
+#: ../archive.php:28 ../front-page.php:39 ../index.php:34 ../search.php:29
+msgid "Next page"
+msgstr ""
+
+#: ../comments.php:46 ../comments.php:64
+msgid "Comment navigation"
+msgstr ""
+
+#: ../comments.php:47 ../comments.php:65
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: ../comments.php:48 ../comments.php:66
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: ../comments.php:71
+msgid "Comments are closed."
+msgstr ""
+
+#: ../footer.php:12 ../inc/customizer-sections/general.php:46
+#, php-format
+msgid "&copy; Copyright %s. All Rights Reserved."
+msgstr ""
+
+#: ../footer.php:27
+msgid "Theme:"
+msgstr ""
+
+#: ../footer.php:27 ../inc/class-backend-panel.php:213
+msgid "Asterion"
+msgstr ""
+
+#: ../footer.php:27
+msgid "by Orange Themes"
+msgstr ""
+
+#: ../header.php:111
+msgid "Please set up the menu"
+msgstr ""
+
+#: ../searchform.php:13
+msgid "Search for:"
+msgstr ""
+
+#: ../single.php:30
+msgid "Post navigation"
+msgstr ""
+
+#: ../single.php:35
+msgid "<div class=\"meta-nav\"><span>Published In</span>%title</div>"
+msgstr ""
+
+#: ../single.php:37
+msgid ""
+"<div class=\"meta-nav meta-nav-left\"><span>Previous Post</span>%title</div>"
+msgstr ""
+
+#: ../single.php:38
+msgid ""
+"<div class=\"meta-nav meta-nav-right\"><span>Next Post</span>%title</div>"
+msgstr ""
+
+#: ../inc/class-asterion.php:130 ../inc/customizer-sections/header.php:210
+msgid "Main Menu"
+msgstr ""
+
+#: ../inc/class-asterion.php:293
+msgid "Orange Themes Custom Widgets"
+msgstr ""
+
+#: ../inc/class-asterion.php:303
+msgid "Orange Front Page"
+msgstr ""
+
+#: ../inc/class-asterion.php:314
+msgid "Contact Form 7"
+msgstr ""
+
+#: ../inc/class-asterion.php:325
+msgid "JetPack"
+msgstr ""
+
+#: ../inc/class-asterion.php:384 ../inc/class-tgm-plugin-activation.php:327
+msgid "Install Required Plugins"
+msgstr ""
+
+#: ../inc/class-asterion.php:385 ../inc/class-tgm-plugin-activation.php:328
+msgid "Install Plugins"
+msgstr ""
+
+#: ../inc/class-asterion.php:386 ../inc/class-tgm-plugin-activation.php:330
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: ../inc/class-asterion.php:387 ../inc/class-tgm-plugin-activation.php:333
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: ../inc/class-asterion.php:448 ../inc/class-tgm-plugin-activation.php:385
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: ../inc/class-asterion.php:449 ../inc/class-tgm-plugin-activation.php:387
+#: ../inc/class-tgm-plugin-activation.php:3159
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: ../inc/class-asterion.php:450 ../inc/class-tgm-plugin-activation.php:388
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: ../inc/class-asterion.php:451 ../inc/class-tgm-plugin-activation.php:390
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: ../inc/class-asterion.php:452 ../inc/class-tgm-plugin-activation.php:392
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#: ../inc/class-asterion.php:453 ../inc/class-tgm-plugin-activation.php:394
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: ../inc/class-asterion.php:454 ../inc/class-tgm-plugin-activation.php:397
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: ../inc/class-asterion.php:469
+msgid "Sidebar"
+msgstr ""
+
+#: ../inc/class-asterion.php:471
+msgid "Main homepage widgets section"
+msgstr ""
+
+#: ../inc/class-asterion.php:482
+msgid "Blog Sidebar"
+msgstr ""
+
+#: ../inc/class-asterion.php:484
+msgid "Main blog widgets section"
+msgstr ""
+
+#: ../inc/class-asterion.php:495
+msgid "Page Sidebar"
+msgstr ""
+
+#: ../inc/class-asterion.php:497
+msgid "Page widgets section"
+msgstr ""
+
+#: ../inc/class-backend-panel.php:62
+msgid "Asterion Dashboard"
+msgstr ""
+
+#: ../inc/class-backend-panel.php:150
+msgid "Need Help?"
+msgstr ""
+
+#: ../inc/class-backend-panel.php:155
+msgid "Theme Demo"
+msgstr ""
+
+#: ../inc/class-backend-panel.php:160
+msgid "Send us Feedback"
+msgstr ""
+
+#: ../inc/class-posts.php:113 ../page-templates/clean-page.php:41
+#: ../template-parts/content-page.php:39
+#: ../template-parts/content-single.php:60
+msgid "Pages:"
+msgstr ""
+
+#: ../inc/class-posts.php:117 ../page-templates/clean-page.php:45
+#: ../template-parts/content-page.php:43
+#: ../template-parts/content-single.php:64
+msgid "Page"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:332
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:386
+#: ../inc/class-tgm-plugin-activation.php:827
+#: ../inc/class-tgm-plugin-activation.php:2533
+#: ../inc/class-tgm-plugin-activation.php:3580
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:395
+msgid "Dismiss this notice"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:396
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:522
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:523
+msgid "Update Required"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:934
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:934
+#: ../inc/class-tgm-plugin-activation.php:937
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:937
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:1982
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2273
+msgid "Required"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2276
+msgid "Recommended"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2292
+msgid "WordPress Repository"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2295
+msgid "External Source"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2298
+msgid "Pre-Packaged"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2315
+msgid "Not Installed"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2319
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2321
+msgid "Active"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2327
+msgid "Required Update not Available"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2330
+msgid "Requires Update"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2333
+msgid "Update recommended"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2490
+msgid "Installed version:"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2498
+msgid "Minimum required version:"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2510
+msgid "Available version:"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2533
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2547
+msgid "Plugin"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2548
+msgid "Source"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2549
+msgid "Type"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2553
+msgid "Version"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2554
+msgid "Status"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2603
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2608
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2614
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2684
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2717
+msgid "Install"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2723
+msgid "Update"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2726
+msgid "Activate"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2757
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2759
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2800
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2802
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2908
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2934
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3158
+msgid "Plugin activation failed."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3498
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3501
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3503
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3507
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3509
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3509
+#: ../inc/class-tgm-plugin-activation.php:3517
+msgid "Show Details"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3509
+#: ../inc/class-tgm-plugin-activation.php:3517
+msgid "Hide Details"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3510
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3512
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3515
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3517
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3518
+msgid "All installations have been completed."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3520
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: ../inc/backend/changelog.php:6
+msgid "Changelog"
+msgstr ""
+
+#: ../inc/backend/getting-started.php:7
+msgid "Welcome to Asterion!"
+msgstr ""
+
+#: ../inc/backend/getting-started.php:9
+msgid "Our most popular free one page WordPress theme, Asterion!"
+msgstr ""
+
+#: ../inc/backend/getting-started.php:10
+msgid ""
+"We want to make sure you have the best experience using Asterion and that is "
+"why we gathered here all the necessary information for you. We hope you will "
+"enjoy using Asterion, as much as we enjoy creating great products."
+msgstr ""
+
+#: ../inc/backend/getting-started.php:17
+msgid "Getting started"
+msgstr ""
+
+#: ../inc/backend/getting-started.php:19
+msgid ""
+"You need help to setup and configure this theme? We got you covered with an "
+"extensive theme documentation on our website."
+msgstr ""
+
+#: ../inc/backend/getting-started.php:20
+msgid "View Documentation"
+msgstr ""
+
+#: ../inc/backend/getting-started.php:22
+msgid "Customize everything in a single place."
+msgstr ""
+
+#: ../inc/backend/getting-started.php:23
+msgid ""
+"Using the WordPress Customizer you can easily customize every aspect of the "
+"theme."
+msgstr ""
+
+#: ../inc/backend/getting-started.php:24
+msgid "Go to Customizer"
+msgstr ""
+
+#: ../inc/backend/getting-started.php:40
+msgid "Getting Started"
+msgstr ""
+
+#: ../inc/customizer-sections/about.php:16
+msgid "About Section"
+msgstr ""
+
+#: ../inc/customizer-sections/about.php:17
+msgid "Change about section information here."
+msgstr ""
+
+#: ../inc/customizer-sections/about.php:36
+#: ../inc/customizer-sections/contact-us.php:36
+#: ../inc/customizer-sections/counters.php:36
+#: ../inc/customizer-sections/features.php:36
+#: ../inc/customizer-sections/latest-posts.php:36
+#: ../inc/customizer-sections/portfolio.php:36
+#: ../inc/customizer-sections/team.php:36
+#: ../inc/customizer-sections/testimonials.php:36
+msgid "Install Orange Front Page"
+msgstr ""
+
+#: ../inc/customizer-sections/about.php:37
+#: ../inc/customizer-sections/contact-us.php:37
+#: ../inc/customizer-sections/counters.php:37
+#: ../inc/customizer-sections/features.php:37
+#: ../inc/customizer-sections/latest-posts.php:37
+#: ../inc/customizer-sections/portfolio.php:37
+#: ../inc/customizer-sections/team.php:37
+#: ../inc/customizer-sections/testimonials.php:37
+msgid "This option requires "
+msgstr ""
+
+#: ../inc/customizer-sections/about.php:37
+#: ../inc/customizer-sections/contact-us.php:37
+#: ../inc/customizer-sections/counters.php:37
+#: ../inc/customizer-sections/features.php:37
+#: ../inc/customizer-sections/latest-posts.php:37
+#: ../inc/customizer-sections/portfolio.php:37
+#: ../inc/customizer-sections/team.php:37
+#: ../inc/customizer-sections/testimonials.php:37
+msgid ", please install it to enable this section."
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:20
+msgid "Blog Settings"
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:21
+msgid "Customize blog page here."
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:33
+msgid "Single Post"
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:34
+msgid "Change single post settings"
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:53
+msgid "Show image in single post page?"
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:78
+msgid "Show date in single post page?"
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:102
+msgid "Show post author in single post page?"
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:121
+msgid "Show post tags in single post page?"
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:144
+msgid "Show post categories in single post page?"
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:158
+msgid "Blog Listing"
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:159
+msgid "Change blog listing settings"
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:178
+msgid "Show post image in blog listing page?"
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:202
+msgid "Show post date in blog listing page?"
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:227
+msgid "Show post comment count in blog listing page?"
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:245
+msgid "Show blog post categories in blog listing page?"
+msgstr ""
+
+#: ../inc/customizer-sections/contact-us.php:16
+msgid "Contact us"
+msgstr ""
+
+#: ../inc/customizer-sections/contact-us.php:17
+msgid "Change contact us section information here."
+msgstr ""
+
+#: ../inc/customizer-sections/counters.php:16
+msgid "Counters Section"
+msgstr ""
+
+#: ../inc/customizer-sections/counters.php:17
+msgid "Change counters section information here."
+msgstr ""
+
+#: ../inc/customizer-sections/features.php:16
+msgid "Features Section"
+msgstr ""
+
+#: ../inc/customizer-sections/features.php:17
+msgid "Change features section information here."
+msgstr ""
+
+#: ../inc/customizer-sections/general.php:20
+msgid "General Settings"
+msgstr ""
+
+#: ../inc/customizer-sections/general.php:21
+msgid ""
+"Theme general options like header and footer settings, copyright information "
+"etc."
+msgstr ""
+
+#: ../inc/customizer-sections/general.php:34
+#: ../inc/customizer-sections/general.php:53
+msgid "Copyright"
+msgstr ""
+
+#: ../inc/customizer-sections/general.php:35
+msgid "Change copyright here."
+msgstr ""
+
+#: ../inc/customizer-sections/general.php:54
+msgid "Add your copyright message here."
+msgstr ""
+
+#: ../inc/customizer-sections/general.php:74
+msgid "Colors"
+msgstr ""
+
+#: ../inc/customizer-sections/general.php:75
+msgid "Customize theme colors here."
+msgstr ""
+
+#: ../inc/customizer-sections/general.php:92
+msgid "Accent Color"
+msgstr ""
+
+#: ../inc/customizer-sections/general.php:93
+msgid "Theme accent colors"
+msgstr ""
+
+#: ../inc/customizer-sections/general.php:109
+msgid "Hover Color"
+msgstr ""
+
+#: ../inc/customizer-sections/general.php:110
+msgid "Theme hover colors"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:22
+msgid "Header Settings"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:23
+msgid "Theme header options like front page, blog and archive page images"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:36
+msgid "Front Page Header"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:37
+msgid "Front page header information here."
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:51
+msgid "Header image"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:52
+msgid "Header intro image"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:76
+msgid "Enable parallax effect?"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:94
+msgid "Enable image overlay?"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:105 ../sections/intro-image.php:10
+msgid "Welcome To Orange Themes!"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:112
+msgid "First title for header image"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:122 ../sections/intro-image.php:11
+msgid "YOUR FAVORITE SOURCE OF FREE BOOTSTRAP THEMES"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:129
+msgid "Second title for header image"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:139 ../sections/intro-image.php:12
+msgid "Tell me more"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:146
+msgid "Button title"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:156
+msgid "#"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:163
+msgid "Button URL"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:181
+msgid "Open link in new tab?"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:196
+msgid "Blog/Archive Header Settings"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:197
+msgid "Blog/Archive header image."
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:211
+msgid "Menu color settings"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:227
+msgid "Main Menu Style"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:232
+msgid "Dark Menu"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:233
+msgid "Light Menu"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:250
+msgid "Main Menu Background Style"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:255
+msgid "No Background"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:256
+msgid "Menu Overlay"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:273
+msgid "Main Menu Position"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:278
+msgid "Sticky Menu"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:279
+msgid "Fixed Menu"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:288
+msgid "Blog Archive Header Image"
+msgstr ""
+
+#: ../inc/customizer-sections/latest-posts.php:16
+msgid "Latest Posts Section"
+msgstr ""
+
+#: ../inc/customizer-sections/latest-posts.php:17
+msgid "Change latest posts section information here."
+msgstr ""
+
+#: ../inc/customizer-sections/portfolio.php:16
+msgid "Portfolio Section"
+msgstr ""
+
+#: ../inc/customizer-sections/portfolio.php:17
+msgid "Change portfolio section information here."
+msgstr ""
+
+#: ../inc/customizer-sections/team.php:16
+msgid "Team Section"
+msgstr ""
+
+#: ../inc/customizer-sections/team.php:17
+msgid "Change team section information here."
+msgstr ""
+
+#: ../inc/customizer-sections/testimonials.php:16
+msgid "Testimonials Section"
+msgstr ""
+
+#: ../inc/customizer-sections/testimonials.php:17
+msgid "Change testimonials section information here."
+msgstr ""
+
+#: ../page-templates/clean-page.php:27 ../template-parts/content-page.php:26
+#: ../template-parts/content-single.php:46
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: ../template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: ../template-parts/content-none.php:22
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: ../template-parts/content-none.php:26
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: ../template-parts/content-none.php:31
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: ../template-parts/content.php:29
+msgid "Leave a comment"
+msgstr ""
+
+#: ../template-parts/content.php:29
+msgid "1 Comment"
+msgstr ""
+
+#: ../template-parts/content.php:29
+msgid "% Comments"
+msgstr ""
+
+#: ../template-parts/content.php:59
+msgid "Continue Reading"
+msgstr ""

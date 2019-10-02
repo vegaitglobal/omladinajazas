@@ -1,0 +1,400 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: SKT Strong\n"
+"POT-Creation-Date: 2018-12-04 18:40+0530\n"
+"PO-Revision-Date: 2018-12-04 18:39+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:14
+msgid "404 Not Found"
+msgstr ""
+
+#: 404.php:17
+msgid ""
+"Looks like you have taken a wrong turn.....Dont worry... it happens to the "
+"best of us."
+msgstr ""
+
+#: archive.php:32
+msgid "Back"
+msgstr ""
+
+#: archive.php:33
+msgid "Next"
+msgstr ""
+
+#: archive.php:34
+msgid "Posts navigation"
+msgstr ""
+
+#: category.php:19
+msgid "Category: "
+msgstr ""
+
+#. translators: 1: number of comments, 2: post title
+#: comments.php:28
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:36 comments.php:54
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:37 comments.php:55
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:38 comments.php:56
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:64
+msgid "Comments are closed."
+msgstr ""
+
+#: content-search.php:25 content.php:27
+msgid "Read More &rarr;"
+msgstr ""
+
+#: content-single.php:23 image.php:49 page.php:26
+msgid "Pages:"
+msgstr ""
+
+#: content-single.php:27 page.php:30
+msgid "Page"
+msgstr ""
+
+#: content.php:19
+msgid ", "
+msgstr ""
+
+#: content.php:31
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: customize-pro/example-1/class-customize.php:76
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: customize-pro/example-1/class-customize.php:77
+msgid "Upgrade Now"
+msgstr ""
+
+#: footer.php:42
+msgid "Read More.."
+msgstr ""
+
+#: functions.php:33
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:47
+msgid "Blog Sidebar"
+msgstr ""
+
+#: functions.php:48
+msgid "Appears on blog page sidebar"
+msgstr ""
+
+#: functions.php:57
+msgid "Header Right Widget"
+msgstr ""
+
+#: functions.php:58
+msgid "Appears on top of the header"
+msgstr ""
+
+#: functions.php:77
+msgctxt "roboto:on or off"
+msgid "on"
+msgstr ""
+
+#: functions.php:84
+msgctxt "Scada:on or off"
+msgid "on"
+msgstr ""
+
+#: header.php:60
+msgid "facebook"
+msgstr ""
+
+#: header.php:64
+msgid "twitter"
+msgstr ""
+
+#: header.php:68
+msgid "google-plus"
+msgstr ""
+
+#: header.php:72
+msgid "linkedin"
+msgstr ""
+
+#: header.php:86
+msgid "Menu"
+msgstr ""
+
+#: header.php:149
+msgid "Read More"
+msgstr ""
+
+#: image.php:27 image.php:54
+msgid "Edit"
+msgstr ""
+
+#: inc/about-themes.php:5
+msgid "About Theme"
+msgstr ""
+
+#: inc/about-themes.php:23
+msgid "About Theme Info"
+msgstr ""
+
+#: inc/about-themes.php:25
+msgid ""
+"SKT Strong is a responsive crossfit WordPress theme which can be used for "
+"gym, fitness, personal trainer, studio, yoga, boxing, aerobics, spa, health, "
+"workout, portfolio and other multipurpose local business use. Compatible "
+"with gallery plugins, contact form plugins, SEO plugins and is translation "
+"ready and multilingual ready."
+msgstr ""
+
+#: inc/about-themes.php:32
+msgid "Live Demo"
+msgstr ""
+
+#: inc/about-themes.php:33
+msgid "Buy Pro"
+msgstr ""
+
+#: inc/about-themes.php:34
+msgid "Documentation"
+msgstr ""
+
+#: inc/customizer.php:39
+msgid "Color Scheme"
+msgstr ""
+
+#: inc/customizer.php:40
+msgid "More color options in PRO Version"
+msgstr ""
+
+#: inc/customizer.php:49
+msgid "Slider Settings"
+msgstr ""
+
+#: inc/customizer.php:51
+msgid ""
+"Featured Image Size Should be ( 1400x591 ) More slider settings available in "
+"PRO Version"
+msgstr ""
+
+#: inc/customizer.php:62
+msgid "Select page for slide one:"
+msgstr ""
+
+#: inc/customizer.php:72
+msgid "Select page for slide two:"
+msgstr ""
+
+#: inc/customizer.php:82
+msgid "Select page for slide three:"
+msgstr ""
+
+#: inc/customizer.php:94 inc/customizer.php:141 inc/customizer.php:200
+#: inc/customizer.php:272 inc/customizer.php:320
+msgid "Uncheck To Show This Section"
+msgstr ""
+
+#: inc/customizer.php:101
+msgid "Homepage Three Boxes Section"
+msgstr ""
+
+#: inc/customizer.php:102
+msgid "Select Pages from the dropdown for homepage three boxes section"
+msgstr ""
+
+#: inc/customizer.php:148
+msgid "Social Settings"
+msgstr ""
+
+#: inc/customizer.php:149
+msgid "More social icon available in PRO Version"
+msgstr ""
+
+#: inc/customizer.php:160
+msgid "Add facebook link here"
+msgstr ""
+
+#: inc/customizer.php:170
+msgid "Add twitter link here"
+msgstr ""
+
+#: inc/customizer.php:179
+msgid "Add google plus link here"
+msgstr ""
+
+#: inc/customizer.php:188
+msgid "Add linkedin link here"
+msgstr ""
+
+#: inc/customizer.php:205
+msgid "Footer Area"
+msgstr ""
+
+#: inc/customizer.php:226
+msgid "Add title for latest news feed"
+msgstr ""
+
+#: inc/customizer.php:237
+msgid "Add title for about us"
+msgstr ""
+
+#: inc/customizer.php:249
+msgid "About Description"
+msgstr ""
+
+#: inc/customizer.php:260
+msgid "Add title for footer contact info"
+msgstr ""
+
+#: inc/customizer.php:277
+msgid "Contact Details"
+msgstr ""
+
+#: inc/customizer.php:278
+msgid "Add you contact details here"
+msgstr ""
+
+#: inc/customizer.php:289
+msgid "Add contact address here"
+msgstr ""
+
+#: inc/customizer.php:298
+msgid "Add contact number here."
+msgstr ""
+
+#: inc/customizer.php:308
+msgid "Add you email here"
+msgstr ""
+
+#: inc/template-tags.php:28
+msgid "Post navigation"
+msgstr ""
+
+#: inc/template-tags.php:30
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr ""
+
+#: inc/template-tags.php:31
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr ""
+
+#: inc/template-tags.php:55
+msgid "Pingback:"
+msgstr ""
+
+#: inc/template-tags.php:74
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/template-tags.php:161
+msgctxt "Used before publish date."
+msgid "<span class=\"screen-reader-text\">Posted on</span>"
+msgstr ""
+
+#: no-results.php:11
+msgid "Nothing Found"
+msgstr ""
+
+#. translators: %s: publish post started
+#: no-results.php:17
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: no-results.php:19
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: no-results.php:22
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#. translators: %s: search term
+#: search.php:17
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:10
+msgid "Search..."
+msgstr ""
+
+#: searchform.php:12
+msgid "Search"
+msgstr ""
+
+#: sidebar.php:11
+msgid "Category"
+msgstr ""
+
+#: sidebar.php:18
+msgid "Archives"
+msgstr ""
+
+#: sidebar.php:24
+msgid "Meta"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "SKT Strong"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://www.sktthemes.net/shop/free-corporate-wordpress-theme/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"SKT Strong is a responsive crossfit WordPress theme which can be used for "
+"gym, fitness, personal trainer, studio, yoga, boxing, aerobics, spa, health, "
+"workout, portfolio and other multipurpose local business use. Compatible "
+"with gallery plugins, contact form plugins, SEO plugins and is translation "
+"ready and multilingual ready. Check demo at: http://sktthemesdemo.net/strong/"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "SKT Themes"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.sktthemes.net"
+msgstr ""

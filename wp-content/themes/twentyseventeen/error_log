@@ -1,0 +1,9 @@
+[09-May-2019 15:05:10 Europe/Zagreb] PHP Fatal error:  Call to undefined function get_template_part() in /home/omladina/public_html/wp-content/themes/twentyseventeen/footer.php on line 22
+[10-May-2019 03:30:41 Europe/Zagreb] PHP Fatal error:  Call to undefined function get_header() in /home/omladina/public_html/wp-content/themes/twentyseventeen/404.php on line 13
+[12-May-2019 17:46:54 Europe/Zagreb] PHP Fatal error:  Call to undefined function get_header() in /home/omladina/public_html/wp-content/themes/twentyseventeen/404.php on line 13
+[19-May-2019 02:49:04 Europe/Zagreb] PHP Fatal error:  Call to undefined function get_template_directory() in /home/omladina/public_html/wp-content/themes/twentyseventeen/functions.php on line 16
+[14-Jul-2019 18:12:06 Europe/Zagreb] PHP Fatal error:  Call to undefined function get_header() in /home/omladina/public_html/wp-content/themes/twentyseventeen/404.php on line 13
+[18-Jul-2019 04:45:21 Europe/Zagreb] PHP Fatal error:  Call to undefined function get_template_part() in /home/omladina/public_html/wp-content/themes/twentyseventeen/footer.php on line 22
+[18-Jul-2019 18:24:12 Europe/Zagreb] PHP Fatal error:  Call to undefined function get_header() in /home/omladina/public_html/wp-content/themes/twentyseventeen/404.php on line 13
+[21-Jul-2019 21:01:26 Europe/Zagreb] PHP Fatal error:  Call to undefined function get_header() in /home/omladina/public_html/wp-content/themes/twentyseventeen/404.php on line 13
+[06-Aug-2019 09:56:31 Europe/Zagreb] PHP Fatal error:  Call to undefined function get_template_directory() in /home/omladina/public_html/wp-content/themes/twentyseventeen/functions.php on line 16

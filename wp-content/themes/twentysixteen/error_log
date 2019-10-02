@@ -1,0 +1,4 @@
+[07-May-2019 20:02:11 Europe/Zagreb] PHP Fatal error:  Call to undefined function get_header() in /home/omladina/public_html/wp-content/themes/twentysixteen/404.php on line 10
+[28-May-2019 08:08:52 Europe/Zagreb] PHP Fatal error:  Call to undefined function get_header() in /home/omladina/public_html/wp-content/themes/twentysixteen/404.php on line 10
+[15-Jul-2019 07:43:22 Europe/Zagreb] PHP Fatal error:  Call to undefined function get_header() in /home/omladina/public_html/wp-content/themes/twentysixteen/404.php on line 10
+[16-Jul-2019 05:27:49 Europe/Zagreb] PHP Fatal error:  Call to undefined function get_header() in /home/omladina/public_html/wp-content/themes/twentysixteen/404.php on line 10

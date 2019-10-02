@@ -1,0 +1,13 @@
+[08-May-2019 20:47:51 Europe/Zagreb] PHP Fatal error:  Call to undefined function get_header() in /home/omladina/public_html/wp-content/themes/twentyfifteen/archive.php on line 19
+[09-May-2019 03:11:32 Europe/Zagreb] PHP Fatal error:  Call to undefined function the_ID() in /home/omladina/public_html/wp-content/themes/twentyfifteen/content-link.php on line 13
+[10-May-2019 15:04:52 Europe/Zagreb] PHP Fatal error:  Call to undefined function _e() in /home/omladina/public_html/wp-content/themes/twentyfifteen/author-bio.php on line 12
+[12-May-2019 06:02:14 Europe/Zagreb] PHP Fatal error:  Call to undefined function get_header() in /home/omladina/public_html/wp-content/themes/twentyfifteen/index.php on line 17
+[12-May-2019 12:16:15 Europe/Zagreb] PHP Fatal error:  Call to undefined function the_ID() in /home/omladina/public_html/wp-content/themes/twentyfifteen/content.php on line 13
+[13-May-2019 10:16:09 Europe/Zagreb] PHP Fatal error:  Call to undefined function get_header() in /home/omladina/public_html/wp-content/themes/twentyfifteen/404.php on line 10
+[15-Jul-2019 01:07:28 Europe/Zagreb] PHP Fatal error:  Call to undefined function get_header() in /home/omladina/public_html/wp-content/themes/twentyfifteen/404.php on line 10
+[17-Jul-2019 08:36:57 Europe/Zagreb] PHP Fatal error:  Call to undefined function get_header() in /home/omladina/public_html/wp-content/themes/twentyfifteen/archive.php on line 19
+[17-Jul-2019 15:20:11 Europe/Zagreb] PHP Fatal error:  Call to undefined function the_ID() in /home/omladina/public_html/wp-content/themes/twentyfifteen/content-link.php on line 13
+[19-Jul-2019 08:25:41 Europe/Zagreb] PHP Fatal error:  Call to undefined function _e() in /home/omladina/public_html/wp-content/themes/twentyfifteen/author-bio.php on line 12
+[21-Jul-2019 07:44:04 Europe/Zagreb] PHP Fatal error:  Call to undefined function get_header() in /home/omladina/public_html/wp-content/themes/twentyfifteen/index.php on line 17
+[21-Jul-2019 14:27:57 Europe/Zagreb] PHP Fatal error:  Call to undefined function the_ID() in /home/omladina/public_html/wp-content/themes/twentyfifteen/content.php on line 13
+[22-Jul-2019 17:46:23 Europe/Zagreb] PHP Fatal error:  Call to undefined function get_header() in /home/omladina/public_html/wp-content/themes/twentyfifteen/404.php on line 10

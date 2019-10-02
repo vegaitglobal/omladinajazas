@@ -1,0 +1,182 @@
+/*--------------------
+Features
+--------------------*/
+
+.ot-features-item {
+	text-align: center;
+}
+
+.ot-features-item .ot-features-title {
+	margin: 20px 0px;
+	padding: 0px;
+	line-height: 70%;
+	font-size: 19px;
+	font-weight: 800;
+	text-transform: uppercase;
+	color: #2D2D2D;
+}
+
+.text-light .ot-features-item h3 {
+	color: #FFFFFF;
+}
+
+.ot-features-item p {
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 22px;
+	color: #969696;
+	margin: 0px;
+}
+
+.ot-circle {
+	height: 95px;
+	width: 95px;
+	text-align: center;
+	line-height: 98px;
+	color: #FFFFFF;
+	border-radius: 100px;
+	background-color: #23AD21;
+	margin: 0 2px 4px;
+	font-size: 24px;
+}
+
+
+/*--------------------
+Team
+--------------------*/
+
+.ot-team-item {
+	text-align: center;
+	background-color: #fff;
+}
+
+.ot-team-item .ot-team-image {
+	margin: 20px 0 15px;
+}
+
+.ot-team-item .ot-team-title {
+	margin: 20px 0 15px;
+	font-size: 16px;
+	font-weight: 800;
+	text-transform: uppercase;
+	color: #2D2D2D;
+}
+
+.ot-team-item .ot-team-position {
+	color: #989898;
+	font-size: 12px;
+	margin: 15px 0 10px;
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 2px;
+}
+
+.ot-team-item p {
+	font-size: 13px;
+	font-weight: 400;
+	color: #292929;
+	padding-bottom: 20px;
+}
+
+
+/*** Widget Latest Posts ***/
+.ot-widget-post {
+	display: table;
+	margin: 0 0 20px 0;
+	border-bottom: 1px dotted;
+	border-color: #D8D8D8;
+	padding-bottom: 20px;
+	width: 100%;
+}
+.ot-widget-post:last-child {
+	border-bottom: none;
+	padding-bottom: 0px;
+	margin: 0px;
+}
+.ot-widget-post .post-image {
+	float: left;
+	width: 90px;
+	vertical-align: middle;
+	position: relative;
+	margin-right: 20px;
+}
+.widget-review .post-image {
+	width: 70px;
+	margin-right: 15px;
+}
+.ot-widget-post .post-body {
+	overflow: hidden;
+}
+.ot-widget-post h2 {
+	margin: 0;
+	font-size: 14px;
+	line-height: 130%;
+}
+.ot-widget-post h2 a {
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+	color: #4F4F52;
+}
+
+.ot-widget-post h2 a:hover {
+	opacity: 0.8;
+}
+
+.ot-widget-post .post-meta {
+	margin-top: 5px;
+	color: #B1B1B1;
+	font-size: 11px;
+}
+
+.ot-widget-post .post-meta span {
+	margin-right: 8px;
+}
+
+.ot-widget-post .post-meta span a {
+	color: #B1B1B1;
+}
+
+/*** Widget Social ***/
+
+.ot-widget-socials .widget-container {
+	text-align: center;
+}
+.ot-widget-socials a {
+	margin: 3px 5px;
+	padding: 5px;
+	font-size: 15px;
+	color: #545458;
+}
+
+/*** Widget About Author ***/
+.ot-widget-about-author .author-item {
+	text-align: center;
+}
+.ot-widget-about-author .author-image {
+	margin: 10px auto 15px;
+}
+
+.ot-widget-about-author .author-image .rounded {
+	border-radius: 100px;
+	margin: 0 auto;
+}
+
+.ot-widget-about-author .author-post h3 {
+	font-size: 19px;
+	color: #4A4A4E;
+	margin: 20px 0 2px;
+}
+
+.ot-widget-about-author .author-post p {
+	margin: 14px 0 20px;
+	text-align: initial;
+}
+
+.ot-widget-about-author .author-post .author-position {
+	font: 400 13px Roboto, sans-serif;
+	font-weight: 300;
+	line-height: 20px;
+	color: #b1b1b1;
+}

@@ -1,0 +1,166 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Orange Themes Custom Widgets\n"
+"POT-Creation-Date: 2016-11-22 21:23+0200\n"
+"PO-Revision-Date: 2016-11-22 21:23+0200\n"
+"Last-Translator: Orange Themes <support@orange-themes.com>\n"
+"Language-Team: Orange Themes <support@orange-themes.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;esc_html__;esc_html_e;"
+"esc_attr__;esc_html__e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ./..\n"
+
+#: ../widgets/about-author.php:7 ../widgets/about-author.php:15
+msgid "About Blog Author"
+msgstr ""
+
+#: ../widgets/about-author.php:7
+msgid "Widget with image, name, subtitle and author description."
+msgstr ""
+
+#: ../widgets/about-author.php:36 ../widgets/features.php:41
+#: ../widgets/latest-posts.php:32 ../widgets/social.php:39
+#: ../widgets/team.php:38
+msgid "Title:"
+msgstr ""
+
+#: ../widgets/about-author.php:42 ../widgets/team.php:31
+msgid "Image:"
+msgstr ""
+
+#: ../widgets/about-author.php:46 ../widgets/team.php:34
+msgid "Choose File"
+msgstr ""
+
+#: ../widgets/about-author.php:52
+msgid "Name:"
+msgstr ""
+
+#: ../widgets/about-author.php:57 ../widgets/team.php:43
+msgid "Subtitle:"
+msgstr ""
+
+#: ../widgets/about-author.php:62
+msgid "Desciprion:"
+msgstr ""
+
+#: ../widgets/about-author.php:67
+msgid "Read More Url:"
+msgstr ""
+
+#: ../widgets/about-author.php:135
+msgid "Read More"
+msgstr ""
+
+#: ../widgets/features.php:5
+msgid "Features"
+msgstr ""
+
+#: ../widgets/features.php:5
+msgid "Widget With Icon And Text"
+msgstr ""
+
+#: ../widgets/features.php:27
+msgid "Icon:"
+msgstr ""
+
+#: ../widgets/features.php:37
+msgid "Color:"
+msgstr ""
+
+#: ../widgets/features.php:45 ../widgets/team.php:47
+msgid "Text:"
+msgstr ""
+
+#: ../widgets/latest-posts.php:6
+msgid "Latest Posts"
+msgstr ""
+
+#: ../widgets/latest-posts.php:6
+msgid "Latest post widget with category and tag filters"
+msgstr ""
+
+#: ../widgets/latest-posts.php:12
+msgid "Latests News"
+msgstr ""
+
+#: ../widgets/latest-posts.php:38
+msgid "Category:"
+msgstr ""
+
+#: ../widgets/latest-posts.php:63
+msgid "Tag:"
+msgstr ""
+
+#: ../widgets/latest-posts.php:86
+msgid "Images:"
+msgstr ""
+
+#: ../widgets/latest-posts.php:88
+msgid "Show"
+msgstr ""
+
+#: ../widgets/latest-posts.php:89
+msgid "Hide"
+msgstr ""
+
+#: ../widgets/latest-posts.php:96
+msgid "Post count:"
+msgstr ""
+
+#: ../widgets/latest-posts.php:103
+msgid "Offset:"
+msgstr ""
+
+#: ../widgets/latest-posts.php:216
+msgid "No posts were found"
+msgstr ""
+
+#: ../widgets/social.php:7
+msgid "Social"
+msgstr ""
+
+#: ../widgets/social.php:7
+msgid "Widget with social network links"
+msgstr ""
+
+#: ../widgets/social.php:15
+msgid "Follow Me"
+msgstr ""
+
+#: ../widgets/social.php:46
+msgid "Twitter Account Url:"
+msgstr ""
+
+#: ../widgets/social.php:52
+msgid "Facebook Account Url:"
+msgstr ""
+
+#: ../widgets/social.php:58
+msgid "Google+ Account Url:"
+msgstr ""
+
+#: ../widgets/social.php:64
+msgid "Pinterest Account Url:"
+msgstr ""
+
+#: ../widgets/social.php:70
+msgid "Tumblr Account Url:"
+msgstr ""
+
+#: ../widgets/social.php:77
+msgid "Instagram Account Url:"
+msgstr ""
+
+#: ../widgets/team.php:7
+msgid "Team"
+msgstr ""
+
+#: ../widgets/team.php:7
+msgid "Widget with image, text, name and subtitle."
+msgstr ""
