@@ -1,0 +1,23 @@
+/*
+Theme Name: SKT Strong
+Description: SKT Strong Theme
+Author: Crveni Tim
+Template: skt-strong
+Version: 1.0.0
+Text Domain: skt-strong-child
+*/
+
+/* WUTU FORMS */
+
+.question-content {
+    color: white;
+    background: #00c0ff;
+    padding: 1em;
+    width: 950px;
+}
+
+.question-content p {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
