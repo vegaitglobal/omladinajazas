@@ -411,6 +411,10 @@ input:focus {
     background: #f4ad3d;
 }
 
+#ojh-risk-calculator .ojh-risk-calculator-results .ojh-risk-calculator-progress.danger .bar {
+    background: #FF5733;
+}
+
 #ojh-risk-calculator .ojh-risk-calculator-results .ojh-risk-calculator-results-title {
     font-size: 15px;
     font-weight: 700;

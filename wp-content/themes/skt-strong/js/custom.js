@@ -70,4 +70,25 @@ jQuery(document).ready(function() {
             first_part = word_array.join(' ');        // rejoin the first words together
             heading.html([first_part, ' <span>', last_word, '</span>'].join(''));
         });
-});	
+});
+
+// HANDLE WATU QUIZ RESULTS
+jQuery(document).ajaxComplete(function () {
+    if (jQuery('#watu-achieved-points').get(0)) {
+        const percentage = getResultPercentage();
+        const bar = jQuery('.bar');
+        bar.css('width', `${percentage}%`);
+        if (percentage > 67) {
+            bar.parent('div:first').addClass('danger');
+        } else if (percentage > 33 && percentage < 67) {
+            bar.parent('div:first').addClass('warning');
+        }
+    }
+});
+
+const getResultPercentage = function () {
+    const achieved = jQuery('#watu-achieved-points').get(0).innerText;
+    const maximum = jQuery('#watu-max-points').get(0).innerText;
+    const precentage = achieved / maximum * 100;
+    return precentage.toFixed(0);
+}
