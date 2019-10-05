@@ -70,4 +70,50 @@ jQuery(document).ready(function() {
             first_part = word_array.join(' ');        // rejoin the first words together
             heading.html([first_part, ' <span>', last_word, '</span>'].join(''));
         });
-});	
+});
+
+// 'Test Znanja'
+
+jQuery(document).ready(function() {
+	setTimeout(function(){
+		const watu = window.Watu;
+		//Todo: Hide 'introText' on second step!
+		const introText = jQuery('.quiz-area').addClass('introText');
+
+		const questionElements = jQuery('.watu-question');
+		questionElements.hide();
+		const questions = jQuery('.question-content');
+		var otherQuestions = [];
+		jQuery.each(questionElements, function (index, value) {
+			if (value.innerText.indexOf('*') >= 0) {
+				value.classList.add("firstStep");
+				// console.log(value)
+				jQuery(value).show();
+			} else {
+				otherQuestions.push(jQuery(value));
+			}
+		});
+		// Question randomizer
+		const parent = questionElements.parent();
+		var result = [];
+		const count = otherQuestions.length;
+		for (var i = 0; i < 10; i++) {
+			var randomNo = Math.floor((Math.random() * count) + 1);
+			while (true) {
+				if (jQuery.inArray(randomNo, result) != -1) {
+					randomNo = Math.floor((Math.random() * count) + 1);
+					console.log('test')
+				} else {
+					result.push(randomNo);
+					break;
+				}
+			}
+		}
+		var randomQuestions = [];
+		jQuery.each(result, function(key, value) {
+			randomQuestions.push(otherQuestions[value]);
+		});
+		console.log(randomQuestions);
+		// randomQuestions[0].show();
+	}, 100);
+});
