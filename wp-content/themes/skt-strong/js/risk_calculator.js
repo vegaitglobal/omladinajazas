@@ -1,4 +1,3 @@
-
 const initWatu = function () {
     const questions = jQuery('.watu-question');
     questions.hide();
@@ -28,7 +27,7 @@ const initRiscProgressIndicator = function () {
     indicatorWrapper.find('.ojh-progress-indicator:first').find('.ojh-progress-indicator__step:first').addClass('ojh-progress-indicator__step--active');
 };
 
-const addAnswerEventListener = function ( ) {
+const addAnswerEventListener = function () {
     const elems = document.querySelectorAll('.watu-question .answer');
 
     elems.forEach(elem => {
@@ -75,7 +74,7 @@ const manageButtons = function () {
         jQuery('#submit-btn').hide();
         jQuery("#next-question-btn").click(function () {
             Watu.current_step++;
-            jQuery( ".ojh-progress-indicator .ojh-progress-indicator__step:nth-child("+ Watu.current_step + ")").addClass('ojh-progress-indicator__step--active');
+            jQuery(".ojh-progress-indicator .ojh-progress-indicator__step:nth-child(" + Watu.current_step + ")").addClass('ojh-progress-indicator__step--active');
             var index = Object.keys(Watu.filtered_questions)[Watu.current_step - 1];
             var prevIndex = Object.keys(Watu.filtered_questions)[Watu.current_step - 2];
             showNextStep(index, prevIndex);
@@ -90,7 +89,7 @@ const manageButtons = function () {
         });
 
         jQuery("#prev-question-btn").click(function () {
-            jQuery( ".ojh-progress-indicator .ojh-progress-indicator__step:nth-child("+ Watu.current_step + ")").removeClass('ojh-progress-indicator__step--active');
+            jQuery(".ojh-progress-indicator .ojh-progress-indicator__step:nth-child(" + Watu.current_step + ")").removeClass('ojh-progress-indicator__step--active');
             Watu.current_step--;
             var index = Object.keys(Watu.filtered_questions)[Watu.current_step - 1];
             var nextIndex = Object.keys(Watu.filtered_questions)[Watu.current_step];
@@ -140,8 +139,7 @@ const getNoOfSteps = function () {
 
             if (Watu.filtered_questions[currIndex]) {
                 Watu.filtered_questions[currIndex].push(jQuery(this).attr('id'));
-            }
-            else {
+            } else {
                 Watu.filtered_questions[currIndex] = [jQuery(this).attr('id')];
                 noOfSteps++;
             }
@@ -174,7 +172,6 @@ jQuery(document).ready(function () {
 
     setTimeout(function () {
         initWatu();
-        initRiscProgressIndicator();
         addAnswerEventListener();
         console.log("Total questions: " + Watu.total_questions);
         console.log("Total steps: " + Watu.total_steps);
@@ -183,6 +180,10 @@ jQuery(document).ready(function () {
             jQuery('#action-button').hide();
         }
 
+        const watuForm = jQuery(`#quiz-${Watu.exam_id}`);
+        watuForm.parent('div:first').prepend('<div id="ojh-risk-indicator-wrapper"><div class="ojh-progress-indicator"></div></div>');
+
+        initRiscProgressIndicator();
     }, 100);
 
 });
