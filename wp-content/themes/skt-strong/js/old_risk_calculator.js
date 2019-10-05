@@ -4,16 +4,13 @@ const initWatu = function () {
     questions.hide();
     manageButtons();
     Watu.filtered_questions = {};
-    Watu.temp_questions = {};
     Watu.current_step = 1;
-    Watu.current_index = '1';
     Watu.isLastQuestion = false;
     Watu.total_steps = getNoOfSteps();
     Watu.total_questions = getNoOfQuestions();
-    showNextStep(Watu.current_index);
+    showNextStep(Watu.current_step);
     console.log(Watu);
 };
-
 const initRiscProgressIndicator = function () {
     var total_steps = Watu.total_steps;
     var step_num = null;
@@ -33,36 +30,35 @@ const addAnswerEventListener = function ( ) {
 
     elems.forEach(elem => {
         elem.addEventListener('click', event => {
-            jQuery(event.target).parent('div:first')
-                .css('background', '#7a7a7a')
-                .css('color', 'white')
-                .siblings('div:not(.question-content)')
-                .css('background', 'white')
-                .css('color', '#7a7a7a');
+            jQuery(event.target).parent('div:first').css('background', '#7a7a7a').siblings('div').css('background', 'white');
+
+            console.log(event.target.value);
         });
+
     });
 }
 
 
-const showNextStep = function (index, prevIndex) {
-    Watu.filtered_questions[index].forEach(function (question_id) {
+const showNextStep = function (step) {
+    Watu.filtered_questions[step].forEach(function (question_id) {
         jQuery("#" + question_id).show();
     });
-    if (index > 1) {
-        Watu.filtered_questions[prevIndex].forEach(function (question_id) {
+    if (step > 1) {
+        Watu.filtered_questions[step - 1].forEach(function (question_id) {
             jQuery("#" + question_id).hide();
         });
     }
 }
 
-const showPrevStep = function (index, nextIndex) {
-    Watu.filtered_questions[index].forEach(function (question_id) {
+const showPrevStep = function (step) {
+    Watu.filtered_questions[step].forEach(function (question_id) {
         jQuery("#" + question_id).show();
     });
-    Watu.filtered_questions[nextIndex].forEach(function (question_id) {
+    Watu.filtered_questions[step + 1].forEach(function (question_id) {
         jQuery("#" + question_id).hide();
     });
-}
+};
+
 
 const manageButtons = function () {
 
@@ -76,10 +72,7 @@ const manageButtons = function () {
         jQuery("#next-question-btn").click(function () {
             Watu.current_step++;
             jQuery( ".ojh-progress-indicator .ojh-progress-indicator__step:nth-child("+ Watu.current_step + ")").addClass('ojh-progress-indicator__step--active');
-            var index = Object.keys(Watu.filtered_questions)[Watu.current_step - 1];
-            var prevIndex = Object.keys(Watu.filtered_questions)[Watu.current_step - 2];
-            showNextStep(index, prevIndex);
-            console.log(Watu.current_step - 1);
+            showNextStep(Watu.current_step);
             if (Watu.current_step === Watu.total_steps) {
                 jQuery(this).hide();
                 jQuery("#submit-btn").show();
@@ -92,9 +85,7 @@ const manageButtons = function () {
         jQuery("#prev-question-btn").click(function () {
             jQuery( ".ojh-progress-indicator .ojh-progress-indicator__step:nth-child("+ Watu.current_step + ")").removeClass('ojh-progress-indicator__step--active');
             Watu.current_step--;
-            var index = Object.keys(Watu.filtered_questions)[Watu.current_step - 1];
-            var nextIndex = Object.keys(Watu.filtered_questions)[Watu.current_step];
-            showPrevStep(index, nextIndex);
+            showPrevStep(Watu.current_step);
             jQuery("#submit-btn").hide();
             if (Watu.current_step === 1) {
                 jQuery(this).hide();
@@ -129,44 +120,31 @@ const getCurrentIndex = function (beforeQuestion) {
 const getNoOfSteps = function () {
 
     var noOfSteps = 0;
+    var prevIndex = 0;
     jQuery(".watu-question").each(function (k, v) {
         var fullQuestion = jQuery(v).find("p").text();
-        console.log(fullQuestion);
         var question = "";
         if (fullQuestion.split("]")[1]) {
             question = fullQuestion.split("]")[1].trim();
             var beforeQuestion = fullQuestion.split("]")[0].trim();
             var currIndex = getCurrentIndex(beforeQuestion.replace(/ /g, ''));
-
-            if (Watu.filtered_questions[currIndex]) {
+            if (prevIndex == -1 || prevIndex !== currIndex) {
+                noOfSteps++;
+                Watu.filtered_questions[currIndex] = [jQuery(this).attr('id')];
+            } else {
                 Watu.filtered_questions[currIndex].push(jQuery(this).attr('id'));
             }
-            else {
-                Watu.filtered_questions[currIndex] = [jQuery(this).attr('id')];
-                noOfSteps++;
-            }
-
+            prevIndex = currIndex;
         } else {
             question = fullQuestion.split(".")[1].trim();
+            prevIndex++;
             noOfSteps++;
-            Watu.temp_questions[noOfSteps] = [jQuery(this).attr('id')];
+            Watu.filtered_questions[prevIndex] = [jQuery(this).attr('id')];
         }
         // brisemo redni broj/index ispred pitanja
         jQuery(v).find("p").text(question);
     });
 
-    // dodati iz temp_questiona 
-    jQuery.each(Watu.temp_questions, function (k, v) {
-        var i = 1;
-        while (1) {
-            if (!Watu.filtered_questions.hasOwnProperty(i)) {
-                Watu.filtered_questions[i] = v;
-                break;
-            }
-            i++;
-        }
-    });
-    delete Watu.temp_questions;
     return noOfSteps;
 }
 
@@ -182,6 +160,7 @@ jQuery(document).ready(function () {
         if (!Watu.isLastQuestion) {
             jQuery('#action-button').hide();
         }
+
 
     }, 100);
 
