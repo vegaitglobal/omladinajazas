@@ -37,21 +37,21 @@
         .bar {
           background: $ojh-red;
         }
-      }      
-    }
-
-    .ojh-risk-calculator-results-title {
-      font-size: 17px;
-      font-weight: 700;
-      color: $ojh-blue-background;
-      padding-bottom: 10px;
-    }
-
-    .ojh-risk-calculator-results-description {
-      font-size: 14px;
-      font-weight: 700;
-      color: $ojh-gray;
+      }
     }
   }
-  
+
+  .ojh-risk-calculator-results-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: $ojh-blue-background;
+    padding-bottom: 10px;
+  }
+
+  .ojh-risk-calculator-results-description {
+    font-size: 14px;
+    font-weight: 700;
+    color: $ojh-gray;
+  }
+
 }

@@ -1,7 +1,10 @@
 const initQuizProgressIndicator = function () {
+    const watuForm = jQuery(`#quiz-${Watu.exam_id}`);
+    watuForm.parent('div:first').prepend('<div id="ojh-quiz-steps-wrapper"><div class="ojh-progress-indicator"></div></div>');
+
     var total_steps = Watu.total_steps;
     var step_num = null;
-    var indicatorWrapper = jQuery("#ojh-risk-indicator-wrapper");
+    var indicatorWrapper = jQuery("#ojh-quiz-steps-wrapper");
     var indicator = indicatorWrapper.find('.ojh-progress-indicator:first');
 
     for (var i = 1; i <= total_steps; i++) {
@@ -13,18 +16,8 @@ const initQuizProgressIndicator = function () {
     indicatorWrapper.find('.ojh-progress-indicator:first').find('.ojh-progress-indicator__step:first').addClass('ojh-progress-indicator__step--active');
 };
 
-jQuery(document).ready(function () {
-    setTimeout(function () {
-        initQuizProgressIndicator();
-
-    }, 100)
-
-});
-
 // 'Test Znanja'
 const initView = function () {
-    //Todo: Hide 'introText' on second step!
-
     const questionElements = jQuery('.watu-question');
     questionElements.hide();
     var otherQuestions = [];
@@ -50,10 +43,6 @@ const initView = function () {
     Watu.total_steps = getNumberOfSteps(allQuestions);
     Watu.total_questions = getNumberOfQuestions();
     _showNextStep(Watu.current_step);
-
-
-
-
 }
 
 const getRandomQuestions = function (questions) {
@@ -77,8 +66,8 @@ const getRandomQuestions = function (questions) {
 const manageTestButtons = function () {
 
     if (parseInt(Watu.singlePage)) {
-        var nextBtn = '<a id="test-next-question-btn">SLEDEĆI KORAK</a>';
-        var prevBtn = '<a id="test-prev-question-btn">PRETHODNI KORAK</a>';
+        var nextBtn = '<a id="test-next-question-btn">SLEDEĆI KORAK ></a>';
+        var prevBtn = '<a id="test-prev-question-btn">< PRETHODNI KORAK</a>';
         var submitBtn = '<a id="test-submit-btn" onclick="Watu.submitResult()">POGLEDAJ REZULTAT</a>';
         const introText = jQuery('.quiz-area p:nth-child(2)');
         jQuery('#action-button').after(prevBtn, nextBtn, submitBtn);
@@ -171,8 +160,7 @@ const getNumberOfSteps = function (randomQuestions) {
 
             if (Watu.filtered_questions[currIndex]) {
                 Watu.filtered_questions[currIndex].push(jQuery(this).attr('id'));
-            }
-            else {
+            } else {
                 Watu.filtered_questions[currIndex] = [jQuery(this).attr('id')];
                 noOfSteps++;
             }
@@ -188,7 +176,6 @@ const getNumberOfSteps = function (randomQuestions) {
         // brisemo redni broj/index ispred pitanja
         jQuery(v).find("p").text(question);
     });
-
 
     // dodati iz temp_questiona
     jQuery.each(Watu.temp_questions, function (k, v) {
@@ -209,13 +196,8 @@ jQuery(document).ready(function () {
     if (jQuery(".entry-title").text() == 'TEST PROVERE ZNANJA PO PITANJU HIV/AIDS-A') {
 
         setTimeout(function () {
-
             initView();
-
+            initQuizProgressIndicator();
         }, 100);
     }
 });
-
-
-
-
