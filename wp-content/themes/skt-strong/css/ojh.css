@@ -292,7 +292,7 @@ input:focus {
 #ojh-quiz-steps-wrapper {
   width: 100%; }
   #ojh-quiz-steps-wrapper .ojh-progress-indicator {
-    -ms-box-orient: horizontal;
+    /*-ms-box-orient: horizontal;*/
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -329,23 +329,109 @@ input:focus {
       -moz-justify-content: center;
       -ms-justify-content: center;
       -o-justify-content: center;
-      justify-content: center;
-      color: #7a7a7a;
-      font-family: "Roboto", sans-serif;
-      font-size: 1.625rem;
-      line-height: 1;
-      font-weight: 400;
-      text-transform: none; }
-      #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step.ojh-progress-indicator__step--active {
+      justify-content: center; }
+      @media (min-device-width: 768px) {
+        #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step {
+          width: 2.5rem;
+          height: 2.5rem; } }
+      #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step .ojh-progress-indicator__step__dot {
+        width: 0.625rem;
+        height: 0.625rem;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        border-radius: 50%;
+        background-color: #7a7a7a;
+        z-index: 999; }
+        @media (min-device-width: 920px) {
+          #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step .ojh-progress-indicator__step__dot {
+            display: none; } }
+      #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step .ojh-progress-indicator__step__number {
+        display: none;
+        width: inherit;
+        height: inherit;
+        color: #7a7a7a;
+        font-family: "Roboto", sans-serif;
+        font-size: 1.625rem;
+        line-height: 1;
+        font-weight: 400;
+        text-transform: none; }
+        @media (min-device-width: 920px) {
+          #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step .ojh-progress-indicator__step__number {
+            /*-ms-box-orient: horizontal;*/
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -moz-flex;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: row;
+            -moz-flex-direction: row;
+            -ms-flex-direction: row;
+            -o-flex-direction: row;
+            flex-direction: row;
+            -webkit-align-items: center;
+            -moz-align-items: center;
+            -ms-align-items: center;
+            -o-align-items: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            -moz-justify-content: center;
+            -ms-justify-content: center;
+            -o-justify-content: center;
+            justify-content: center;
+            background-color: #f7f7f7;
+            z-index: 999; } }
+      #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step.ojh-progress-indicator__step--active .ojh-progress-indicator__step__dot {
+        background-color: #00c0ff; }
+      #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step.ojh-progress-indicator__step--active .ojh-progress-indicator__step__number {
         color: #00c0ff; }
     #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step + .ojh-progress-indicator__step:before {
       content: '';
       position: absolute;
       top: calc(1.25rem - 0.3125rem/2);
-      left: -1.25em;
-      width: 1.875rem;
+      left: -0.625rem;
+      width: 1.25rem;
       height: 0.1875rem;
       background: #7a7a7a; }
+      @media (min-device-width: 360px) {
+        #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step + .ojh-progress-indicator__step:before {
+          left: -0.75rem;
+          width: 2.5rem; } }
+      @media (min-device-width: 420px) {
+        #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step + .ojh-progress-indicator__step:before {
+          left: -1rem;
+          width: 2.5rem; } }
+      @media (min-device-width: 576px) {
+        #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step + .ojh-progress-indicator__step:before {
+          left: -1.25rem;
+          width: 2.5rem; } }
+      @media (min-device-width: 768px) {
+        #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step + .ojh-progress-indicator__step:before {
+          left: -1.25rem;
+          width: 6em; } }
+      @media (min-device-width: 800px) {
+        #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step + .ojh-progress-indicator__step:before {
+          left: -1.875rem;
+          width: 7em; } }
+      @media (min-device-width: 920px) {
+        #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step + .ojh-progress-indicator__step:before {
+          left: -2.5rem;
+          width: 5rem; } }
+    @media (min-device-width: 360px) {
+      #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step:last-of-type:before {
+        width: 1.875rem; } }
+    @media (min-device-width: 576px) {
+      #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step:last-of-type:before {
+        width: 2.5rem; } }
+    @media (min-device-width: 800px) {
+      #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step:last-of-type:before {
+        width: 3rem; } }
+    @media (min-device-width: 920px) {
+      #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step:last-of-type:before {
+        left: -2.5rem;
+        width: 5rem; } }
     #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step--active + .ojh-progress-indicator__step--active:before {
       background: #00c0ff; }
 
@@ -358,7 +444,7 @@ input:focus {
     width: 100%;
     margin-bottom: 2.5rem; }
     #watu_quiz .quiz-form .watu-question {
-      -ms-box-orient: horizontal;
+      /*-ms-box-orient: horizontal;*/
       display: -webkit-box;
       display: -moz-box;
       display: -ms-flexbox;
@@ -407,7 +493,7 @@ input:focus {
             -moz-transform: translateY(-50%);
             -o-transform: translateY(-50%);
             transform: translateY(-50%);
-            -ms-box-orient: horizontal;
+            /*-ms-box-orient: horizontal;*/
             display: -webkit-box;
             display: -moz-box;
             display: -ms-flexbox;
@@ -447,7 +533,7 @@ input:focus {
         -ms-align-self: flex-start;
         -o-align-self: flex-start;
         align-self: flex-start;
-        -ms-box-orient: horizontal;
+        /*-ms-box-orient: horizontal;*/
         display: -webkit-box;
         display: -moz-box;
         display: -ms-flexbox;
@@ -571,7 +657,7 @@ input:focus {
 #test-next-question-btn,
 #submit-btn,
 #test-submit-btn {
-  display: inline-block;
+  display: block;
   text-align: right;
   margin-top: 2.5rem;
   padding: 0.625rem 0;
