@@ -18,6 +18,7 @@
       /* QUESTION */
       .question-content {
         flex: 0 0 100%;
+        margin-top: 0;
         @include box-sizing (border-box);
         background-color: $ojh-blue;
         padding: 1.25rem 0.625rem;
