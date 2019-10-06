@@ -1,0 +1,18 @@
+/* MAIN STYLE */
+
+// Core variables and mixins
+
+@import 'variables';
+@import 'mixins';
+
+
+// General CSS
+@import 'general';
+
+
+// Components
+@import 'components/intro';
+@import 'components/progress-indicator';
+@import 'components/questions-and-answers';
+@import 'components/pagination';
+@import 'components/results';

@@ -1,0 +1,45 @@
+/* PROGRESS INDICATOR */
+
+#ojh-risk-indicator-wrapper {
+    width: 100%;
+
+  .ojh-progress-indicator {
+  @include display-flex ();
+  @include flex-direction (row);
+  @include align-items (center);
+  @include justify-content (space-between);
+  margin-bottom: 2.5rem;
+  width: 100%;
+
+    .ojh-progress-indicator__step {
+      position: relative;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: flex;
+      align-items: center;
+      @include justify-content (center);    
+      @include font-mix ($ojh-gray, $ojh-body-font, 1.625rem, 1, 400, none);
+
+      &.ojh-progress-indicator__step--active {
+        color: $ojh-blue;
+      }
+
+    }
+
+    .ojh-progress-indicator__step + .ojh-progress-indicator__step:before {
+      content: '';
+      position: absolute;
+      top: calc(1.25rem - 0.3125rem/2);
+      left: -1.25em;
+      width: 1.875rem;
+      height: 0.1875rem;
+      background: $ojh-gray;
+    }
+
+    .ojh-progress-indicator__step--active + .ojh-progress-indicator__step--active:before {
+      background: $ojh-blue;
+    }  
+
+  }
+
+}
