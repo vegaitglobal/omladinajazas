@@ -377,15 +377,15 @@ input:focus {
 }
 
 /* RESULTS */
-#ojh-risk-calculator {
+.ojh-risk-calculator {
     width: 100%
 }
 
-#ojh-risk-calculator .ojh-risk-calculator-results {
+.ojh-risk-calculator .ojh-risk-calculator-results {
     width: 100%;
 }
 
-#ojh-risk-calculator .ojh-risk-calculator-results .ojh-risk-calculator-progress {
+.ojh-risk-calculator .ojh-risk-calculator-results .ojh-risk-calculator-progress {
     -webkit-box-shadow: 2px 2px 2px 0px rgba(122, 122, 122, 0.5);
     -moz-box-shadow: 2px 2px 2px 0px rgba(122, 122, 122, 0.5);
     box-shadow: 2px 2px 2px 0px rgba(122, 122, 122, 0.5);
@@ -397,32 +397,32 @@ input:focus {
     background: #ffffff;
 }
 
-#ojh-risk-calculator .ojh-risk-calculator-results .ojh-risk-calculator-progress .bar {
+.ojh-risk-calculator .ojh-risk-calculator-results .ojh-risk-calculator-progress .bar {
     position: relative;
     float: left;
     height: 100%;
 }
 
-#ojh-risk-calculator .ojh-risk-calculator-results .ojh-risk-calculator-progress.primary .bar {
+.ojh-risk-calculator .ojh-risk-calculator-results .ojh-risk-calculator-progress.primary .bar {
     background: #52bff9;
 }
 
-#ojh-risk-calculator .ojh-risk-calculator-results .ojh-risk-calculator-progress.warning .bar {
+.ojh-risk-calculator .ojh-risk-calculator-results .ojh-risk-calculator-progress.warning .bar {
     background: #f4ad3d;
 }
 
-#ojh-risk-calculator .ojh-risk-calculator-results .ojh-risk-calculator-progress.danger .bar {
+.ojh-risk-calculator .ojh-risk-calculator-results .ojh-risk-calculator-progress.danger .bar {
     background: #FF5733;
 }
 
-#ojh-risk-calculator .ojh-risk-calculator-results .ojh-risk-calculator-results-title {
+.ojh-risk-calculator .ojh-risk-calculator-results .ojh-risk-calculator-results-title {
     font-size: 15px;
     font-weight: 700;
     color: #52bff9;
     padding-bottom: 10px;
 }
 
-#ojh-risk-calculator .ojh-risk-calculator-results .ojh-risk-calculator-results-description {
+.ojh-risk-calculator .ojh-risk-calculator-results .ojh-risk-calculator-results-description {
     font-size: 14px;
     font-weight: 700;
     color: #7a7a7a;
