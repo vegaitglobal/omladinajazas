@@ -11,8 +11,7 @@ wp-content/mu-plugins/
 wp-content/wp-cache-config.php
 wp-content/plugins/hello.php
 
-wp-content/themes/skt-strong/css/ojh.css
-
+wp-content/themes/skt-strong/css/*.map
 
 /.htaccess
 /license.txt

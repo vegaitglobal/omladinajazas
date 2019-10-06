@@ -61,7 +61,8 @@
         white-space: nowrap;
         @include font-mix ($ojh-medium-gray, $ojh-body-font, 0.875rem, 1.2, 500, none);
 
-        input[type=radio] {
+        input[type=radio],
+        input[type=checkbox] {
           display: none !important;
         }
 
