@@ -188,6 +188,7 @@ jQuery(document).ready(function () {
         setTimeout(function () {
             initView();
             initQuizProgressIndicator();
+            jQuery("#complete-overlay-test").css("display", "block");
         }, 100);
     }
 });
