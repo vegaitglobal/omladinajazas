@@ -24,15 +24,56 @@
       display: flex;
       align-items: center;
       @include justify-content (center);    
-      @include font-mix ($ojh-gray, $ojh-body-font, 1.625rem, 1, 400, none);
         @media (min-device-width: 576px) {}
-        @media (min-device-width: 768px) {}
+        @media (min-device-width: 768px) {
+          width: 2.5rem;
+          height: 2.5rem;          
+        }
         @media (min-device-width: 920px) {}
         @media (min-device-width: 1200px) {}
 
-      &.ojh-progress-indicator__step--active {
-        color: $ojh-blue;
-      }
+        .ojh-progress-indicator__step__dot {
+          width: 0.625rem;
+          height: 0.625rem;
+          @include border-radius(50%);        
+          background-color: $ojh-gray;
+          z-index: 999;
+
+          @media (min-device-width: 576px) {}
+          @media (min-device-width: 768px) {
+          }
+          @media (min-device-width: 920px) {
+            display: none;
+          }
+          @media (min-device-width: 1200px) {}
+        }
+
+        .ojh-progress-indicator__step__number {
+          display: none;
+          width: inherit;
+          height: inherit;
+          @include font-mix ($ojh-gray, $ojh-body-font, 1.625rem, 1, 400, none);
+          @media (min-device-width: 576px) {}
+          @media (min-device-width: 768px) {}
+          @media (min-device-width: 920px) {
+            @include display-flex ();
+            @include flex-direction (row);
+            @include align-items (center);
+            @include justify-content (center);
+            background-color: $ojh-light-gray;
+            z-index: 999;            
+          }
+          @media (min-device-width: 1200px) {}        
+        }
+
+        &.ojh-progress-indicator__step--active {
+          .ojh-progress-indicator__step__dot {
+            background-color: $ojh-blue;
+          }
+          .ojh-progress-indicator__step__number {        
+            color: $ojh-blue;
+          }  
+        }    
 
     }
 
@@ -40,10 +81,64 @@
       content: '';
       position: absolute;
       top: calc(1.25rem - 0.3125rem/2);
-      left: -1.25em;
-      width: 1.875rem;
+      left: -0.625rem;
+      width: 1.25rem;
       height: 0.1875rem;
-      background: $ojh-gray;
+      background: $ojh-gray;     
+        @media (min-device-width: 360px) {
+          left: -0.75rem;
+          width: 2.5rem;             
+        }
+        @media (min-device-width: 420px) {
+          left: -1rem;
+          width: 2.5rem;             
+        }                 
+        @media (min-device-width: 576px) {
+          left: -1.25rem;
+          width: 2.5rem;             
+        }
+        @media (min-device-width: 768px) {
+          left: -1.25rem;
+          width: 6em;                  
+        }
+        @media (min-device-width: 800px) {
+          left: -1.875rem;
+          width: 7em;                  
+        }        
+        @media (min-device-width: 920px) {
+          left: -2.5rem;
+          width: 5rem;            
+        }
+        @media (min-device-width: 1200px) {}         
+        
+    }
+
+    .ojh-progress-indicator__step {
+      &:last-of-type {
+        &:before {
+
+          @media (min-device-width: 360px) { 
+            width: 1.875rem;
+          }
+          @media (min-device-width: 420px) {            
+          }                 
+          @media (min-device-width: 576px) { 
+            width: 2.5rem;          
+          }
+          @media (min-device-width: 768px) { 
+
+          }
+          @media (min-device-width: 800px) {
+            width: 3rem;                 
+          }           
+          @media (min-device-width: 920px) {
+            left: -2.5rem;
+            width: 5rem;            
+          }
+          @media (min-device-width: 1200px) {}            
+        }
+          
+      }  
     }
 
     .ojh-progress-indicator__step--active + .ojh-progress-indicator__step--active:before {

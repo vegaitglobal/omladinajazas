@@ -131,11 +131,13 @@ const getNoOfSteps = function () {
             noOfSteps++;
             Watu.temp_questions[noOfSteps] = [jQuery(this).attr('id')];
         }
-        // brisemo redni broj/index ispred pitanja
+        // deleting oder number/index before question
         jQuery(v).find("p").text(question);
+        const number = '<span class="watu_num">' + Watu.current_step + '. ' + '</span>';
+        jQuery(v).find("p").prepend(number);
     });
 
-    // dodati iz temp_questiona 
+    // add from temp_question
     jQuery.each(Watu.temp_questions, function (k, v) {
         var i = 1;
         while (1) {
@@ -151,7 +153,7 @@ const getNoOfSteps = function () {
 }
 
 jQuery(document).ready(function () {
-    if (jQuery(".entry-title").text() == "KALKULATOR RIZIKA") {
+    if (jQuery("#quiz-5").get(0)) {
         setTimeout(function () {
             initWatu();
             jQuery("#risk-calc-complete-overlay").css("display", "block");

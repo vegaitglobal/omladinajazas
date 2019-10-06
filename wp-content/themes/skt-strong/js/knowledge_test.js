@@ -1,25 +1,20 @@
 
-// 'Test Znanja'
+// Knowledge test
 const initView = function () {
     const questionElements = jQuery('.watu-question');
     questionElements.hide();
     var otherQuestions = [];
     var allQuestions = [];
-    var elem = null;
     jQuery.each(questionElements, function (index, value) {
-        elem = jQuery(value);
         if (value.innerText.replace(/ /g, '').indexOf('[1]') >= 0) {
             value.classList.add("firstStep");
-            elem.removeClass('watu-question').css('display', 'block');
-            elem.children('textarea').attr('rows', 1).css('height', '30px');
-            elem.children('textarea').attr('rows', 1).css('height', '30px');
             allQuestions.push(jQuery(value));
             jQuery(value).show();
         } else {
             otherQuestions.push(jQuery(value));
         }
     });
-
+    const firstStepQuestionNo = allQuestions.length;
     const randomQuestions = getRandomQuestions(otherQuestions);
     allQuestions.push(...randomQuestions);
 
@@ -28,13 +23,13 @@ const initView = function () {
     Watu.temp_questions = {};
     Watu.current_step = 1;
     Watu.isLastQuestion = false;
-    Watu.total_steps = getNumberOfSteps(allQuestions);
+    Watu.total_steps = getNumberOfSteps(allQuestions, firstStepQuestionNo);
     Watu.total_questions = getNumberOfQuestions();
     _showNextStep(Watu.current_step);
-}
+};
 
+//	Question randomizer
 const getRandomQuestions = function (questions) {
-    //	Question randomizer
     var randomNumbers = [];
     const count = questions.length;
     while (randomNumbers.length < 10) {
@@ -49,7 +44,7 @@ const getRandomQuestions = function (questions) {
         randomQuestions.push(questions[value - 1]);
     });
     return randomQuestions;
-}
+};
 
 const manageTestButtons = function () {
 
@@ -136,10 +131,11 @@ const getCurrIndex = function (beforeQuestion) {
     return currIndex;
 }
 
-const getNumberOfSteps = function (randomQuestions) {
+const getNumberOfSteps = function (randomQuestions, firstStepQuestionNo) {
 
     var noOfSteps = 0;
     Watu.question_ids = [];
+    var i = 1;
     jQuery(randomQuestions).each(function (k, v) {
         var fullQuestion = jQuery(v).find("p").text();
         var question = "";
@@ -163,11 +159,18 @@ const getNumberOfSteps = function (randomQuestions) {
             Watu.temp_questions[noOfSteps] = [jQuery(this).attr('id')];
         }
         Watu.question_ids.push(v.context.id.split('-')[1]);
-        // brisemo redni broj/index ispred pitanja
+        // deleting oder number/index before question
         jQuery(v).find("p").text(question);
+        if(i <= firstStepQuestionNo) {
+            i++;
+        } else {
+            const number = '<span class="watu_num">' + (i - firstStepQuestionNo) + '. ' + '</span>';
+            jQuery(v).find("p").prepend(number);
+            i++;
+        }
     });
 
-    // dodati iz temp_questiona
+    // add from temp_question
     jQuery.each(Watu.temp_questions, function (k, v) {
         var i = 1;
         while (1) {
@@ -183,7 +186,7 @@ const getNumberOfSteps = function (randomQuestions) {
 }
 
 jQuery(document).ready(function () {
-    if (jQuery(".entry-title").text() == 'TEST PROVERE ZNANJA PO PITANJU HIV/AIDS-A') {
+    if (jQuery("#quiz-3").get(0)) {
 
         setTimeout(function () {
             initView();
