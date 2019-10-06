@@ -376,6 +376,213 @@ input:focus {
     cursor: not-allowed !important;
 }
 
+#watu_quiz .quiz-form .watu-question {
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+#watu_quiz .quiz-form .watu-question .question-content {
+    flex: 0 0 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #00c0ff;
+    padding: 1.25rem 0.625rem;
+}
+
+#watu_quiz .quiz-form .watu-question .question-content p {
+    position: relative;
+    text-align: center;
+    margin-bottom: 0;
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.2;
+    font-weight: 500;
+    text-transform: none;
+    flex: auto;
+    text-align: center;
+}
+
+#watu_quiz .quiz-form .watu-question .question-content p .watu_num {
+    position: absolute;
+    left: 0.625rem;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.875rem;
+    line-height: 1;
+    font-weight: 700;
+    text-transform: none;
+    text-align: center;
+}
+
+#watu_quiz .quiz-form .watu-question div:not([class]) {
+    -webkit-align-self: flex-start;
+    -moz-align-self: flex-start;
+    -ms-align-self: flex-start;
+    -o-align-self: flex-start;
+    align-self: flex-start;
+    flex: 0 0 24.0625rem;
+    height: 2.5rem;
+    text-align: center;
+    margin-top: 1.25rem;
+    padding: 0.625rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    -webkit-border-radius: 0.3125rem;
+    -moz-border-radius: 0.3125rem;
+    -ms-border-radius: 0.3125rem;
+    -o-border-radius: 0.3125rem;
+    border-radius: 0.3125rem;
+    -webkit-box-shadow: -3px 3px 3px -2px rgba(122, 122, 122, 0.5);
+    -moz-box-shadow: -3px 3px 3px -2px rgba(122, 122, 122, 0.5);
+    box-shadow: -3px 3px 3px -2px rgba(122, 122, 122, 0.5);
+    white-space: nowrap;
+}
+
+#watu_quiz .quiz-form .watu-question div:not([class]) input[type=radio] {
+    display: none !important;
+}
+
+#watu_quiz .quiz-form .watu-question div:not([class]) label {
+    display: inline-block !important;
+    width: 100%;
+}
+
+#watu_quiz .quiz-form .watu-question div:not([class]) {
+    color: #5c5c5c;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.2;
+    font-weight: 500;
+    text-transform: none;
+}
+
+#watu_quiz .quiz-form .watu-question div:not([class]):hover {
+    background-color: #7a7a7a;
+}
+
+#watu_quiz .quiz-form .watu-question div:not([class]):hover {
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.2;
+    font-weight: 500;
+    text-transform: none;
+}
+
+#watu_quiz .quiz-form .watu-question div:not([class]).checked {
+    background-color: #7a7a7a;
+}
+
+#watu_quiz .quiz-form .watu-question div:not([class]).checked {
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.2;
+    font-weight: 500;
+    text-transform: none;
+}
+
+#watu_quiz .quiz-form .watu-question div:not([class]):nth-of-type(odd) {
+    margin-left: 1.25rem;
+}
+
+#watu_quiz .quiz-form .watu-question + .watu-question {
+    margin-top: 2.5rem;
+}
+
+#watu_quiz .quiz-form #prev-question-btn {
+    display: inline-block;
+    width: 24.0625rem;
+    margin-top: 2.5rem;
+    padding: 0.625rem 0;
+    color: #5c5c5c;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.8125rem;
+    line-height: 1;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+#watu_quiz .quiz-form #prev-question-btn:hover {
+    cursor: pointer;
+    color: #00c0ff;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.8125rem;
+    line-height: 1;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+#watu_quiz .quiz-form #prev-question-btn.disabled:hover {
+    color: #5c5c5c;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.8125rem;
+    line-height: 1;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+#watu_quiz .quiz-form #next-question-btn {
+    display: inline-block;
+    width: 24.0625rem;
+    text-align: right;
+    margin-top: 2.5rem;
+    padding: 0.625rem 0;
+    color: #00c0ff;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.8125rem;
+    line-height: 1;
+    font-weight: 500;
+    text-transform: uppercase;
+    float: right;
+}
+
+#watu_quiz .quiz-form #next-question-btn:hover {
+    cursor: pointer;
+    color: #00c0ff;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.8125rem;
+    line-height: 1;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+#watu_quiz .quiz-form #next-question-btn.disabled:hover {
+    color: #00c0ff;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.8125rem;
+    line-height: 1;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+#watu_quiz .quiz-form .disabled {
+    opacity: 0.2;
+    cursor: not-allowed !important;
+}
+
 /* RESULTS */
 .ojh-risk-calculator {
     width: 100%

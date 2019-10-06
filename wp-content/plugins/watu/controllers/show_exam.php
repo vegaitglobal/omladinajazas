@@ -142,9 +142,9 @@ if(isset($_REQUEST['do']) and $_REQUEST['do']) { // Quiz Reuslts.
 	foreach ($questions as $qct => $ques) {
 		$is_empty = false;
 		$qnum = $qct+1;
-		$question_number = empty($exam->dont_display_question_numbers) ? "<span class='watu_num'>$qnum. </span>"  : '';
-		
-		$result .= "<div class='show-question'>";
+	        $question_number = empty($exam->dont_display_question_numbers) ? "<span class='watu_num'>$qnum. </span>"  : '';
+
+        $result .= "<div class='show-question'>";
 		$result .= "<div class='show-question-content'>". wpautop($question_number . stripslashes($ques->question), false) . "</div>";
 		$all_answers = $ques->answers;
 		$correct = false;
