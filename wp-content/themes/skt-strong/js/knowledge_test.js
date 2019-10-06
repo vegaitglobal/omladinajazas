@@ -1,10 +1,10 @@
 const initQuizProgressIndicator = function () {
-
-    console.log('KNOWLEDGE TEST PROGRESS BAR FUNCTION');
+    const watuForm = jQuery(`#quiz-${Watu.exam_id}`);
+    watuForm.parent('div:first').prepend('<div id="ojh-quiz-steps-wrapper"><div class="ojh-progress-indicator"></div></div>');
 
     var total_steps = Watu.total_steps;
     var step_num = null;
-    var indicatorWrapper = jQuery("#ojh-risk-indicator-wrapper");
+    var indicatorWrapper = jQuery("#ojh-quiz-steps-wrapper");
     var indicator = indicatorWrapper.find('.ojh-progress-indicator:first');
 
     for (var i = 1; i <= total_steps; i++) {
@@ -36,8 +36,6 @@ const initView = function () {
 
     const randomQuestions = getRandomQuestions(otherQuestions);
     allQuestions.push(...randomQuestions);
-    console.log(allQuestions);
-
 
     manageTestButtons();
     Watu.filtered_questions = {};
@@ -47,8 +45,6 @@ const initView = function () {
     Watu.total_steps = getNumberOfSteps(allQuestions);
     Watu.total_questions = getNumberOfQuestions();
     _showNextStep(Watu.current_step);
-
-
 }
 
 const getRandomQuestions = function (questions) {
@@ -181,7 +177,6 @@ const getNumberOfSteps = function (randomQuestions) {
         jQuery(v).find("p").text(question);
     });
 
-
     // dodati iz temp_questiona
     jQuery.each(Watu.temp_questions, function (k, v) {
         var i = 1;
@@ -206,7 +201,3 @@ jQuery(document).ready(function () {
         }, 100);
     }
 });
-
-
-
-
