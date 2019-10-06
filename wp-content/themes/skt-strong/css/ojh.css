@@ -468,11 +468,11 @@ input:focus {
       /* ANSWER */ }
       #watu_quiz .quiz-form .watu-question .question-content {
         flex: 0 0 100%;
+        margin-top: 0;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
         background-color: #00c0ff;
-        margin-top: 0;
         padding: 1.25rem 0.625rem; }
         #watu_quiz .quiz-form .watu-question .question-content p {
           position: relative;
@@ -731,4 +731,5 @@ input:focus {
     font-size: 14px;
     font-weight: 700;
     color: #7a7a7a; }
+
 /*# sourceMappingURL=ojh.css.map */
