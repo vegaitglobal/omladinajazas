@@ -4,7 +4,6 @@
 #prev-question-btn,
 #test-prev-question-btn {
   display: inline-block;
-  width: 24.0625rem;
   margin-top: 2.5rem;
   padding: 0.625rem 0;
   @include font-mix ($ojh-medium-gray, $ojh-body-font, 0.8125rem, 1, 500, uppercase);
@@ -31,7 +30,6 @@
 #submit-btn,
 #test-submit-btn {
   display: inline-block;
-  width: 24.0625rem;
   text-align: right;
   margin-top: 2.5rem;
   padding: 0.625rem 0;

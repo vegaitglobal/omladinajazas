@@ -8,8 +8,14 @@
   @include flex-direction (row);
   @include align-items (center);
   @include justify-content (space-between);
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.875rem;
   width: 100%;
+    @media (min-device-width: 576px) {}
+    @media (min-device-width: 768px) {
+      margin-bottom: 2.5rem;
+    }
+    @media (min-device-width: 920px) {}
+    @media (min-device-width: 1200px) {}
 
     .ojh-progress-indicator__step {
       position: relative;
@@ -19,6 +25,10 @@
       align-items: center;
       @include justify-content (center);    
       @include font-mix ($ojh-gray, $ojh-body-font, 1.625rem, 1, 400, none);
+        @media (min-device-width: 576px) {}
+        @media (min-device-width: 768px) {}
+        @media (min-device-width: 920px) {}
+        @media (min-device-width: 1200px) {}
 
       &.ojh-progress-indicator__step--active {
         color: $ojh-blue;

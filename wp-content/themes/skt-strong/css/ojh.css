@@ -314,8 +314,11 @@ input:focus {
     -ms-justify-content: space-between;
     -o-justify-content: space-between;
     justify-content: space-between;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.875rem;
     width: 100%; }
+    @media (min-device-width: 768px) {
+      #ojh-quiz-steps-wrapper .ojh-progress-indicator {
+        margin-bottom: 2.5rem; } }
     #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step {
       position: relative;
       width: 2.5rem;
@@ -387,7 +390,6 @@ input:focus {
         padding: 1.25rem 0.625rem; }
         #watu_quiz .quiz-form .watu-question .question-content p {
           position: relative;
-          text-align: center;
           margin-bottom: 0;
           color: #ffffff;
           font-family: "Roboto", sans-serif;
@@ -396,6 +398,7 @@ input:focus {
           font-weight: 500;
           text-transform: none;
           flex: auto;
+          padding-left: 2.5rem;
           text-align: center; }
           #watu_quiz .quiz-form .watu-question .question-content p .watu_num {
             position: absolute;
@@ -405,13 +408,40 @@ input:focus {
             -moz-transform: translateY(-50%);
             -o-transform: translateY(-50%);
             transform: translateY(-50%);
+            -ms-box-orient: horizontal;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -moz-flex;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: row;
+            -moz-flex-direction: row;
+            -ms-flex-direction: row;
+            -o-flex-direction: row;
+            flex-direction: row;
+            -webkit-align-items: center;
+            -moz-align-items: center;
+            -ms-align-items: center;
+            -o-align-items: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            -moz-justify-content: center;
+            -ms-justify-content: center;
+            -o-justify-content: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
             color: #ffffff;
             font-family: "Roboto", sans-serif;
-            font-size: 1.875rem;
+            font-size: 1.25rem;
             line-height: 1;
             font-weight: 700;
             text-transform: none;
             text-align: center; }
+            @media (min-device-width: 768px) {
+              #watu_quiz .quiz-form .watu-question .question-content p .watu_num {
+                font-size: 1.875rem; } }
       #watu_quiz .quiz-form .watu-question div:not([class]) {
         -webkit-align-self: flex-start;
         -moz-align-self: flex-start;
@@ -440,8 +470,8 @@ input:focus {
         -ms-justify-content: center;
         -o-justify-content: center;
         justify-content: center;
-        flex: 0 0 24.0625rem;
-        max-width: 24.0625rem;
+        flex: 0 0 100%;
+        max-width: 100%;
         min-height: 2.5rem;
         text-align: center;
         margin-top: 1.25rem;
@@ -464,6 +494,14 @@ input:focus {
         line-height: 1.2;
         font-weight: 500;
         text-transform: none; }
+        @media (min-device-width: 920px) {
+          #watu_quiz .quiz-form .watu-question div:not([class]) {
+            flex: 0 0 48%;
+            max-width: 48%; } }
+        @media (min-device-width: 1200px) {
+          #watu_quiz .quiz-form .watu-question div:not([class]) {
+            flex: 0 0 24.0625rem;
+            max-width: 24.0625rem; } }
         #watu_quiz .quiz-form .watu-question div:not([class]) input[type=radio],
         #watu_quiz .quiz-form .watu-question div:not([class]) input[type=checkbox] {
           display: none !important; }
@@ -488,8 +526,9 @@ input:focus {
           line-height: 1.2;
           font-weight: 500;
           text-transform: none; }
-        #watu_quiz .quiz-form .watu-question div:not([class]):nth-of-type(odd) {
-          margin-left: 1.25rem; }
+        @media (min-device-width: 920px) {
+          #watu_quiz .quiz-form .watu-question div:not([class]):nth-of-type(odd) {
+            margin-left: 1.25rem; } }
     #watu_quiz .quiz-form .watu-question + .watu-question {
       margin-top: 2.5rem; }
 
@@ -498,7 +537,6 @@ input:focus {
 #prev-question-btn,
 #test-prev-question-btn {
   display: inline-block;
-  width: 24.0625rem;
   margin-top: 2.5rem;
   padding: 0.625rem 0;
   color: #5c5c5c;
@@ -535,7 +573,6 @@ input:focus {
 #submit-btn,
 #test-submit-btn {
   display: inline-block;
-  width: 24.0625rem;
   text-align: right;
   margin-top: 2.5rem;
   padding: 0.625rem 0;
