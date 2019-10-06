@@ -1,7 +1,8 @@
 /* PAGINATION */
 
 /* Previous step */
-#prev-question-btn {
+#prev-question-btn,
+#test-prev-question-btn {
   display: inline-block;
   width: 24.0625rem;
   margin-top: 2.5rem;
@@ -24,7 +25,10 @@
 }
 
 /* Next step */
-#next-question-btn {
+#next-question-btn,
+#test-next-question-btn,
+#submit-btn,
+#test-submit-btn {
   display: inline-block;
   width: 24.0625rem;
   text-align: right;
