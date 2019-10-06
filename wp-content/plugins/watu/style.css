@@ -1,0 +1,115 @@
+.watu-question, #action-button {
+	display:none;
+}
+
+form.quiz-form {
+	text-align:left;
+}
+
+.single-page-quiz .watu-question, .single-page-quiz #action-button {
+	display:block;
+}
+
+.watu-question {
+	clear: both;
+	width: 100%;
+}
+
+.single-page-quiz #next-question {
+	display:none;
+}
+.question-content {
+	margin-top:20px;
+}
+
+.answer>span {
+	padding-right:20px;
+}
+.user-answer>span {
+	font-weight:bold;
+	background:url(wrong.png) no-repeat right top;
+}
+.correct-answer>span {
+	background:url(correct.png) no-repeat right top;
+}
+
+.watu-sidebox
+{
+	border:1px solid black;
+	padding:10px;
+	margin-bottom: 20px;
+}
+
+#watu-sidebar
+{
+	float:left;
+	min-width:200px;
+	max-width: 320px;
+}
+
+#watu-related, #watu-ad
+{
+	background-color: #BBEEDD;
+}
+
+.quiz-form label {
+   display: inline !important;
+}
+
+.watu-basic-chart td, .watu-basic-chart-points td, .watu-basic-chart-percent td {
+	padding: 6px;
+}
+
+.quiz-form input[type='checkbox'] {
+   display: inline !important;
+}
+
+.quiz-form input[type='radio'] {
+   display: inline !important;
+}
+
+.show-question {
+	border-bottom: 1px dashed #DDD;
+	margin-bottom: 7px;	
+}
+
+.show-question-content {
+	font-size:110%;
+}
+
+.watu-admin label {
+	min-width: 150px;
+	display:block;
+	float:left;
+}
+
+.watu-padded {
+	padding: 10px;
+}
+
+.watu-twitter-share-button {
+	margin: 0px !important;
+}
+
+.watu-textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    max-width: 100%;
+}
+
+/* The following is override for themes that set radios and checkboxes on their own line */
+ .quiz-form input[type="checkbox"],
+ .quiz-form input[type="radio"] {
+ 	display: inline-block !important;
+ }
+ form.quiz-form span {
+ 	display: inline;
+ }
+ form.quiz-form input {
+	 display: inline;
+ }
+ input.watu-beehive {
+ 	display:none !important;
+}
