@@ -285,9 +285,9 @@ input:focus {
 
 /* INTRO */
 /* PROGRESS INDICATOR */
-#ojh-risk-indicator-wrapper {
+#ojh-quiz-steps-wrapper {
   width: 100%; }
-  #ojh-risk-indicator-wrapper .ojh-progress-indicator {
+  #ojh-quiz-steps-wrapper .ojh-progress-indicator {
     -ms-box-orient: horizontal;
     display: -webkit-box;
     display: -moz-box;
@@ -312,7 +312,7 @@ input:focus {
     justify-content: space-between;
     margin-bottom: 2.5rem;
     width: 100%; }
-    #ojh-risk-indicator-wrapper .ojh-progress-indicator .ojh-progress-indicator__step {
+    #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step {
       position: relative;
       width: 2.5rem;
       height: 2.5rem;
@@ -329,9 +329,9 @@ input:focus {
       line-height: 1;
       font-weight: 400;
       text-transform: none; }
-      #ojh-risk-indicator-wrapper .ojh-progress-indicator .ojh-progress-indicator__step.ojh-progress-indicator__step--active {
+      #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step.ojh-progress-indicator__step--active {
         color: #00c0ff; }
-    #ojh-risk-indicator-wrapper .ojh-progress-indicator .ojh-progress-indicator__step + .ojh-progress-indicator__step:before {
+    #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step + .ojh-progress-indicator__step:before {
       content: '';
       position: absolute;
       top: calc(1.25rem - 0.3125rem/2);
@@ -339,7 +339,7 @@ input:focus {
       width: 1.875rem;
       height: 0.1875rem;
       background: #7a7a7a; }
-    #ojh-risk-indicator-wrapper .ojh-progress-indicator .ojh-progress-indicator__step--active + .ojh-progress-indicator__step--active:before {
+    #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step--active + .ojh-progress-indicator__step--active:before {
       background: #00c0ff; }
 
 /* FORM ELEMEMTS */
@@ -571,12 +571,12 @@ input:focus {
         background: #f4ad3d; }
       #ojh-risk-calculator .ojh-risk-calculator-results .ojh-risk-calculator-progress.danger .bar {
         background: #FF5733; }
-    #ojh-risk-calculator .ojh-risk-calculator-results .ojh-risk-calculator-results-title {
+    #ojh-risk-calculator .ojh-risk-calculator-results-title {
       font-size: 17px;
       font-weight: 700;
       color: #52bff9;
       padding-bottom: 10px; }
-    #ojh-risk-calculator .ojh-risk-calculator-results .ojh-risk-calculator-results-description {
+    #ojh-risk-calculator .ojh-risk-calculator-results-description {
       font-size: 14px;
       font-weight: 700;
       color: #7a7a7a; }
