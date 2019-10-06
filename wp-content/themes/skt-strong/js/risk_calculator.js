@@ -154,7 +154,7 @@ jQuery(document).ready(function () {
     if (jQuery(".entry-title").text() == "KALKULATOR RIZIKA") {
         setTimeout(function () {
             initWatu();
-            jQuery("#complete-overlay").css("display", "block");
+            jQuery("#complete-overlay-risk").css("display", "block");
             addAnswerEventListener();
             // Hide 'submit' btn and show 'previous' & 'next' buttons:
             if (!Watu.isLastQuestion) {
