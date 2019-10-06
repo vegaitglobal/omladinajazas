@@ -19,3 +19,6 @@ wp-content/plugins/hello.php
 
 # IDE configuration
 .idea/
+
+# Ignore .sql files
+*.sql
