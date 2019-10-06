@@ -5,15 +5,16 @@ const initWatu = function () {
     Watu.filtered_questions = {};
     Watu.temp_questions = {};
     Watu.current_step = 1;
-    Watu.current_index = '1';
     Watu.isLastQuestion = false;
     Watu.total_steps = getNoOfSteps();
     Watu.total_questions = getNoOfQuestions();
-    showNextStep(Watu.current_index);
-    console.log(Watu);
+    showNextStep(Watu.current_step);
 };
 
 const initRiscProgressIndicator = function () {
+
+    console.log('RISK CALCULATOR PROGRESS BAR FUNCTION');
+
     var total_steps = Watu.total_steps;
     var step_num = null;
     var indicatorWrapper = jQuery("#ojh-risk-indicator-wrapper");
@@ -78,7 +79,6 @@ const manageButtons = function () {
             var index = Object.keys(Watu.filtered_questions)[Watu.current_step - 1];
             var prevIndex = Object.keys(Watu.filtered_questions)[Watu.current_step - 2];
             showNextStep(index, prevIndex);
-            console.log(Watu.current_step - 1);
             if (Watu.current_step === Watu.total_steps) {
                 jQuery(this).hide();
                 jQuery("#submit-btn").show();
@@ -130,7 +130,6 @@ const getNoOfSteps = function () {
     var noOfSteps = 0;
     jQuery(".watu-question").each(function (k, v) {
         var fullQuestion = jQuery(v).find("p").text();
-        console.log(fullQuestion);
         var question = "";
         if (fullQuestion.split("]")[1]) {
             question = fullQuestion.split("]")[1].trim();
@@ -169,23 +168,20 @@ const getNoOfSteps = function () {
 }
 
 jQuery(document).ready(function () {
+    if (jQuery(".entry-title").text() == "KALKULATOR RIZIKA") {
+        setTimeout(function () {
+            initWatu();
+            addAnswerEventListener();
+            // Hide 'submit' btn and show 'previous' & 'next' buttons:
+            if (!Watu.isLastQuestion) {
+                jQuery('#action-button').hide();
+            }
+            const watuForm = jQuery(`#quiz-${Watu.exam_id}`);
+            watuForm.parent('div:first').prepend('<div id="ojh-risk-indicator-wrapper"><div class="ojh-progress-indicator"></div></div>');
 
-    setTimeout(function () {
-        initWatu();
-        addAnswerEventListener();
-        console.log("Total questions: " + Watu.total_questions);
-        console.log("Total steps: " + Watu.total_steps);
-        // Hide 'submit' btn and show 'previous' & 'next' buttons:
-        if (!Watu.isLastQuestion) {
-            jQuery('#action-button').hide();
-        }
-
-        const watuForm = jQuery(`#quiz-${Watu.exam_id}`);
-        watuForm.parent('div:first').prepend('<div id="ojh-risk-indicator-wrapper"><div class="ojh-progress-indicator"></div></div>');
-
-        initRiscProgressIndicator();
-    }, 100);
-
+            initRiscProgressIndicator();
+        }, 100);
+    }
 });
 
 

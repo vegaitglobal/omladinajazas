@@ -117,3 +117,15 @@ const getStdRisckPercentage = function () {
     const stdRiscPercentage = riscPercentage / 40 * 100;
     return stdRiscPercentage.toFixed(0);
 }
+
+jQuery(document).ready(function() {
+        jQuery('h2.section-title, .logo h1, .slide_info h2, .cols-3 h5').each(function(index, element) {
+            var heading = jQuery(element);
+            var word_array, last_word, first_part;
+            word_array = heading.html().split(/\s+/); // split on spaces
+            last_word = word_array.pop();             // pop the last word
+            first_part = word_array.join(' ');        // rejoin the first words together
+            heading.html([first_part, ' <span>', last_word, '</span>'].join(''));
+        });
+});
+
