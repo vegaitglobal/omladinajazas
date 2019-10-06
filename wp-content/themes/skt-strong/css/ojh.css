@@ -283,11 +283,15 @@ input:focus {
   outline: none;
   box-shadow: none; }
 
+#menubar .sitenav #menu-glavni-meni li a {
+  text-transform: uppercase;
+  padding: 1.125rem 0.9375rem; }
+
 /* INTRO */
 /* PROGRESS INDICATOR */
-#ojh-risk-indicator-wrapper {
+#ojh-quiz-steps-wrapper {
   width: 100%; }
-  #ojh-risk-indicator-wrapper .ojh-progress-indicator {
+  #ojh-quiz-steps-wrapper .ojh-progress-indicator {
     -ms-box-orient: horizontal;
     display: -webkit-box;
     display: -moz-box;
@@ -312,7 +316,7 @@ input:focus {
     justify-content: space-between;
     margin-bottom: 2.5rem;
     width: 100%; }
-    #ojh-risk-indicator-wrapper .ojh-progress-indicator .ojh-progress-indicator__step {
+    #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step {
       position: relative;
       width: 2.5rem;
       height: 2.5rem;
@@ -329,9 +333,9 @@ input:focus {
       line-height: 1;
       font-weight: 400;
       text-transform: none; }
-      #ojh-risk-indicator-wrapper .ojh-progress-indicator .ojh-progress-indicator__step.ojh-progress-indicator__step--active {
+      #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step.ojh-progress-indicator__step--active {
         color: #00c0ff; }
-    #ojh-risk-indicator-wrapper .ojh-progress-indicator .ojh-progress-indicator__step + .ojh-progress-indicator__step:before {
+    #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step + .ojh-progress-indicator__step:before {
       content: '';
       position: absolute;
       top: calc(1.25rem - 0.3125rem/2);
@@ -339,33 +343,11 @@ input:focus {
       width: 1.875rem;
       height: 0.1875rem;
       background: #7a7a7a; }
-    #ojh-risk-indicator-wrapper .ojh-progress-indicator .ojh-progress-indicator__step--active + .ojh-progress-indicator__step--active:before {
+    #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step--active + .ojh-progress-indicator__step--active:before {
       background: #00c0ff; }
 
 /* FORM ELEMEMTS */
 #watu_quiz {
-  -ms-box-orient: horizontal;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  -moz-flex-direction: column;
-  -ms-flex-direction: column;
-  -o-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: flex-start;
-  -moz-align-items: flex-start;
-  -ms-align-items: flex-start;
-  -o-align-items: flex-start;
-  align-items: flex-start;
-  -webkit-justify-content: space-between;
-  -moz-justify-content: space-between;
-  -ms-justify-content: space-between;
-  -o-justify-content: space-between;
-  justify-content: space-between;
   margin-top: 2.5rem;
   width: 100%;
   /* QUESTIONS AND ANSWERS */ }
@@ -388,6 +370,11 @@ input:focus {
       -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      -ms-justify-content: center;
+      -o-justify-content: center;
+      justify-content: center;
       /* QUESTION */
       /* ANSWER */ }
       #watu_quiz .quiz-form .watu-question .question-content {
@@ -430,8 +417,31 @@ input:focus {
         -ms-align-self: flex-start;
         -o-align-self: flex-start;
         align-self: flex-start;
+        -ms-box-orient: horizontal;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -moz-flex;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        -moz-flex-direction: row;
+        -ms-flex-direction: row;
+        -o-flex-direction: row;
+        flex-direction: row;
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        -ms-align-items: center;
+        -o-align-items: center;
+        align-items: center;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        -ms-justify-content: center;
+        -o-justify-content: center;
+        justify-content: center;
         flex: 0 0 24.0625rem;
-        height: 2.5rem;
+        max-width: 24.0625rem;
+        min-height: 2.5rem;
         text-align: center;
         margin-top: 1.25rem;
         padding: 0.625rem;
@@ -447,7 +457,6 @@ input:focus {
         -webkit-box-shadow: -3px 3px 3px -2px rgba(122, 122, 122, 0.5);
         -moz-box-shadow: -3px 3px 3px -2px rgba(122, 122, 122, 0.5);
         box-shadow: -3px 3px 3px -2px rgba(122, 122, 122, 0.5);
-        white-space: nowrap;
         color: #5c5c5c;
         font-family: "Roboto", sans-serif;
         font-size: 0.875rem;
@@ -468,6 +477,8 @@ input:focus {
           line-height: 1.2;
           font-weight: 500;
           text-transform: none; }
+          #watu_quiz .quiz-form .watu-question div:not([class]):hover label {
+            cursor: pointer; }
         #watu_quiz .quiz-form .watu-question div:not([class]).checked {
           background-color: #7a7a7a;
           color: #ffffff;
@@ -483,7 +494,8 @@ input:focus {
 
 /* PAGINATION */
 /* Previous step */
-#prev-question-btn, #test-prev-question-btn {
+#prev-question-btn,
+#test-prev-question-btn {
   display: inline-block;
   width: 24.0625rem;
   margin-top: 2.5rem;
@@ -494,7 +506,8 @@ input:focus {
   line-height: 1;
   font-weight: 500;
   text-transform: uppercase; }
-  #prev-question-btn:hover, #test-prev-question-btn:hover {
+  #prev-question-btn:hover,
+  #test-prev-question-btn:hover {
     cursor: pointer;
     color: #00c0ff;
     font-family: "Roboto", sans-serif;
@@ -502,10 +515,12 @@ input:focus {
     line-height: 1;
     font-weight: 500;
     text-transform: uppercase; }
-  #prev-question-btn.disabled, #test-prev-question-btn.disabled {
+  #prev-question-btn.disabled,
+  #test-prev-question-btn.disabled {
     opacity: 0.2;
     cursor: not-allowed !important; }
-    #prev-question-btn.disabled:hover, #test-prev-question-btn.disabled:hover {
+    #prev-question-btn.disabled:hover,
+    #test-prev-question-btn.disabled:hover {
       color: #5c5c5c;
       font-family: "Roboto", sans-serif;
       font-size: 0.8125rem;
@@ -514,7 +529,10 @@ input:focus {
       text-transform: uppercase; }
 
 /* Next step */
-#next-question-btn, #submit-btn, #test-next-question-btn, #test-submit-btn {
+#next-question-btn,
+#test-next-question-btn,
+#submit-btn,
+#test-submit-btn {
   display: inline-block;
   width: 24.0625rem;
   text-align: right;
@@ -527,7 +545,10 @@ input:focus {
   font-weight: 500;
   text-transform: uppercase;
   float: right; }
-  #next-question-btn:hover, #submit-btn:hover, #test-next-question-btn:hover, #test-submit-btn:hover {
+  #next-question-btn:hover,
+  #test-next-question-btn:hover,
+  #submit-btn:hover,
+  #test-submit-btn:hover {
     cursor: pointer;
     color: #00c0ff;
     font-family: "Roboto", sans-serif;
@@ -535,10 +556,16 @@ input:focus {
     line-height: 1;
     font-weight: 500;
     text-transform: uppercase; }
-  #next-question-btn.disabled, #submit-btn.disabled, #test-next-question-btn.disabled, #test-submit-btn.disabled {
+  #next-question-btn.disabled,
+  #test-next-question-btn.disabled,
+  #submit-btn.disabled,
+  #test-submit-btn.disabled {
     opacity: 0.2;
     cursor: not-allowed !important; }
-    #next-question-btn.disabled:hover, #submit-btn.disabled:hover, #test-next-question-btn.disabled:hover, #test-submit-btn.disabled:hover {
+    #next-question-btn.disabled:hover,
+    #test-next-question-btn.disabled:hover,
+    #submit-btn.disabled:hover,
+    #test-submit-btn.disabled:hover {
       color: #00c0ff;
       font-family: "Roboto", sans-serif;
       font-size: 0.8125rem;
