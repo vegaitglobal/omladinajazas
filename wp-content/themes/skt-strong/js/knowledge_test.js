@@ -1,4 +1,7 @@
 const initQuizProgressIndicator = function () {
+
+    console.log('KNOWLEDGE TEST PROGRESS BAR FUNCTION');
+
     var total_steps = Watu.total_steps;
     var step_num = null;
     var indicatorWrapper = jQuery("#ojh-risk-indicator-wrapper");
@@ -12,14 +15,6 @@ const initQuizProgressIndicator = function () {
     }
     indicatorWrapper.find('.ojh-progress-indicator:first').find('.ojh-progress-indicator__step:first').addClass('ojh-progress-indicator__step--active');
 };
-
-jQuery(document).ready(function () {
-    setTimeout(function () {
-        initQuizProgressIndicator();
-
-    }, 100)
-
-});
 
 // 'Test Znanja'
 const initView = function () {
@@ -52,7 +47,6 @@ const initView = function () {
     Watu.total_steps = getNumberOfSteps(allQuestions);
     Watu.total_questions = getNumberOfQuestions();
     _showNextStep(Watu.current_step);
-
 
 
 }
@@ -171,8 +165,7 @@ const getNumberOfSteps = function (randomQuestions) {
 
             if (Watu.filtered_questions[currIndex]) {
                 Watu.filtered_questions[currIndex].push(jQuery(this).attr('id'));
-            }
-            else {
+            } else {
                 Watu.filtered_questions[currIndex] = [jQuery(this).attr('id')];
                 noOfSteps++;
             }
@@ -208,9 +201,8 @@ jQuery(document).ready(function () {
     if (jQuery(".entry-title").text() == 'TEST PROVERE ZNANJA PO PITANJU HIV/AIDS-A') {
 
         setTimeout(function () {
-
             initView();
-
+            initQuizProgressIndicator();
         }, 100);
     }
 });

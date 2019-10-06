@@ -12,6 +12,9 @@ const initWatu = function () {
 };
 
 const initRiscProgressIndicator = function () {
+
+    console.log('RISK CALCULATOR PROGRESS BAR FUNCTION');
+
     var total_steps = Watu.total_steps;
     var step_num = null;
     var indicatorWrapper = jQuery("#ojh-risk-indicator-wrapper");
