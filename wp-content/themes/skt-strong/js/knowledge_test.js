@@ -5,9 +5,14 @@ const initView = function () {
     questionElements.hide();
     var otherQuestions = [];
     var allQuestions = [];
+    var elem = null;
     jQuery.each(questionElements, function (index, value) {
+        elem = jQuery(value);
         if (value.innerText.replace(/ /g, '').indexOf('[1]') >= 0) {
             value.classList.add("firstStep");
+            elem.removeClass('watu-question').css('display', 'block');
+            elem.children('textarea').attr('rows', 1).css('height', '30px');
+            elem.children('textarea').attr('rows', 1).css('height', '30px');
             allQuestions.push(jQuery(value));
             jQuery(value).show();
         } else {
