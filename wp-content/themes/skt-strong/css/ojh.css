@@ -516,7 +516,8 @@ input:focus {
 
 /* PAGINATION */
 /* Previous step */
-#prev-question-btn {
+#prev-question-btn,
+#test-prev-question-btn {
   display: inline-block;
   width: 24.0625rem;
   margin-top: 2.5rem;
@@ -527,7 +528,8 @@ input:focus {
   line-height: 1;
   font-weight: 500;
   text-transform: uppercase; }
-  #prev-question-btn:hover {
+  #prev-question-btn:hover,
+  #test-prev-question-btn:hover {
     cursor: pointer;
     color: #00c0ff;
     font-family: "Roboto", sans-serif;
@@ -535,10 +537,12 @@ input:focus {
     line-height: 1;
     font-weight: 500;
     text-transform: uppercase; }
-  #prev-question-btn.disabled {
+  #prev-question-btn.disabled,
+  #test-prev-question-btn.disabled {
     opacity: 0.2;
     cursor: not-allowed !important; }
-    #prev-question-btn.disabled:hover {
+    #prev-question-btn.disabled:hover,
+    #test-prev-question-btn.disabled:hover {
       color: #5c5c5c;
       font-family: "Roboto", sans-serif;
       font-size: 0.8125rem;
@@ -547,7 +551,10 @@ input:focus {
       text-transform: uppercase; }
 
 /* Next step */
-#next-question-btn {
+#next-question-btn,
+#test-next-question-btn,
+#submit-btn,
+#test-submit-btn {
   display: inline-block;
   width: 24.0625rem;
   text-align: right;
@@ -560,7 +567,10 @@ input:focus {
   font-weight: 500;
   text-transform: uppercase;
   float: right; }
-  #next-question-btn:hover {
+  #next-question-btn:hover,
+  #test-next-question-btn:hover,
+  #submit-btn:hover,
+  #test-submit-btn:hover {
     cursor: pointer;
     color: #00c0ff;
     font-family: "Roboto", sans-serif;
@@ -568,10 +578,16 @@ input:focus {
     line-height: 1;
     font-weight: 500;
     text-transform: uppercase; }
-  #next-question-btn.disabled {
+  #next-question-btn.disabled,
+  #test-next-question-btn.disabled,
+  #submit-btn.disabled,
+  #test-submit-btn.disabled {
     opacity: 0.2;
     cursor: not-allowed !important; }
-    #next-question-btn.disabled:hover {
+    #next-question-btn.disabled:hover,
+    #test-next-question-btn.disabled:hover,
+    #submit-btn.disabled:hover,
+    #test-submit-btn.disabled:hover {
       color: #00c0ff;
       font-family: "Roboto", sans-serif;
       font-size: 0.8125rem;
