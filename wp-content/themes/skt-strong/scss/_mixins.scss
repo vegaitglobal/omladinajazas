@@ -1,0 +1,581 @@
+// =============================================================================
+// BOX SIZING
+// =============================================================================
+
+@mixin box-sizing($value) {
+    -webkit-box-sizing: $value;
+    -moz-box-sizing: $value;
+    box-sizing: $value;
+}
+
+/*
+@include box-sizing ($value);
+@include box-sizing (border-box);
+*/
+
+
+/*
+@include display-flex ();
+@include flex-direction (row);
+@include align-items (center);
+@include justify-content (center);
+*/
+
+
+// =============================================================================
+// FLEX
+// =============================================================================
+
+// Display
+@mixin display-flex() {
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+}
+
+/*
+@include display-flex();
+*/
+
+// Flex direction
+@mixin flex-direction($value) {
+    -webkit-flex-direction: $value;
+    -moz-flex-direction: $value;
+    -ms-flex-direction: $value;
+    -o-flex-direction: $value;
+    flex-direction: $value;
+}
+
+/*
+@include flex-direction ($value);
+@include flex-direction (row);
+@include flex-direction (row-reverse);
+@include flex-direction (column);
+@include flex-direction (column-reverse);
+*/
+
+// Justify content (main axis)
+@mixin justify-content($value) {
+    -webkit-justify-content: $value;
+    -moz-justify-content: $value;
+    -ms-justify-content: $value;
+    -o-justify-content: $value;
+    justify-content: $value;
+}
+
+/*
+@include justify-content ($value);
+@include justify-content (flex-start);
+@include justify-content (center);
+@include justify-content (flex-end);
+@include justify-content (space-between);
+@include justify-content (space-around);
+*/
+
+// Align items (cross axis)
+@mixin align-items($value) {
+    -webkit-align-items: $value;
+    -moz-align-items: $value;
+    -ms-align-items: $value;
+    -o-align-items: $value;
+    align-items: $value;
+}
+
+/*
+@include align-items ($value);
+@include align-items (flex-start);
+@include align-items (center);
+@include align-items (flex-end);
+@include align-items (stretch);
+@include align-items (baseline);
+*/
+
+// Flex flow
+@mixin flex-flow($value1, $value2) {
+    -webkit-flex-flow: $value1 $value2;
+    -moz-flex-flow: $value1 $value2;
+    -ms-flex-flow: $value1 $value2;
+    -o-flex-flow: $value1 $value2;
+    flex-flow: $value1 $value2;
+}
+
+/*
+@include flex-flow ($value1, $value2);
+@include flex-flow (row, wrap);
+@include flex-flow (row, nowrap);
+@include flex-flow (column, wrap);
+@include flex-flow (column, nowrap);
+*/
+
+// Align self
+@mixin align-self($value) {
+    -webkit-align-self: $value;
+    -moz-align-self: $value;
+    -ms-align-self: $value;
+    -o-align-self: $value;
+    align-self: $value;
+}
+
+/*
+@include align-self ($value);
+@include align-self (center);
+@include align-self (center);
+@include align-self (center);
+*/
+
+// Flex-wrap
+@mixin flex-wrap($value) {
+    -webkit-flex-wrap: $value;
+    -ms-flex-wrap: $value;
+    flex-wrap: $value;
+}
+
+/*
+@include flex-wrap(wrap);
+@include flex-wrap(nowrap);
+ */
+
+
+/* Flex */
+@mixin flex($flex-grow, $flex-shrink, $flex-basis) {
+    -webkit-flex: $flex-grow $flex-shrink $flex-basis;
+    -ms-flex: $flex-grow $flex-shrink $flex-basis;
+    flex: $flex-grow $flex-shrink $flex-basis;
+}
+
+/*
+@include flex ($flex-grow, $flex-shrink, $flex-basis);
+@include flex (0, 1, auto);
+*/
+
+
+// =============================================================================
+// GRID
+// =============================================================================
+
+@mixin display-grid() {
+    display: -ms-grid;
+    display: grid;
+}
+
+// @include display-grid();
+
+
+// MIXINS
+
+/* FONT */
+
+@mixin font-mix ($color, $font-family, $font-size, $line-height, $font-weight, $text-transform) {
+color: $color;
+font-family: $font-family;  
+font-size: $font-size;
+line-height: $line-height;
+font-weight: $font-weight;
+text-transform: $text-transform;
+}
+
+/* 
+@include font-mix (
+$color,
+$font-family, 
+$font-size, 
+$line-height, 
+$font-weight, 
+$text-transform );
+
+@include font-mix ($gray-darker, $body-font, 15px, 1, 500, none); 
+@include font-mix ($gray-darker, $body-font, 15px, 1, 500, uppercase); 
+*/
+
+
+/* BORDER RADIUS */
+
+@mixin border-radius ($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;      
+          border-radius: $radius;
+}
+
+/* 
+@include border-radius($radius);
+@include border-radius(50%);
+*/
+
+@mixin border-radius-multi ($radius-top-left, $radius-top-right, $radius-bottom-left, $radius-bottom-right) {
+  -webkit-border-radius: $radius-top-left $radius-top-right $radius-bottom-right $radius-bottom-left;
+     -moz-border-radius: $radius-top-left $radius-top-right $radius-bottom-right $radius-bottom-left;
+      -ms-border-radius: $radius-top-left $radius-top-right $radius-bottom-right $radius-bottom-left;
+       -o-border-radius: $radius-top-left $radius-top-right $radius-bottom-right $radius-bottom-left;      
+          border-radius: $radius-top-left $radius-top-right $radius-bottom-right $radius-bottom-left;
+}
+
+/* 
+@include border-radius-multi($radius-top-left $radius-top-right $radius-bottom-right $radius-bottom-left);
+@include border-radius-multi(3px 0px 3px 0px);
+@include border-radius-multi(0px 3px 0px 3px);
+*/
+
+
+
+/* BACKGROUND IMAGE */
+
+@mixin background-cover() {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@mixin bg-image ($background-repeat, $background-position-horizontal, $background-position-vertical, $background-size) {
+background-repeat: $background-repeat;
+background-position: $background-position-horizontal $background-position-vertical;
+-webkit-background-size: $background-size;
+   -moz-background-size: $background-size;
+    -ms-background-size: $background-size;
+     -o-background-size: $background-size;
+        background-size: $background-size;
+}
+
+/*
+@include bg-image (
+$background-repeat, 
+$background-position-horizontal, $background-position-vertical, 
+$background-size);
+
+@include bg-image (no-repeat, center, top, auto);
+@include bg-image (no-repeat, center, center, cover);
+@include bg-image (no-repeat, center, bottom, contain);
+*/
+
+
+/* INPUT */
+
+@mixin input ($height, $text-align, $vertical-padding, $horizontal-padding, $border-width, $border-radius, $border-color, $background-color, $border-color-focus, $background-color-focus) {
+height: $height;
+text-align: $text-align;
+padding: $vertical-padding $horizontal-padding; 
+border: $border-width solid $border-color;
+border-radius: $border-radius;
+background-color: $background-color; 
+-webkit-box-shadow: none;
+box-shadow: none; 
+  &:focus {
+  outline: none;      
+  -webkit-box-shadow: none;
+  box-shadow: none;  
+  border: $border-width solid $border-color-focus;
+  background-color: $background-color-focus; 
+  }  
+}
+
+/* 
+@include input (
+$height, $text-align,
+$vertical-padding, $horizontal-padding, 
+$border-width, $border-radius, 
+$border-color, $background-color, 
+$border-color-focus, $background-color-focus);
+
+@include input (34px, left, 5px, 10px, 1px, 0px, $gray, $gray-light, $gray, $gray-light);
+
+
++ Font-mix ++++++++++++++++++++++++
+
+@include font-mix ($color, $font-family, $font-size, $line-height, $font-weight, $text-transform );
+
+@include font-mix ($gray-darker, $body-font, 15px, 1, 500, none); 
+@include font-mix ($gray-darker, $body-font, 15px, 1, 500, uppercase); 
+
+*/
+
+
+
+/* TEXTAREA */
+
+@mixin textarea ($text-align, $vertical-padding, $horizontal-padding, $border-width, $border-radius, $border-color, $background-color, $border-color-focus, $background-color-focus) {
+height: auto;
+text-align: $text-align;
+padding: $vertical-padding $horizontal-padding;
+border: $border-width solid $border-color;
+border-radius: $border-radius;
+background-color: $background-color;
+-webkit-box-shadow: none;
+box-shadow: none;
+resize: vertical; 
+margin-bottom: 15px;   
+  &:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;    
+  border: $border-width solid $border-color-focus;
+  background-color: $background-color-focus;
+  }  
+}
+
+/* 
+@include textarea (
+$text-align,
+$vertical-padding, $horizontal-padding, 
+$border-width, $border-radius,
+$border-color, $background-color, 
+$border-color-focus, $background-color-focus);
+
+@include textarea (left, 5px, 10px, 1px, 0px, $gray, $gray-light, $gray, $gray-light);
+
+
++ Font-mix ++++++++++++++++++++++++
+
+@include font-mix ($color, $font-family, $font-size, $line-height, $font-weight, $text-transform );
+
+@include font-mix ($gray-darker, $body-font, 15px, 1, 500, none); 
+@include font-mix ($gray-darker, $body-font, 15px, 1, 500, uppercase); 
+
+*/
+
+
+/* PLACEHOLDER */
+
+@mixin placeholder-input ($color, $font-family, $font-size, $line-height, $font-weight, $text-align, $text-transform) {
+  ::-moz-placeholder { /* Firefox 19+ */
+  color: $color;
+  font-family: $font-family;  
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  text-align: $text-align;
+  text-transform: $text-transform;
+  }
+  ::-webkit-input-placeholder {
+  color: $color;
+  font-family: $font-family;  
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  text-align: $text-align;
+  text-transform: $text-transform;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+  color: $color;
+  font-family: $font-family;  
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  text-align: $text-align;
+  text-transform: $text-transform;
+  }
+  :-ms-input-placeholder {
+  color: $color;
+  font-family: $font-family;  
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  text-align: $text-align;
+  text-transform: $text-transform;
+  }    
+}
+
+/*
+@include placeholder-input (
+$color,
+$font-family, 
+$font-size, 
+$line-height, 
+$font-weight, 
+$text-align, 
+$text-transform);
+
+@include placeholder-input ($gray-darker, $body-font, 15px, 1, 500, left, none); 
+@include placeholder-input ($gray-darker, $body-font, 15px, 1, 500, left, uppercase); 
+*/
+
+
+/* BUTTON */
+
+@mixin button ($font-family, $font-size, $line-height, $font-weight, $text-align, $text-transform, $vertical-padding, $lateral-padding, $border-width, $border-radius, $color, $background-color, $border-color, $color-hover, $background-color-hover, $border-color-hover, $color-focus, $background-color-focus, $border-color-focus, $color-active, $background-color-active, $border-color-active ) {
+font-family: $p2n-body-font;
+font-size: $font-size;    
+line-height: $line-height;
+font-weight: $font-weight;
+text-align: $text-align;
+text-transform: $text-transform;
+padding: $vertical-padding $lateral-padding;
+border-radius: $border-radius;
+color: $color;
+background-color: $background-color;
+border: $border-width solid $border-color;
+@include transition (all, 0.3s, linear);
+  &:hover {
+  color: $color-hover;  
+  background-color: $background-color-hover;
+  border-color: $border-color-hover;  
+  }
+  &:focus {
+  /*text-shadow: 1px 0px 1px $gray-200;  */
+  color: $color-focus;  
+  background-color: $background-color-focus;
+  border-color: $border-color-focus; 
+  }
+  &:active {
+  /*text-shadow: 1px 0px 1px $gray-200;*/
+  color: $color-active;  
+  background-color: $background-color-active;
+  border-color: $border-color-active; 
+  }
+  &:hover, &:focus, &:active {
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  }
+  &:focus {
+    &:active {
+    outline: 0;
+    }
+  }
+}
+
+
+
+/*
+
+@include button (
+$font-family, 
+$font-size, 
+$line-height, 
+$font-weight, 
+$text-align, 
+$text-transform,
+
+$vertical-padding, $lateral-padding,
+$border-width, $border-radius,
+
+$color, $background-color, $border-color,
+$color-hover, $background-color-hover, $border-color-hover, 
+$color-focus, $background-color-focus, $border-color-focus,
+$color-active, $background-color-active, $border-color-active
+);
+
+
+Btn-full: 
+@include button (
+$body-font, 14px, 1, 500, center, uppercase,
+8px, 20px,
+0px, 3px,
+$white, $gray, transparent,
+$white, darken( $gray, 10% ), transparent,
+$white, lighten( $gray, 10% ), transparent,
+$white, lighten( $gray, 10% ), transparent
+); 
+
+
+Btn-outline:
+@include button (
+$body-font, 14px, 1, 500, center, uppercase,
+8px, 20px,
+1px, 3px,
+$white, transparent, $white,
+$gray, $white, $white,
+$white, lighten( $gray, 10% ), transparent,
+$white, lighten( $gray, 10% ), transparent
+); 
+
+*/
+
+
+
+/* TRANSITION */
+
+@mixin transition ($object, $sec, $type) {
+-webkit-transition: $object $sec $type;
+-moz-transition: $object $sec $type;
+-o-transition: $object $sec $type;
+transition: $object $sec $type;
+}
+
+/*
+@include transition ($object, $sec, $type);
+@include transition (all, 0.3s, linear);
+*/
+
+/* TRANSFORM */
+
+/*@mixin transform ($x, $y, $z) {
+-webkit-transform: translate3d($x, $y, $z)
+-moz-transform: translate3d($x, $y, $z)
+-o-transform: translate3d($x, $y, $z)
+transform: translate3d($x, $y, $z)
+}*/
+
+/*
+@include transform ($object, $sec, $type);
+@include transform (all, 0.3s, linear);
+*/
+
+/* TRANSLATE Y */
+@mixin translatey ($value) {
+  -webkit-transform: translateY($value);
+  -moz-transform: translateY($value);
+  -o-transform: translateY($value);
+  transform: translateY($value);
+}
+
+
+/*
+@include translatey ($value);
+@include translatey (-50%);
+*/
+
+/* ROTATE */
+
+@mixin rotate {
+  -webkit-transform: rotate($deg);
+  -ms-transform: rotate($deg);
+  transform: rotate($deg);
+}
+
+/*
+@include rotate ($deg);
+@include rotate (all);
+*/
+
+
+
+/* BOX SHADOW */
+
+@mixin box-shadow ($horizontal-length, $vertical-length, $blur, $spread, $rgba-color-and-opacity) {
+-webkit-box-shadow: $horizontal-length $vertical-length $blur $spread $rgba-color-and-opacity;
+    -moz-box-shadow: $horizontal-length $vertical-length $blur $spread $rgba-color-and-opacity;
+    box-shadow: $horizontal-length $vertical-length $blur $spread $rgba-color-and-opacity;
+}
+
+/*
+
+@include box-shadow (5px, 5px, 5px, 0px, rgba(51,51,51,0.15));
+
+-webkit-box-shadow: 10px 10px 5px 0px rgba(51,51,51,0.15);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(51,51,51,0.15);
+    box-shadow: 10px 10px 5px 0px rgba(51,51,51,0.15);
+
+*/
+
+/* BOX SHADOW INSET*/
+
+@mixin box-shadow-inset ($horizontal-length, $vertical-length, $blur, $spread, $rgba-color-and-opacity) {
+-webkit-box-shadow: inset $horizontal-length $vertical-length $blur $spread $rgba-color-and-opacity;
+    -moz-box-shadow: inset $horizontal-length $vertical-length $blur $spread $rgba-color-and-opacity;
+    box-shadow: inset $horizontal-length $vertical-length $blur $spread $rgba-color-and-opacity;
+}
+
+/*
+
+@include box-shadow (5px, 5px, 5px, 0px, rgba(51,51,51,0.15));
+
+-webkit-box-shadow: 10px 10px 5px 0px rgba(51,51,51,0.15);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(51,51,51,0.15);
+    box-shadow: 10px 10px 5px 0px rgba(51,51,51,0.15);
+
+*/
