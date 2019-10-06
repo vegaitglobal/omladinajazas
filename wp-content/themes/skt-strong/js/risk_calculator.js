@@ -133,7 +133,7 @@ const getNoOfSteps = function () {
         }
         // deleting oder number/index before question
         jQuery(v).find("p").text(question);
-        const number = '<span class="watu_num">' + Watu.current_step + '. ' + '</span>';
+        const number = '<span class="watu_num">' + noOfSteps + '. ' + '</span>';
         jQuery(v).find("p").prepend(number);
     });
 
