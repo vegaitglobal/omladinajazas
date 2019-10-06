@@ -79,21 +79,29 @@ jQuery(document).ajaxComplete(function () {
 
         const hivRiscPercentage = getResultPercentage();
         const hivBar = jQuery('.bar.hiv');
+        let hivRiskLevel = 'low';
         hivBar.css('width', `${hivRiscPercentage}%`);
         if (hivRiscPercentage > 67) {
             hivBar.parent('div:first').addClass('danger');
+            hivRiskLevel = 'high';
         } else if (hivRiscPercentage > 33 && hivRiscPercentage < 67) {
             hivBar.parent('div:first').addClass('warning');
+            hivRiskLevel = 'medium';
         }
+        jQuery(`#hiv-results-msg .${hivRiskLevel}-risk-msg`).removeAttr('style');
 
         const stdRiscPercentage = getStdRisckPercentage();
         const stdBar = jQuery('.bar.std');
+        let stdRiskLevel = 'low';
         stdBar.css('width', `${stdRiscPercentage}%`);
         if (stdRiscPercentage > 67) {
             stdBar.parent('div:first').addClass('danger');
+            stdRiskLevel = 'high';
         } else if (stdRiscPercentage > 33 && stdRiscPercentage < 67) {
             stdBar.parent('div:first').addClass('warning');
+            stdRiskLevel = 'medium';
         }
+        jQuery(`#std-results-msg .${stdRiskLevel}-risk-msg`).removeAttr('style');
     }
 });
 
