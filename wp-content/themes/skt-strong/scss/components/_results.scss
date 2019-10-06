@@ -46,6 +46,7 @@
     font-weight: 700;
     color: $ojh-blue-background;
     padding-bottom: 10px;
+    text-transform: uppercase;
   }
 
   .ojh-risk-calculator-results-description {
@@ -54,4 +55,9 @@
     color: $ojh-gray;
   }
 
+}
+
+
+#hiv-results-msg + .ojh-risk-calculator-results {
+  margin-top: 2.5rem;
 }
