@@ -17,6 +17,7 @@
       @include display-flex ();
       @include flex-direction (row);
       @include flex-wrap(wrap);
+      @include justify-content (center);
 
       /* QUESTION */
       .question-content {
@@ -47,10 +48,15 @@
       }
 
       /* ANSWER */
-      div:not([class]) {
+      div:not([class]) {        
         @include align-self (flex-start);
+        @include display-flex ();
+        @include flex-direction (row);
+        @include align-items (center);
+        @include justify-content (center);         
         flex: 0 0 24.0625rem;
-        height: 2.5rem;
+        max-width: 24.0625rem;
+        min-height: 2.5rem;
         text-align: center;
         margin-top: 1.25rem;
         padding: 0.625rem;
@@ -58,7 +64,6 @@
         background-color: $ojh-white;
         @include border-radius(0.3125rem);
         @include box-shadow (-3px, 3px, 3px, -2px, rgba($ojh-gray, 0.5));
-        white-space: nowrap;
         @include font-mix ($ojh-medium-gray, $ojh-body-font, 0.875rem, 1.2, 500, none);
 
         input[type=radio],
@@ -74,6 +79,9 @@
         &:hover {
           background-color: $ojh-gray;
           @include font-mix ($ojh-white, $ojh-body-font, 0.875rem, 1.2, 500, none);
+          label {
+            cursor: pointer;          
+          }          
         }
 
         &.checked {
