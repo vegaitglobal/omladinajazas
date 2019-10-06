@@ -72,8 +72,8 @@ const getRandomQuestions = function (questions) {
 const manageTestButtons = function () {
 
     if (parseInt(Watu.singlePage)) {
-        var nextBtn = '<a id="test-next-question-btn">SLEDEĆI KORAK</a>';
-        var prevBtn = '<a id="test-prev-question-btn">PRETHODNI KORAK</a>';
+        var nextBtn = '<a id="test-next-question-btn">SLEDEĆI KORAK ></a>';
+        var prevBtn = '<a id="test-prev-question-btn">< PRETHODNI KORAK</a>';
         var submitBtn = '<a id="test-submit-btn" onclick="Watu.submitResult()">POGLEDAJ REZULTAT</a>';
         const introText = jQuery('.quiz-area p:nth-child(2)');
         jQuery('#action-button').after(prevBtn, nextBtn, submitBtn);

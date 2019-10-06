@@ -118,6 +118,21 @@ const getStdRisckPercentage = function () {
     return stdRiscPercentage.toFixed(0);
 }
 
+const addWatuAnswerEventListener = function () {
+    const elems = document.querySelectorAll('.watu-question .answer');
+
+    elems.forEach(elem => {
+        elem.addEventListener('click', event => {
+            jQuery(event.target).parent('div:first')
+                .css('background', '#7a7a7a')
+                .css('color', 'white')
+                .siblings('div:not(.question-content)')
+                .css('background', 'white')
+                .css('color', '#7a7a7a');
+        });
+    });
+}
+
 jQuery(document).ready(function() {
         jQuery('h2.section-title, .logo h1, .slide_info h2, .cols-3 h5').each(function(index, element) {
             var heading = jQuery(element);
@@ -127,5 +142,6 @@ jQuery(document).ready(function() {
             first_part = word_array.join(' ');        // rejoin the first words together
             heading.html([first_part, ' <span>', last_word, '</span>'].join(''));
         });
+        addWatuAnswerEventListener();
 });
 
