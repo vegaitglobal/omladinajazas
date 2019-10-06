@@ -1,20 +1,3 @@
-const initQuizProgressIndicator = function () {
-    const watuForm = jQuery(`#quiz-${Watu.exam_id}`);
-    watuForm.parent('div:first').prepend('<div id="ojh-quiz-steps-wrapper"><div class="ojh-progress-indicator"></div></div>');
-
-    var total_steps = Watu.total_steps;
-    var step_num = null;
-    var indicatorWrapper = jQuery("#ojh-quiz-steps-wrapper");
-    var indicator = indicatorWrapper.find('.ojh-progress-indicator:first');
-
-    for (var i = 1; i <= total_steps; i++) {
-        step_num = i < 10 ? '0' + i : i;
-        indicator.append(
-            ' <div class="ojh-progress-indicator__step">' + step_num + '</div>'
-        );
-    }
-    indicatorWrapper.find('.ojh-progress-indicator:first').find('.ojh-progress-indicator__step:first').addClass('ojh-progress-indicator__step--active');
-};
 
 // 'Test Znanja'
 const initView = function () {
@@ -77,6 +60,7 @@ const manageTestButtons = function () {
         jQuery("#test-next-question-btn").click(function () {
             introText.hide();
             Watu.current_step++;
+            jQuery(".ojh-progress-indicator .ojh-progress-indicator__step:nth-child(" + Watu.current_step + ")").addClass('ojh-progress-indicator__step--active');
             var index = Object.keys(Watu.filtered_questions)[Watu.current_step - 1];
             var prevIndex = Object.keys(Watu.filtered_questions)[Watu.current_step - 2];
             _showNextStep(index, prevIndex);
@@ -90,6 +74,7 @@ const manageTestButtons = function () {
         });
 
         jQuery("#test-prev-question-btn").click(function () {
+            jQuery(".ojh-progress-indicator .ojh-progress-indicator__step:nth-child(" + Watu.current_step + ")").removeClass('ojh-progress-indicator__step--active');
             Watu.current_step--;
             var index = Object.keys(Watu.filtered_questions)[Watu.current_step - 1];
             var nextIndex = Object.keys(Watu.filtered_questions)[Watu.current_step];
