@@ -131,7 +131,26 @@ const addWatuAnswerEventListener = function () {
                 .css('color', '#7a7a7a');
         });
     });
-}
+};
+
+const initQuizProgressIndicator = function () {
+    const watuForm = jQuery(`#quiz-${Watu.exam_id}`);
+    watuForm.parent('div:first').prepend('<div id="ojh-quiz-steps-wrapper"><div class="ojh-progress-indicator"></div></div>');
+
+    var total_steps = Watu.total_steps;
+    var step_num = null;
+    var indicatorWrapper = jQuery("#ojh-quiz-steps-wrapper");
+    var indicator = indicatorWrapper.find('.ojh-progress-indicator:first');
+
+    for (var i = 1; i <= total_steps; i++) {
+        step_num = i < 10 ? '0' + i : i;
+        indicator.append(
+            ' <div class="ojh-progress-indicator__step">' + step_num + '</div>'
+        );
+    }
+    indicatorWrapper.find('.ojh-progress-indicator:first').find('.ojh-progress-indicator__step:first').addClass('ojh-progress-indicator__step--active');
+};
+
 
 jQuery(document).ready(function() {
         jQuery('h2.section-title, .logo h1, .slide_info h2, .cols-3 h5').each(function(index, element) {
