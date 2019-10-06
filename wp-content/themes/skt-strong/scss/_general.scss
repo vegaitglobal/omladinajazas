@@ -1,0 +1,66 @@
+/* GENERAL STYLES */
+
+/* CHARSET */
+@charset "UTF-8";
+
+
+/* FONT FAMILY */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap&subset=latin-ext');
+
+
+/* HEADLINES */
+
+h1 {
+  text-align: center;
+  @include font-mix ($ojh-dark-gray, $ojh-body-font, 2rem, 1.2, 400, uppercase); 
+  @media (min-device-width:576px){ 
+  font-size: 2rem; 
+  }
+  @media (min-device-width:768px){ 
+  font-size: 2rem;  
+  }
+  @media (min-device-width:1200px){ 
+  font-size: 2rem;  
+  }
+  @media (min-device-width:1336px){ 
+  }
+  @media (min-device-width:1440px){ 
+  }
+  @media (min-device-width:1920px){ 
+  }
+  @media (min-device-width:2500px){ 
+  }     
+}
+
+
+p + p {
+margin-top: 1rem;
+}
+
+
+
+
+
+/* LINKS */
+a { 
+outline: 0;
+@include transition (all, 0.3s, linear);
+  &:hover { 
+  text-decoration: none;
+  }
+  &:focus, &:active {
+  text-decoration: none;
+  outline: 0;   
+  }     
+}
+
+
+
+
+/* INPUT */
+input {
+  &:focus {
+  outline: none;
+  box-shadow: none;
+  }
+}

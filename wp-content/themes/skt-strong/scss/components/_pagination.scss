@@ -1,0 +1,53 @@
+/* PAGINATION */
+
+/* Previous step */
+#prev-question-btn,
+#test-prev-question-btn {
+  display: inline-block;
+  margin-top: 2.5rem;
+  padding: 0.625rem 0;
+  @include font-mix ($ojh-medium-gray, $ojh-body-font, 0.8125rem, 1, 500, uppercase);
+
+  &:hover {
+    cursor: pointer;
+    @include font-mix ($ojh-blue, $ojh-body-font, 0.8125rem, 1, 500, uppercase);
+  }
+
+  &.disabled {
+    opacity: 0.2;
+    cursor: not-allowed !important;
+
+    &:hover {
+      @include font-mix ($ojh-medium-gray, $ojh-body-font, 0.8125rem, 1, 500, uppercase);
+    }
+  }
+
+}
+
+/* Next step */
+#next-question-btn,
+#test-next-question-btn,
+#submit-btn,
+#test-submit-btn {
+  display: block;
+  text-align: right;
+  margin-top: 2.5rem;
+  padding: 0.625rem 0;
+  @include font-mix ($ojh-blue, $ojh-body-font, 0.8125rem, 1, 500, uppercase);
+  float: right;
+
+  &:hover {
+    cursor: pointer;
+    @include font-mix ($ojh-blue, $ojh-body-font, 0.8125rem, 1, 500, uppercase);
+  }
+
+  &.disabled {
+    opacity: 0.2;
+    cursor: not-allowed !important;
+
+    &:hover {
+      @include font-mix ($ojh-blue, $ojh-body-font, 0.8125rem, 1, 500, uppercase);
+    }
+  }
+
+}

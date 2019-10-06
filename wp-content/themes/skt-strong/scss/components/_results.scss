@@ -1,0 +1,63 @@
+/* RESULTS */
+
+#ojh-risk-calculator {
+  width: 100%;
+
+  .ojh-risk-calculator-results {
+    width: 100%;
+
+    .ojh-risk-calculator-progress {
+      @include box-shadow (2px, 2px, 2px, 0px, rgba($ojh-gray, 0.5));
+      margin: 20px auto;
+      padding: 0;
+      width: 100%;
+      height: 50px;
+      overflow: hidden;
+      background: $ojh-white;
+
+      .bar {
+        position: relative;
+        float: left;
+        height: 100%;
+      }
+
+      &.primary {
+        .bar {
+          background: $ojh-blue-background;
+        }
+      }
+
+      &.warning {
+        .bar {
+          background: $ojh-orange;
+        }
+      }
+
+      &.danger {
+        .bar {
+          background: $ojh-red;
+        }
+      }
+    }
+  }
+
+  .ojh-risk-calculator-results-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: $ojh-blue-background;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .ojh-risk-calculator-results-description {
+    font-size: 14px;
+    font-weight: 700;
+    color: $ojh-gray;
+  }
+
+}
+
+
+#hiv-results-msg + .ojh-risk-calculator-results {
+  margin-top: 2.5rem;
+}
