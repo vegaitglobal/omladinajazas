@@ -1,8 +1,6 @@
 
 // 'Test Znanja'
 const initView = function () {
-    //Todo: Hide 'introText' on second step!
-
     const questionElements = jQuery('.watu-question');
     questionElements.hide();
     var otherQuestions = [];
@@ -136,6 +134,7 @@ const getCurrIndex = function (beforeQuestion) {
 const getNumberOfSteps = function (randomQuestions) {
 
     var noOfSteps = 0;
+    Watu.question_ids = [];
     jQuery(randomQuestions).each(function (k, v) {
         var fullQuestion = jQuery(v).find("p").text();
         var question = "";
@@ -154,10 +153,11 @@ const getNumberOfSteps = function (randomQuestions) {
         } else {
             if (fullQuestion.split(".")[1])
                 question = fullQuestion.split(".")[1].trim();
-            question = fullQuestion;
+            else question = fullQuestion;
             noOfSteps++;
             Watu.temp_questions[noOfSteps] = [jQuery(this).attr('id')];
         }
+        Watu.question_ids.push(v.context.id.split('-')[1]);
         // brisemo redni broj/index ispred pitanja
         jQuery(v).find("p").text(question);
     });
