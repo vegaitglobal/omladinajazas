@@ -6,7 +6,7 @@
   display: inline-block;
   margin-top: 2.5rem;
   padding: 0.625rem 0;
-  @include font-mix ($ojh-medium-gray, $ojh-body-font, 0.8125rem, 1, 500, uppercase);
+  @include font-mix ($ojh-lighter-gray, $ojh-body-font, 0.8125rem, 1, 500, uppercase);
 
   &:hover {
     cursor: pointer;
@@ -32,12 +32,12 @@
   text-align: right;
   margin-top: 2.5rem;
   padding: 0.625rem 0;
-  @include font-mix ($ojh-blue, $ojh-body-font, 0.8125rem, 1, 500, uppercase);
+  @include font-mix ($ojh-blue, $ojh-body-font, 1.1rem, 1, 500, uppercase);
   float: right;
 
   &:hover {
     cursor: pointer;
-    @include font-mix ($ojh-blue, $ojh-body-font, 0.8125rem, 1, 500, uppercase);
+    @include font-mix ($ojh-blue, $ojh-body-font, 1.1rem, 1, 500, uppercase);
   }
 
   &.disabled {
@@ -45,7 +45,7 @@
     cursor: not-allowed !important;
 
     &:hover {
-      @include font-mix ($ojh-blue, $ojh-body-font, 0.8125rem, 1, 500, uppercase);
+      @include font-mix ($ojh-blue, $ojh-body-font, 1.1rem, 1, 500, uppercase);
     }
   }
 }

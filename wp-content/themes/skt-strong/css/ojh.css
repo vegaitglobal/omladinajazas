@@ -288,6 +288,23 @@ input:focus {
   padding: 1.125rem 0.9375rem; }
 
 /* INTRO */
+.site-quiz {
+    margin: 45px auto 0;
+    float: none;
+    width: 945px; }
+    .site-quiz .entry-title {
+        max-width: 445px;
+        margin: 0 auto;
+        font-size: 1.8rem;
+        letter-spacing: -0.5px;
+        line-height: 1.3;
+    }
+    @media (min-device-width: 768px) {
+        .site-quiz .entry-title {
+            font-size: 2.3rem;
+        }
+    }
+
 /* PROGRESS INDICATOR */
 #ojh-quiz-steps-wrapper {
   width: 100%; }
@@ -353,9 +370,9 @@ input:focus {
         height: inherit;
         color: #7a7a7a;
         font-family: "Roboto", sans-serif;
-        font-size: 1.625rem;
+        font-size: 2rem;
         line-height: 1;
-        font-weight: 400;
+        font-weight: 500;
         text-transform: none; }
         @media (min-device-width: 920px) {
           #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step .ojh-progress-indicator__step__number {
@@ -418,7 +435,7 @@ input:focus {
       @media (min-device-width: 920px) {
         #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step + .ojh-progress-indicator__step:before {
           left: -2.5rem;
-          width: 5rem; } }
+          width: 2rem; } }
     @media (min-device-width: 360px) {
       #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step:last-of-type:before {
         width: 1.875rem; } }
@@ -431,13 +448,17 @@ input:focus {
     @media (min-device-width: 920px) {
       #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step:last-of-type:before {
         left: -2.5rem;
-        width: 5rem; } }
+        width: 2rem; } }
+    @media (min-device-width: 920px) {
+        #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step:last-of-type:before {
+            left: -2.5rem;
+            width: 2rem; } }
     #ojh-quiz-steps-wrapper .ojh-progress-indicator .ojh-progress-indicator__step--active + .ojh-progress-indicator__step--active:before {
       background: #00c0ff; }
 
 /* FORM ELEMEMTS */
 #watu_quiz {
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   width: 100%;
   /* QUESTIONS AND ANSWERS */ }
   #watu_quiz .quiz-form {
@@ -466,6 +487,8 @@ input:focus {
       justify-content: center;
       /* QUESTION */
       /* ANSWER */ }
+      #watu_quiz .quiz-form .watu-textarea {
+        font-family: 'Roboto', sans-serif;}
       #watu_quiz .quiz-form .watu-question .question-content {
         flex: 0 0 100%;
         margin-top: 0;
@@ -479,17 +502,17 @@ input:focus {
           margin-bottom: 0;
           color: #ffffff;
           font-family: "Roboto", sans-serif;
-          font-size: 0.875rem;
+          font-size: 1.3rem;
           line-height: 1.2;
-          font-weight: 500;
+          font-weight: 400;
           text-transform: none;
           flex: auto;
-          padding-left: 2.5rem;
+          padding-left: 4rem;
           text-align: center; }
           #watu_quiz .quiz-form .watu-question .question-content p .watu_num {
             position: absolute;
             left: 0.625rem;
-            top: 50%;
+            top: 44%;
             -webkit-transform: translateY(-50%);
             -moz-transform: translateY(-50%);
             -o-transform: translateY(-50%);
@@ -520,7 +543,7 @@ input:focus {
             height: 2.5rem;
             color: #ffffff;
             font-family: "Roboto", sans-serif;
-            font-size: 1.25rem;
+            font-size: 3rem;
             line-height: 1;
             font-weight: 700;
             text-transform: none;
@@ -557,8 +580,8 @@ input:focus {
         max-width: 100%;
         min-height: 2.5rem;
         text-align: center;
-        margin-top: 1.25rem;
-        padding: 0.625rem;
+        margin-top: 2rem;
+        padding: 1.1rem;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
@@ -573,18 +596,15 @@ input:focus {
         box-shadow: -3px 3px 3px -2px rgba(122, 122, 122, 0.5);
         color: #5c5c5c;
         font-family: "Roboto", sans-serif;
-        font-size: 0.875rem;
+        font-size: 1.3rem;
         line-height: 1.2;
-        font-weight: 500;
+        font-weight: 400;
         text-transform: none; }
         @media (min-device-width: 920px) {
           #watu_quiz .quiz-form .watu-question div:not([class]) {
             flex: 0 0 48%;
-            max-width: 48%; } }
-        @media (min-device-width: 1200px) {
-          #watu_quiz .quiz-form .watu-question div:not([class]) {
-            flex: 0 0 24.0625rem;
-            max-width: 24.0625rem; } }
+            max-width: 48%;
+            cursor: pointer; } }
         #watu_quiz .quiz-form .watu-question div:not([class]) input[type=radio],
         #watu_quiz .quiz-form .watu-question div:not([class]) input[type=checkbox] {
           display: none !important; }
@@ -595,9 +615,9 @@ input:focus {
           background-color: #7a7a7a;
           color: #ffffff;
           font-family: "Roboto", sans-serif;
-          font-size: 0.875rem;
+          font-size: 1.3rem;
           line-height: 1.2;
-          font-weight: 500;
+          font-weight: 400;
           text-transform: none; }
           #watu_quiz .quiz-form .watu-question div:not([class]):hover label {
             cursor: pointer; }
@@ -622,9 +642,9 @@ input:focus {
   display: inline-block;
   margin-top: 2.5rem;
   padding: 0.625rem 0;
-  color: #5c5c5c;
+  color: #cccccc;
   font-family: "Roboto", sans-serif;
-  font-size: 0.8125rem;
+  font-size: 1.1rem;
   line-height: 1;
   font-weight: 500;
   text-transform: uppercase; }
@@ -633,7 +653,7 @@ input:focus {
     cursor: pointer;
     color: #00c0ff;
     font-family: "Roboto", sans-serif;
-    font-size: 0.8125rem;
+    font-size: 1.1rem;
     line-height: 1;
     font-weight: 500;
     text-transform: uppercase; }
@@ -645,7 +665,7 @@ input:focus {
     #test-prev-question-btn.disabled:hover {
       color: #5c5c5c;
       font-family: "Roboto", sans-serif;
-      font-size: 0.8125rem;
+      font-size: 1.1rem;
       line-height: 1;
       font-weight: 500;
       text-transform: uppercase; }
@@ -661,7 +681,7 @@ input:focus {
   padding: 0.625rem 0;
   color: #00c0ff;
   font-family: "Roboto", sans-serif;
-  font-size: 0.8125rem;
+  font-size: 1.1rem;
   line-height: 1;
   font-weight: 500;
   text-transform: uppercase;
@@ -673,7 +693,7 @@ input:focus {
     cursor: pointer;
     color: #00c0ff;
     font-family: "Roboto", sans-serif;
-    font-size: 0.8125rem;
+    font-size:1.1rem;
     line-height: 1;
     font-weight: 500;
     text-transform: uppercase; }
@@ -689,7 +709,7 @@ input:focus {
     #test-submit-btn.disabled:hover {
       color: #00c0ff;
       font-family: "Roboto", sans-serif;
-      font-size: 0.8125rem;
+      font-size: 1.1rem;
       line-height: 1;
       font-weight: 500;
       text-transform: uppercase; }

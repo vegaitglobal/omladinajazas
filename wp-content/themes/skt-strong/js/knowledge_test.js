@@ -196,7 +196,7 @@ jQuery(document).ready(function () {
         setTimeout(function () {
             initView();
             initQuizProgressIndicator();
-            jQuery("#test-quiz-complete-overlay").css("display", "block");
+            jQuery("#test-quiz-complete-overlay").css("display", "block").parents(".site-main").addClass("site-quiz");
         }, 100);
     }
 });

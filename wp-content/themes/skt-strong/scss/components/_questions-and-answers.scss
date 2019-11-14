@@ -1,7 +1,7 @@
 /* FORM ELEMEMTS */
 
 #watu_quiz {
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   width: 100%;
 
   /* QUESTIONS AND ANSWERS */
@@ -26,15 +26,15 @@
         p {
           position: relative;
           margin-bottom: 0;
-          @include font-mix ($ojh-white, $ojh-body-font, 0.875rem, 1.2, 500, none);
+          @include font-mix ($ojh-white, $ojh-body-font, 1.3rem, 1.2, 400, none);
           flex: auto;
-          padding-left: 2.5rem;
+          padding-left: 4rem;
           text-align: center;
 
           .watu_num {
             position: absolute;
             left: 0.625rem;
-            top: 50%;
+            top: 44%;
             @include translatey (-50%);
             @include display-flex ();
             @include flex-direction (row);
@@ -42,7 +42,7 @@
             @include justify-content (center);
             width: 2.5rem;
             height: 2.5rem;
-            @include font-mix ($ojh-white, $ojh-body-font, 1.25rem, 1, 700, none);
+            @include font-mix ($ojh-white, $ojh-body-font, 3rem, 1, 700, none);
             text-align: center;
           }
         }
@@ -59,20 +59,17 @@
         max-width: 100%;
         min-height: 2.5rem;
         text-align: center;
-        margin-top: 1.25rem;
-        padding: 0.625rem;
+        margin-top: 2rem;
+        padding: 1.1rem;
         @include box-sizing (border-box);
         background-color: $ojh-white;
         @include border-radius(0.3125rem);
         @include box-shadow (-3px, 3px, 3px, -2px, rgba($ojh-gray, 0.5));
-        @include font-mix ($ojh-medium-gray, $ojh-body-font, 0.875rem, 1.2, 500, none);
+        @include font-mix ($ojh-medium-gray, $ojh-body-font, 1.3rem, 1.2, 400, none);
         @media (min-device-width: 920px) {
           flex: 0 0 48%;
           max-width: 48%;
-        }
-        @media (min-device-width: 1200px) {
-          flex: 0 0 24.0625rem;
-          max-width: 24.0625rem;
+          cursor: pointer;
         }
 
         input[type=radio],
@@ -87,7 +84,7 @@
 
         &:hover {
           background-color: $ojh-gray;
-          @include font-mix ($ojh-white, $ojh-body-font, 0.875rem, 1.2, 500, none);
+          @include font-mix ($ojh-white, $ojh-body-font, 1.3rem, 1.2, 400, none);
           label {
             cursor: pointer;
           }
@@ -104,6 +101,11 @@
           }
           @media (min-device-width: 1200px) {}
         }
+      }
+
+      .watu-textarea {
+        font-family: $ojh-body-font;
+        padding: 5px;
       }
     }
 

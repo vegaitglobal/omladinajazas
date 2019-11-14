@@ -156,7 +156,7 @@ jQuery(document).ready(function () {
     if (jQuery("#quiz-5").get(0)) {
         setTimeout(function () {
             initWatu();
-            jQuery("#risk-calc-complete-overlay").css("display", "block");
+            jQuery("#risk-calc-complete-overlay").css("display", "block").parents(".site-main").addClass("site-quiz");;
             addAnswerEventListener();
             // Hide 'submit' btn and show 'previous' & 'next' buttons:
             if (!Watu.isLastQuestion) {

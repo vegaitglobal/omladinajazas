@@ -14,18 +14,18 @@ h1 {
   text-align: center;
   @include font-mix ($ojh-dark-gray, $ojh-body-font, 2rem, 1.2, 400, uppercase);
   @media (min-device-width:576px){
-  font-size: 2rem;
+    font-size: 2rem;
   }
   @media (min-device-width:768px){
-  font-size: 2rem;
+    font-size: 2rem;
   }
   @media (min-device-width:1200px){
-  font-size: 2rem;
+    font-size: 2rem;
   }
 }
 
 p + p {
-margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 /* LINKS */

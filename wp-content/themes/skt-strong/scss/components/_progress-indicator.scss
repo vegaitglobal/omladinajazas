@@ -41,7 +41,7 @@
           display: none;
           width: inherit;
           height: inherit;
-          @include font-mix ($ojh-gray, $ojh-body-font, 1.625rem, 1, 400, none);
+          @include font-mix ($ojh-gray, $ojh-body-font, 2rem, 1, 500, none);
           @media (min-device-width: 920px) {
             @include display-flex ();
             @include flex-direction (row);

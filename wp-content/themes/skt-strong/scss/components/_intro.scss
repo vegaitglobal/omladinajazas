@@ -1,1 +1,18 @@
 /* INTRO */
+
+.site-quiz {
+  margin: 45px auto 0;
+  float: none;
+  width: 945px;
+
+  .entry-title {
+    max-width: 445px;
+    margin: 0 auto;
+    font-size: 1.8rem;
+    letter-spacing: -0.5px;
+    line-height: 1.3;
+    @media (min-device-width: 768px) {
+        font-size: 2.3rem;
+    }
+  }
+}
