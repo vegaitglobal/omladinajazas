@@ -1,6 +1,6 @@
 /* FORM ELEMEMTS */
 
-#watu_quiz {  
+#watu_quiz {
   margin-top: 2.5rem;
   width: 100%;
 
@@ -29,7 +29,7 @@
           @include font-mix ($ojh-white, $ojh-body-font, 0.875rem, 1.2, 500, none);
           flex: auto;
           padding-left: 2.5rem;
-          text-align: center;       
+          text-align: center;
 
           .watu_num {
             position: absolute;
@@ -38,25 +38,23 @@
             @include translatey (-50%);
             @include display-flex ();
             @include flex-direction (row);
-            @include align-items (center);             
-            @include justify-content (center);            
+            @include align-items (center);
+            @include justify-content (center);
             width: 2.5rem;
             height: 2.5rem;
             @include font-mix ($ojh-white, $ojh-body-font, 1.25rem, 1, 700, none);
-            text-align: center;            
+            text-align: center;
           }
-
         }
-
       }
 
       /* ANSWER */
-      div:not([class]) {        
+      div:not([class]) {
         @include align-self (flex-start);
         @include display-flex ();
         @include flex-direction (row);
         @include align-items (center);
-        @include justify-content (center);         
+        @include justify-content (center);
         flex: 0 0 100%;
         max-width: 100%;
         min-height: 2.5rem;
@@ -68,17 +66,14 @@
         @include border-radius(0.3125rem);
         @include box-shadow (-3px, 3px, 3px, -2px, rgba($ojh-gray, 0.5));
         @include font-mix ($ojh-medium-gray, $ojh-body-font, 0.875rem, 1.2, 500, none);
-
-          @media (min-device-width: 576px) {}
-          @media (min-device-width: 768px) {}
-          @media (min-device-width: 920px) {
-            flex: 0 0 48%;
-            max-width: 48%;         
-          }
-          @media (min-device-width: 1200px) {
-            flex: 0 0 24.0625rem;
-            max-width: 24.0625rem;             
-          }
+        @media (min-device-width: 920px) {
+          flex: 0 0 48%;
+          max-width: 48%;
+        }
+        @media (min-device-width: 1200px) {
+          flex: 0 0 24.0625rem;
+          max-width: 24.0625rem;
+        }
 
         input[type=radio],
         input[type=checkbox] {
@@ -87,41 +82,33 @@
 
         label {
           display: inline-block !important;
-          width: 100%;            
+          width: 100%;
         }
 
         &:hover {
           background-color: $ojh-gray;
           @include font-mix ($ojh-white, $ojh-body-font, 0.875rem, 1.2, 500, none);
           label {
-            cursor: pointer;          
-          }          
+            cursor: pointer;
+          }
         }
 
         &.checked {
           background-color: $ojh-gray;
-          @include font-mix ($ojh-white, $ojh-body-font, 0.875rem, 1.2, 500, none);      
+          @include font-mix ($ojh-white, $ojh-body-font, 0.875rem, 1.2, 500, none);
         }
 
         &:nth-of-type(odd) {
-          @media (min-device-width: 576px) {}
-          @media (min-device-width: 768px) {}
           @media (min-device-width: 920px) {
-            margin-left: 1.25rem;              
+            margin-left: 1.25rem;
           }
-          @media (min-device-width: 1200px) {}           
+          @media (min-device-width: 1200px) {}
         }
-
-
       }
-
-
     }
 
     .watu-question + .watu-question {
       margin-top: 2.5rem;
     }
-
   }
-
 }
