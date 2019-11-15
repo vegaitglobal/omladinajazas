@@ -66,4 +66,31 @@
   ul li {
     font-size: 18px;
   }
+
+  ul {
+    list-style-type: none;
+  }
+
+  .answer {
+    text-transform: uppercase;
+    font-size: 19px;
+    line-height: 28px;
+    font-weight: 600;
+    color: $ojh-red;
+  }
+
+  .correct-answer > span {
+    color: $ojh-blue;
+    background-position: left top;
+    padding-left: 22px;
+  }
+
+  .show-question {
+    margin-bottom: 38px;
+    border-bottom: 0;
+  }
+
+  .show-question-feedback {
+    margin-top: 15px;
+  }
 }

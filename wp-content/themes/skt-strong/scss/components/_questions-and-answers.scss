@@ -1,7 +1,7 @@
 /* FORM ELEMEMTS */
 
 #watu_quiz {
-  margin-top: 2rem;
+  margin: 2rem 0 5rem;
   width: 100%;
   font-size: 18px;
   p {
@@ -12,6 +12,13 @@
   .quiz-form {
     width: 100%;
     margin-bottom: 2.5rem;
+
+    .firstStep {
+        input[type="radio"] + label {
+            display: inline-block !important;
+            margin-bottom: 15px;
+        }
+    }
 
     .watu-question {
       @include display-flex ();
