@@ -81,7 +81,9 @@
           max-width: 48%;
           cursor: pointer;
         }
-
+        .answer span {
+            padding: 0;
+        }
         input[type=radio],
         input[type=checkbox] {
           display: none !important;

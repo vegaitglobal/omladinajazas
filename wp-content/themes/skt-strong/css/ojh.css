@@ -611,6 +611,9 @@ input:focus {
             flex: 0 0 48%;
             max-width: 48%;
             cursor: pointer; } }
+        #watu_quiz .quiz-form .watu-question div:not([class]) .answer span {
+            padding: 0;
+        }
         #watu_quiz .quiz-form .watu-question div:not([class]) input[type=radio],
         #watu_quiz .quiz-form .watu-question div:not([class]) input[type=checkbox] {
           display: none !important; }
@@ -759,29 +762,23 @@ input:focus {
 
 #knowledge-test-achieved-points p,
 #knowledge-test-achieved-points ul li {
-    font-size: 18px;
-}
+    font-size: 18px;}
 #knowledge-test-achieved-points ul {
-    list-style-type: none;
-}
+    list-style-type: none;}
 #knowledge-test-achieved-points .answer {
     text-transform: uppercase;
     font-size: 19px;
     line-height: 28px;
     font-weight: 600;
-    color: #FF5733;
-}
+    color: #FF5733;}
 #knowledge-test-achieved-points .correct-answer > span {
     color: #00c0ff;
     background-position: left top;
-    padding-left: 22px;
-}
+    padding-left: 22px;}
 #knowledge-test-achieved-points .show-question {
     margin-bottom: 38px;
-    border-bottom: 0;
-}
+    border-bottom: 0;}
 #knowledge-test-achieved-points .show-question-feedback {
-    margin-top: 15px;
-}
+    margin-top: 15px;}
 
 /*# sourceMappingURL=ojh.css.map */
