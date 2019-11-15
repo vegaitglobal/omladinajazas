@@ -11,8 +11,8 @@ const initView = function () {
         if (value.innerText.replace(/ /g, '').indexOf('[1]') >= 0) {
             value.classList.add("firstStep");
             elem.removeClass('watu-question').css('display', 'block');
-            elem.children('textarea').attr('rows', 1).css('height', '30px');
-            elem.children('textarea').attr('rows', 1).css('height', '30px');
+            elem.children('textarea').attr('rows', 1).css('height', '40px');
+            elem.children('textarea').attr('rows', 1).css('height', '40px');
             allQuestions.push(jQuery(value));
             jQuery(value).show();
         } else {
