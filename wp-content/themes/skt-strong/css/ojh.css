@@ -496,7 +496,8 @@ input:focus {
       #watu_quiz .quiz-form .watu-textarea {
         font-family: 'Roboto', sans-serif;
         padding: 8px;
-        font-size: 18px;}
+        font-size: 18px;
+        color: #5c5c5c;}
       #watu_quiz .quiz-form .watu-question .question-content {
         flex: 0 0 100%;
         margin-top: 0;
@@ -772,7 +773,8 @@ input:focus {
     font-weight: 600;
     color: #FF5733;}
 #knowledge-test-achieved-points .correct-answer > span {
-    color: #00c0ff;
+    color: #00c0ff;}
+#knowledge-test-achieved-points .answer > span {
     background-position: left top;
     padding-left: 22px;}
 #knowledge-test-achieved-points .show-question {
