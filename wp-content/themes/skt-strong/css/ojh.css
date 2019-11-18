@@ -774,9 +774,6 @@ input:focus {
     color: #FF5733;}
 #knowledge-test-achieved-points .correct-answer > span {
     color: #00c0ff;}
-#knowledge-test-achieved-points .answer > span {
-    background-position: left top;
-    padding-left: 22px;}
 #knowledge-test-achieved-points .show-question {
     margin-bottom: 38px;
     border-bottom: 0;}
