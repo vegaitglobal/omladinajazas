@@ -111,11 +111,9 @@ function skt_strong_scripts() {
 	wp_enqueue_style( 'skt-strong-base-style', get_template_directory_uri()."/css/style_base.css" );
 	wp_enqueue_script( 'jquery-nivo', get_template_directory_uri() . '/js/jquery.nivo.slider.js', array('jquery') );
 	wp_enqueue_script( 'skt-strong-custom-js', get_template_directory_uri() . '/js/custom.js' );
-	wp_enqueue_script( 'skt-strong-quiz-js', get_template_directory_uri() . '/js/risk_calculator.js' );
-	wp_enqueue_script( 'skt-strong-test-js', get_template_directory_uri() . '/js/knowledge_test.js' );
   wp_enqueue_script( 'skt-strong-watu-common-js', get_template_directory_uri() . '/js/watu/common.js' );
-	// wp_enqueue_script( 'spinner_js', get_template_directory_uri() . '/js/spinner.js' );
-	// wp_enqueue_script( 'spinner_css', get_template_directory_uri() . '/css/spinner.css' );
+  wp_enqueue_script( 'skt-strong-quiz-js', get_template_directory_uri() . '/js/watu/risk_calculator.js' );
+  wp_enqueue_script( 'skt-strong-test-js', get_template_directory_uri() . '/js/watu/knowledge_test.js' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
