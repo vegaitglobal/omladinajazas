@@ -100,13 +100,20 @@ const getResultPercentage = function () {
   const maximum = jQuery('#watu-max-points').get(0).innerText;
   const percentage = achieved / maximum * 100;
   return percentage.toFixed(0);
-}
+};
 
 const addWatuAnswerEventListener = function () {
-  const elems = document.querySelectorAll('.watu-question .answer:not([type="radio"])');
+  // handle answer selected event in all radio buttons type questions
+  const radioQuestions = document.querySelectorAll('.watu-question .answer[type=radio]');
+  addRadioButtonsEventListener(radioQuestions);
+  // handle answer selected event in all checkbox type questions
+  const checkboxQuestions = document.querySelectorAll('.watu-question .answer[type=checkbox]');
+  addCheckboxEventListener(checkboxQuestions);
+};
 
-  elems.forEach(elem => {
-    elem.addEventListener('click', event => {
+const addRadioButtonsEventListener = function (elements) {
+  elements.forEach(element => {
+    element.addEventListener('click', event => {
       jQuery(event.target).parent('div:first')
         .css('background', '#7a7a7a')
         .css('color', 'white')
@@ -116,6 +123,28 @@ const addWatuAnswerEventListener = function () {
     });
   });
 };
+
+const addCheckboxEventListener = function (elements) {
+  elements.forEach(element => {
+    element.addEventListener('click', event => {
+      const answer = jQuery(event.target).parent('div:first');
+      // check if checkbox answer is a single king answer - the one that excludes all other answers
+      if (answer.find('span').html().includes(['single'])) {
+        console.log('THIS ONE IS SINGLE') // TODO: DELETE
+      } else {
+        console.log('this one is NOT single') // TODO: DELETE
+      }
+    })
+  })
+};
+
+// TODO: DELETE
+// <div>
+//    <input type="checkbox" name="answer-50[]" id="answer-id-244" class="answer answer-10  answerof-50" value="244">
+//    <label for="answer-id-244" id="answer-label-244" class=" answer label-10">
+//        <span>Oralni [multi]</span>
+//    </label>
+// </div>
 
 const initQuizProgressIndicator = function () {
   const watuForm = jQuery(`#quiz-${Watu.exam_id}`);
