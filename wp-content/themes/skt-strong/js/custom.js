@@ -122,7 +122,7 @@ const getStdRisckPercentage = function () {
 }
 
 const addWatuAnswerEventListener = function () {
-    const elems = document.querySelectorAll('.watu-question .answer:not([type="radio"])');
+    const elems = document.querySelectorAll('.watu-question .answer');
 
     elems.forEach(elem => {
         elem.addEventListener('click', event => {

@@ -9,7 +9,8 @@ const initView = function () {
     jQuery.each(questionElements, function (index, value) {
         elem = jQuery(value);
         if (value.innerText.replace(/ /g, '').indexOf('[1]') >= 0) {
-            value.classList.add("firstStep");
+            value.classList.add('firstStep');
+            jQuery('.firstStep:first').find('div').addClass('radio-button');
             elem.removeClass('watu-question').css('display', 'block');
             elem.children('textarea').attr('rows', 1).css('height', '40px');
             elem.children('textarea').attr('rows', 1).css('height', '40px');
@@ -54,8 +55,8 @@ const getRandomQuestions = function (questions) {
 const manageTestButtons = function () {
 
     if (parseInt(Watu.singlePage)) {
-        var nextBtn = '<a id="test-next-question-btn">SLEDEĆI KORAK ></a>';
-        var prevBtn = '<a id="test-prev-question-btn">< PRETHODNI KORAK</a>';
+        var nextBtn = '<a id="test-next-question-btn">SLEDEĆI KORAK</a>';
+        var prevBtn = '<a id="test-prev-question-btn">PRETHODNI KORAK</a>';
         var submitBtn = '<a id="test-submit-btn" onclick="Watu.submitResult()">POGLEDAJ REZULTAT</a>';
         const introText = jQuery('.quiz-area p:nth-child(2)');
         jQuery('#action-button').after(prevBtn, nextBtn, submitBtn);
