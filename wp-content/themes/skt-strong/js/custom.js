@@ -1,6 +1,3 @@
-// import { Spinner } from "./spinner";
-
-
 jQuery(window).load(function () {
   if (jQuery('#slider') > 0) {
     jQuery('.nivoSlider').nivoSlider({
@@ -56,7 +53,6 @@ var skt_strong_adjustMenu = function () {
     });
   }
 }
-
 
 jQuery(document).ready(function () {
   jQuery('.srchicon').click(function () {
