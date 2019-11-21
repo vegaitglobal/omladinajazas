@@ -474,20 +474,8 @@ input:focus {
       line-height: 1;
       font-weight: 500;
       text-transform: uppercase; }
-
-
-/* TODO: check hover animation and transfer this to scss */
-#test-next-question-btn::after {
-    content: '';
-    display: inline-block;
-    width: 0.8em;
-    height: 0.8em;
-    border-right: 0.1em solid #00c0ff;
-    border-top: 0.1em solid #00c0ff;
-    transform: rotate(45deg);
-    margin-left: 6px;
-}
-#test-prev-question-btn::before {
+  #prev-question-btn::before,
+  #test-prev-question-btn::before {
     content: '';
     display: inline-block;
     width: 0.8em;
@@ -495,12 +483,15 @@ input:focus {
     border-right: 0.1em solid #cccccc;
     border-top: 0.1em solid #cccccc;
     transform: rotate(225deg);
-    margin-right: 6px;
-}
-#test-prev-question-btn:hover::before {
-    border-color: #00c0ff;
-}
-
+    margin-right: 0;
+    transition: all 0.3s linear;}
+    @media (min-device-width: 920px) {
+      #prev-question-btn::before,
+      #test-prev-question-btn::before {
+        margin-right: 6px;}}
+  #prev-question-btn:hover::before,
+  #test-prev-question-btn:hover::before {
+    border-color: #00c0ff;}
 /* Next step */
 #next-question-btn,
 #test-next-question-btn,
@@ -528,6 +519,21 @@ input:focus {
     line-height: 1;
     font-weight: 500;
     text-transform: uppercase; }
+  #next-question-btn::after,
+  #test-next-question-btn::after {
+      content: '';
+      display: inline-block;
+      width: 0.8em;
+      height: 0.8em;
+      border-right: 0.1em solid #00c0ff;
+      border-top: 0.1em solid #00c0ff;
+      transform: rotate(45deg);
+      margin-left: 0;
+      transition: all 0.3s linear;}
+      @media (min-device-width: 920px) {
+        #next-question-btn::after,
+        #test-next-question-btn::after {
+          margin-left: 6px;}}
   #next-question-btn.disabled,
   #test-next-question-btn.disabled,
   #submit-btn.disabled,

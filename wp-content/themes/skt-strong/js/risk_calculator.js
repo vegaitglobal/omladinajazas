@@ -50,8 +50,8 @@ const showPrevStep = function (index, nextIndex) {
 const manageButtons = function () {
 
     if (parseInt(Watu.singlePage)) {
-        var nextBtn = '<a id="next-question-btn">SLEDEĆI KORAK ></a>';
-        var prevBtn = '<a id="prev-question-btn">< PRETHODNI KORAK</a>';
+        var nextBtn = '<a id="next-question-btn">SLEDEĆI KORAK</a>';
+        var prevBtn = '<a id="prev-question-btn">PRETHODNI KORAK</a>';
         var submitBtn = '<a id="submit-btn" onclick="Watu.submitResult()">IZRAČUNAJ RIZIK</a>';
         jQuery('#action-button').after(prevBtn, nextBtn, submitBtn);
         jQuery('#prev-question-btn').hide();
