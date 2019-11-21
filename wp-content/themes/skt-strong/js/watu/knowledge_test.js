@@ -157,7 +157,9 @@ const getNumberOfSteps = function (randomQuestions, firstStepQuestionNo) {
             }
 
         } else {
-            if (fullQuestion.split(".")[1])
+            if (fullQuestion.split(".")[2])
+                 question = fullQuestion.split(".")[1] + ". " + fullQuestion.split(".")[2].trim();
+            else if (fullQuestion.split(".")[1])
                 question = fullQuestion.split(".")[1].trim();
             else question = fullQuestion;
             noOfSteps++;

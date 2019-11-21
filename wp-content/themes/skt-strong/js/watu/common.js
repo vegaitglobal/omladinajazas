@@ -112,8 +112,10 @@ jQuery(document).ready(function () {
 jQuery(document).ajaxComplete(function () {
   if (jQuery('#knowledge-test-achieved-points').get(0)) {
     console.log(Watu.filtered_questions);
+    jQuery('#knowledge-test-achieved-points').append("<div id='qresults'> </div>");
     const question = jQuery('.show-question');
     var i = 1;
+    var questionDivs = [];
     const allQuestions = jQuery.each(question, function (k, v) {
       jQuery(this).hide();
       var questionIndex = jQuery(this).children().find("p").text().split(".")[0].trim();
@@ -121,13 +123,38 @@ jQuery(document).ajaxComplete(function () {
         var newText = i + ". " + jQuery(this).children().find("p").text().split(".")[1];
         i++;
 
-        jQuery(this).find('.show-question-content').find('p').text(newText);
+        // jQuery(this).find('.show-question-content').find('p').text(newText);
+
+        if (jQuery(this).children().find("p").text().replace(/ /g, '').indexOf("[1]") >= 0) {
+          jQuery(this).hide();
+        } else {
         jQuery(this).show();
-      }
-      if (jQuery(this).children().find("p").text().replace(/ /g, '').indexOf("[1]") >= 0) {
+        var clonedObject = jQuery.extend({}, jQuery(this));
+        questionDivs.push(clonedObject);
+        }
+        // jQuery('#knowledge-test-achieved-points').append(jQuery(this).prop('outerHTML'));
         jQuery(this).hide();
       }
 
+    });
+    i = 1; 
+    jQuery('.show-question').remove();
+    jQuery.each(Watu.question_ids, function(key, questionId) {
+        jQuery.each(questionDivs, function(k,v) {
+        var questionIndex = this.children().find("p").text().split(".")[0].trim();
+          if(questionId == questionIndex){
+            var newText = i + ". " + this.children().find("p").text().split(".")[1];
+            i++;
+            this.children().first('p').text(newText);
+            this.children().first('p').css("margin-bottom", "20px");
+            console.log(newText);
+            this.show();
+            jQuery('#qresults').append(this.prop('outerHTML'));
+            return false;
+          }
+
+        });
+      //  console.log(this.children().find("p").text().split(".")[0].trim());
     });
     const unansweredQuestions = document.getElementsByClassName('unanswered');
     while (unansweredQuestions.length > 0) {
