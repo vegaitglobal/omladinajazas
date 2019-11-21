@@ -122,9 +122,6 @@ jQuery(document).ajaxComplete(function () {
       if (jQuery.inArray(questionIndex, Watu.question_ids) != -1) {
         var newText = i + ". " + jQuery(this).children().find("p").text().split(".")[1];
         i++;
-
-        // jQuery(this).find('.show-question-content').find('p').text(newText);
-
         if (jQuery(this).children().find("p").text().replace(/ /g, '').indexOf("[1]") >= 0) {
           jQuery(this).hide();
         } else {
@@ -132,7 +129,6 @@ jQuery(document).ajaxComplete(function () {
         var clonedObject = jQuery.extend({}, jQuery(this));
         questionDivs.push(clonedObject);
         }
-        // jQuery('#knowledge-test-achieved-points').append(jQuery(this).prop('outerHTML'));
         jQuery(this).hide();
       }
 
@@ -147,14 +143,12 @@ jQuery(document).ajaxComplete(function () {
             i++;
             this.children().first('p').text(newText);
             this.children().first('p').css("margin-bottom", "20px");
-            console.log(newText);
             this.show();
             jQuery('#qresults').append(this.prop('outerHTML'));
             return false;
           }
 
         });
-      //  console.log(this.children().find("p").text().split(".")[0].trim());
     });
     const unansweredQuestions = document.getElementsByClassName('unanswered');
     while (unansweredQuestions.length > 0) {
