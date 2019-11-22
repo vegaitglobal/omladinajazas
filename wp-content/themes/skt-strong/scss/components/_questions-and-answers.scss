@@ -14,10 +14,77 @@
     margin-bottom: 2.5rem;
 
     .firstStep {
-        input[type="radio"] + label {
+      input[type="radio"] {
+        height: 1px;
+        left: 2px;
+        opacity: 0;
+        position: absolute;
+        top: 2px;
+        width: 1px;
+
+          & + label {
             display: inline-block !important;
             margin-bottom: 15px;
+            position: relative;
+            padding-left: 40px;
+            cursor: pointer;
+          }
+
+          & + label::before {
+            background-color: $ojh-white;
+            border: 1px solid $ojh-dark-gray;
+            box-sizing: border-box;
+            content: '';
+            display: inline-block;
+            left: 0;
+            height: 30px;
+            position: absolute;
+            top: -6px;
+            width: 30px;
+            border-radius: 50%;
+          }
+
+          & + label::after {
+            content: '';
+            border-radius: 50%;
+            background-color: $ojh-blue;
+            height: 12px;
+            width: 12px;
+            display: none;
+            position: absolute;
+            top: 3px;
+            left: 9px;
+          }
+
+          &:checked ~ label::after {
+            display: inline-block;
+          }
+
+          &:checked ~ label::before {
+            background-color: $ojh-white;
+            border-color: $ojh-dark-gray;
+          }
+      }
+
+      .question-content {
+        display: block;
+        margin: 12px 15px 0 0;
+        & ~ div {
+          display: inline-block;
+          margin-right: 40px;
         }
+      }
+
+      .radio-button {
+        display: block !important;
+        background: transparent !important;
+        color: $ojh-gray !important;
+        margin-bottom: 15px;
+        @media (min-device-width: 920px) {
+          display: inline-block !important;
+          margin-bottom: 0;
+        }
+      }
     }
 
     .watu-question {
