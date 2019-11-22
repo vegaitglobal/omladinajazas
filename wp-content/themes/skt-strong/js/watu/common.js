@@ -5,6 +5,8 @@ const addWatuAnswerEventListeners = function () {
   const checkboxButtonAnswers = document.querySelectorAll('.watu-question .answer[type=checkbox]');
   // rerender checkbox labels
   hideCheckboxSingleAnswerStringCode(checkboxButtonAnswers)
+  // calculate max points for checkboxes
+  hideAndRememberCheckboxPointsCode(checkboxButtonAnswers)
   // handle answer selected event in all checkbox type questions
   addCheckboxEventListener(checkboxButtonAnswers);
 };
@@ -80,6 +82,41 @@ const hideCheckboxSingleAnswerStringCode = function (answerInputs) {
       hideStringCode(answer.find('span'), '[single]')
     }
   })
+}
+
+const hideAndRememberCheckboxPointsCode = function (answerInputs) {
+  let totalPoints = 0;
+  let multipleAnswerMaxPoints = 0;
+  let singleAnswerMaxPoints = 0;
+  answerInputs.forEach(answerInput => {
+    const answer = getAnswerInputParentDiv(answerInput)
+    const answerPoints = getPointsFromLabel(answer.find('span')) * 1
+    totalPoints += answerPoints;
+    if (isSingleKindAnswer(answer)) {
+      if (singleAnswerMaxPoints < answerPoints) {
+        singleAnswerMaxPoints = answerPoints
+      }
+    } else {
+      multipleAnswerMaxPoints += answerPoints;
+    }
+    // TODO: hide the code string [point:??]
+  })
+  const maxPoints = singleAnswerMaxPoints > multipleAnswerMaxPoints ? singleAnswerMaxPoints : multipleAnswerMaxPoints
+  const subtractFromMaxResult = totalPoints - maxPoints;
+  if (Watu.subtractFromMaxResult) {
+    Watu.subtractFromMaxResult += subtractFromMaxResult;
+  } else {
+    Watu.subtractFromMaxResult = subtractFromMaxResult;
+  }
+  console.log('SUBTRACT: ', Watu.subtractFromMaxResult) // TODO: DELETE
+}
+
+const getPointsFromLabel = function (element) {
+  const pointsCode = '[points:';
+  if (element.html().includes(pointsCode)) {
+    const pointsIndex = element.html().indexOf(pointsCode) + pointsCode.length;
+    return element.html().substr(pointsIndex, 2)
+  }
 }
 
 const hideStringCode = function (element, code) {
