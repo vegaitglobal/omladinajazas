@@ -11,22 +11,6 @@ const initWatu = function () {
   showNextStep(Watu.current_step);
 };
 
-const addAnswerEventListener = function () {
-  // const elems = document.querySelectorAll('.watu-question .answer');
-  //
-  // elems.forEach(elem => {
-  //   elem.addEventListener('click', event => {
-  //     jQuery(event.target).parent('div:first')
-  //       .css('background', '#7a7a7a')
-  //       .css('color', 'white')
-  //       .siblings('div:not(.question-content)')
-  //       .css('background', 'white')
-  //       .css('color', '#7a7a7a');
-  //   });
-  // });
-}
-
-
 const showNextStep = function (index, prevIndex) {
   Watu.filtered_questions[index].forEach(function (question_id) {
     jQuery("#" + question_id).show();
@@ -48,19 +32,18 @@ const showPrevStep = function (index, nextIndex) {
 }
 
 const manageButtons = function () {
-
   if (parseInt(Watu.singlePage)) {
-    var nextBtn = '<a id="next-question-btn">SLEDEĆI KORAK</a>';
-    var prevBtn = '<a id="prev-question-btn">PRETHODNI KORAK</a>';
-    var submitBtn = '<a id="submit-btn" onclick="Watu.submitResult()">IZRAČUNAJ RIZIK</a>';
+    const nextBtn = '<a id="next-question-btn">SLEDEĆI KORAK</a>';
+    const prevBtn = '<a id="prev-question-btn">PRETHODNI KORAK</a>';
+    const submitBtn = '<a id="submit-btn" onclick="Watu.submitResult()">IZRAČUNAJ RIZIK</a>';
     jQuery('#action-button').after(prevBtn, nextBtn, submitBtn);
     jQuery('#prev-question-btn').hide();
     jQuery('#submit-btn').hide();
     jQuery("#next-question-btn").click(function () {
       Watu.current_step++;
       jQuery(".ojh-progress-indicator .ojh-progress-indicator__step:nth-child(" + Watu.current_step + ")").addClass('ojh-progress-indicator__step--active');
-      var index = Object.keys(Watu.filtered_questions)[Watu.current_step - 1];
-      var prevIndex = Object.keys(Watu.filtered_questions)[Watu.current_step - 2];
+      const index = Object.keys(Watu.filtered_questions)[Watu.current_step - 1];
+      const prevIndex = Object.keys(Watu.filtered_questions)[Watu.current_step - 2];
       showNextStep(index, prevIndex);
       if (Watu.current_step === Watu.total_steps) {
         jQuery(this).hide();
@@ -74,8 +57,8 @@ const manageButtons = function () {
     jQuery("#prev-question-btn").click(function () {
       jQuery(".ojh-progress-indicator .ojh-progress-indicator__step:nth-child(" + Watu.current_step + ")").removeClass('ojh-progress-indicator__step--active');
       Watu.current_step--;
-      var index = Object.keys(Watu.filtered_questions)[Watu.current_step - 1];
-      var nextIndex = Object.keys(Watu.filtered_questions)[Watu.current_step];
+      const index = Object.keys(Watu.filtered_questions)[Watu.current_step - 1];
+      const nextIndex = Object.keys(Watu.filtered_questions)[Watu.current_step];
       showPrevStep(index, nextIndex);
       jQuery("#submit-btn").hide();
       if (Watu.current_step === 1) {
@@ -89,7 +72,7 @@ const manageButtons = function () {
 }
 
 const getNoOfQuestions = function () {
-  var i = 0;
+  let i = 0;
   jQuery(".watu-question").each(function () {
     i++;
   });
@@ -97,12 +80,12 @@ const getNoOfQuestions = function () {
 }
 
 const getCurrentIndex = function (beforeQuestion) {
-  var currIndex = '';
+  let currIndex = '';
   if (beforeQuestion[beforeQuestion.length - 2] == '[')
     currIndex = beforeQuestion[beforeQuestion.length - 1];
   else {
-    var first = beforeQuestion[beforeQuestion.length - 2];
-    var second = beforeQuestion[beforeQuestion.length - 1];
+    const first = beforeQuestion[beforeQuestion.length - 2];
+    const second = beforeQuestion[beforeQuestion.length - 1];
     currIndex = first + second;
   }
   return currIndex;
@@ -110,14 +93,14 @@ const getCurrentIndex = function (beforeQuestion) {
 
 const getNoOfSteps = function () {
 
-  var noOfSteps = 0;
+  let noOfSteps = 0;
   jQuery(".watu-question").each(function (k, v) {
-    var fullQuestion = jQuery(v).find("p").text();
-    var question = "";
+    const fullQuestion = jQuery(v).find("p").text();
+    let question = "";
     if (fullQuestion.split("]")[1]) {
       question = fullQuestion.split("]")[1].trim();
-      var beforeQuestion = fullQuestion.split("]")[0].trim();
-      var currIndex = getCurrentIndex(beforeQuestion.replace(/ /g, ''));
+      const beforeQuestion = fullQuestion.split("]")[0].trim();
+      const currIndex = getCurrentIndex(beforeQuestion.replace(/ /g, ''));
 
       if (Watu.filtered_questions[currIndex]) {
         Watu.filtered_questions[currIndex].push(jQuery(this).attr('id'));
@@ -139,7 +122,7 @@ const getNoOfSteps = function () {
 
   // add from temp_question
   jQuery.each(Watu.temp_questions, function (k, v) {
-    var i = 1;
+    let i = 1;
     while (1) {
       if (!Watu.filtered_questions.hasOwnProperty(i)) {
         Watu.filtered_questions[i] = v;
@@ -157,7 +140,6 @@ jQuery(document).ready(function () {
     setTimeout(function () {
       initWatu();
       jQuery("#risk-calc-complete-overlay").css("display", "block").parents(".site-main").addClass("site-quiz");
-      addAnswerEventListener();
       // Hide 'submit' btn and show 'previous' & 'next' buttons:
       if (!Watu.isLastQuestion) {
         jQuery('#action-button').hide();
