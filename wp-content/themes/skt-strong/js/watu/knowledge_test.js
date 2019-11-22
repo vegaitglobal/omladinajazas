@@ -1,4 +1,3 @@
-// Knowledge test
 const initView = function () {
   const questionElements = jQuery('.watu-question');
   questionElements.hide();
@@ -52,7 +51,6 @@ const getRandomQuestions = function (questions) {
 };
 
 const manageTestButtons = function () {
-
   if (parseInt(Watu.singlePage)) {
     var nextBtn = '<a id="test-next-question-btn">SLEDEĆI KORAK</a>';
     var prevBtn = '<a id="test-prev-question-btn">PRETHODNI KORAK</a>';
@@ -137,7 +135,6 @@ const getCurrIndex = function (beforeQuestion) {
 }
 
 const getNumberOfSteps = function (randomQuestions, firstStepQuestionNo) {
-
   var noOfSteps = 0;
   Watu.question_ids = [];
   var i = 1;
@@ -200,5 +197,52 @@ jQuery(document).ready(function () {
       initQuizProgressIndicator();
       jQuery("#test-quiz-complete-overlay").css("display", "block").parents(".site-main").addClass("site-quiz");
     }, 100);
+  }
+});
+
+jQuery(document).ajaxComplete(function () {
+  if (jQuery('#knowledge-test-achieved-points').get(0)) {
+    jQuery('#knowledge-test-achieved-points').append("<div id='qresults'> </div>");
+    const question = jQuery('.show-question');
+    let i = 1;
+    const questionDivs = [];
+    const allQuestions = jQuery.each(question, function (k, v) {
+      jQuery(this).hide();
+      const questionIndex = jQuery(this).children().find("p").text().split(".")[0].trim();
+      if (jQuery.inArray(questionIndex, Watu.question_ids) != -1) {
+        var newText = i + ". " + jQuery(this).children().find("p").text().split(".")[1];
+        i++;
+        if (jQuery(this).children().find("p").text().replace(/ /g, '').indexOf("[1]") >= 0) {
+          jQuery(this).hide();
+        } else {
+          jQuery(this).show();
+          var clonedObject = jQuery.extend({}, jQuery(this));
+          questionDivs.push(clonedObject);
+        }
+        jQuery(this).hide();
+      }
+
+    });
+    i = 1;
+    jQuery('.show-question').remove();
+    jQuery.each(Watu.question_ids, function (key, questionId) {
+      jQuery.each(questionDivs, function (k, v) {
+        const questionIndex = this.children().find("p").text().split(".")[0].trim();
+        if (questionId == questionIndex) {
+          const newText = i + ". " + this.children().find("p").text().split(".")[1];
+          i++;
+          this.children().first('p').text(newText);
+          this.children().first('p').css("margin-bottom", "20px");
+          this.show();
+          jQuery('#qresults').append(this.prop('outerHTML'));
+          return false;
+        }
+
+      });
+    });
+    const unansweredQuestions = document.getElementsByClassName('unanswered');
+    while (unansweredQuestions.length > 0) {
+      unansweredQuestions[0].parentNode.removeChild(unansweredQuestions[0]);
+    }
   }
 });

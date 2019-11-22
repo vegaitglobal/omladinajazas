@@ -92,7 +92,6 @@ const getCurrentIndex = function (beforeQuestion) {
 }
 
 const getNoOfSteps = function () {
-
   let noOfSteps = 0;
   jQuery(".watu-question").each(function (k, v) {
     const fullQuestion = jQuery(v).find("p").text();
@@ -148,3 +147,29 @@ jQuery(document).ready(function () {
     }, 100);
   }
 });
+
+// handle results page
+jQuery(document).ajaxComplete(function () {
+  if (jQuery('#watu-achieved-points').get(0)) {
+
+    const hivRiscPercentage = getResultPercentage();
+    const hivBar = jQuery('.bar.hiv');
+    let hivRiskLevel = 'low';
+    hivBar.css('width', `${hivRiscPercentage}%`);
+    if (hivRiscPercentage > 67) {
+      hivBar.parent('div:first').addClass('danger');
+      hivRiskLevel = 'high';
+    } else if (hivRiscPercentage > 33 && hivRiscPercentage < 67) {
+      hivBar.parent('div:first').addClass('warning');
+      hivRiskLevel = 'medium';
+    }
+    jQuery(`#hiv-results-msg .${hivRiskLevel}-risk-msg`).removeAttr('style');
+  }
+});
+
+const getResultPercentage = function () {
+  const achieved = jQuery('#watu-achieved-points').get(0).innerText;
+  const maximum = jQuery('#watu-max-points').get(0).innerText;
+  const percentage = achieved / maximum * 100;
+  return percentage.toFixed(0);
+};

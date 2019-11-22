@@ -1,36 +1,10 @@
-// HANDLE WATU QUIZ RESULTS
-jQuery(document).ajaxComplete(function () {
-  if (jQuery('#watu-achieved-points').get(0)) {
-
-    const hivRiscPercentage = getResultPercentage();
-    const hivBar = jQuery('.bar.hiv');
-    let hivRiskLevel = 'low';
-    hivBar.css('width', `${hivRiscPercentage}%`);
-    if (hivRiscPercentage > 67) {
-      hivBar.parent('div:first').addClass('danger');
-      hivRiskLevel = 'high';
-    } else if (hivRiscPercentage > 33 && hivRiscPercentage < 67) {
-      hivBar.parent('div:first').addClass('warning');
-      hivRiskLevel = 'medium';
-    }
-    jQuery(`#hiv-results-msg .${hivRiskLevel}-risk-msg`).removeAttr('style');
-  }
-});
-
-const getResultPercentage = function () {
-  const achieved = jQuery('#watu-achieved-points').get(0).innerText;
-  const maximum = jQuery('#watu-max-points').get(0).innerText;
-  const percentage = achieved / maximum * 100;
-  return percentage.toFixed(0);
-};
-
-const addWatuAnswerEventListener = function () {
+const addWatuAnswerEventListeners = function () {
   // handle answer selected event in all radio buttons type questions
   const radioButtonAnswers = document.querySelectorAll('.watu-question .answer[type=radio]');
   addRadioButtonsEventListener(radioButtonAnswers);
   const checkboxButtonAnswers = document.querySelectorAll('.watu-question .answer[type=checkbox]');
   // rerender checkbox labels
-  hideAnswerLabelCode(checkboxButtonAnswers)
+  hideCheckboxSingleAnswerStringCode(checkboxButtonAnswers)
   // handle answer selected event in all checkbox type questions
   addCheckboxEventListener(checkboxButtonAnswers);
 };
@@ -38,12 +12,8 @@ const addWatuAnswerEventListener = function () {
 const addRadioButtonsEventListener = function (elements) {
   elements.forEach(element => {
     element.addEventListener('click', event => {
-      getAnswerInputParentDiv(event.target)
-        .css('background', '#7a7a7a')
-        .css('color', 'white')
-        .siblings('div:not(.question-content)')
-        .css('background', 'white')
-        .css('color', '#7a7a7a');
+      const answer = getAnswerInputParentDiv(event.target)
+      handleAnswerSelected(answer, true)
     });
   });
 };
@@ -52,32 +22,47 @@ const addCheckboxEventListener = function (elements) {
   elements.forEach(element => {
     element.addEventListener('click', event => {
       const answer = getAnswerInputParentDiv(event.target);
-      answer
-        .css('background', '#7a7a7a')
-        .css('color', 'white')
+      if (!answer.find('input').prop('checked')) {
+        handleAnswerNotSelected(answer)
+        return
+      }
+      handleAnswerSelected(answer)
       // if checkbox answer is "single" king answer, uncheck all other answers
       if (isSingleKindAnswer(answer)) {
         const siblingAnswers = answer.siblings('div:not(.question-content)');
         siblingAnswers.each(function () {
           const siblingAnswer = jQuery(this);
-          siblingAnswer.css('background', 'white').css('color', '#7a7a7a');
-          siblingAnswer.find('input').prop('checked', false);
+          handleAnswerNotSelected(siblingAnswer)
         });
-
       }
       // if checkbox answer is "one of many" kind of answer, uncheck all "single" kind answers
       else {
         answer.siblings('div:not(.question-content)').each(function () {
           const siblingAnswer = jQuery(this);
-          if (siblingAnswer.find('span').html().includes(['[single]'])) {
-            siblingAnswer.css('background', 'white').css('color', '#7a7a7a');
-            siblingAnswer.find('input').prop('checked', false);
+          if (isSingleKindAnswer(siblingAnswer)) {
+            handleAnswerNotSelected(siblingAnswer)
           }
         })
       }
     })
   })
 };
+
+const handleAnswerSelected = function (answer, uncheckSiblings) {
+  answer.css('background', '#7a7a7a').css('color', 'white')
+  answer.find('input').prop('checked', true);
+  if (uncheckSiblings) {
+    answer
+      .siblings('div:not(.question-content)')
+      .css('background', 'white')
+      .css('color', '#7a7a7a');
+  }
+}
+
+const handleAnswerNotSelected = function (answer) {
+  answer.css('background', 'white').css('color', '#7a7a7a');
+  answer.find('input').prop('checked', false);
+}
 
 const getAnswerInputParentDiv = function (answerInput) {
   return jQuery(answerInput).parent('div:first')
@@ -87,16 +72,20 @@ const isSingleKindAnswer = function (answer) {
   return answer.find('span').html().includes(['[single]'])
 }
 
-const hideAnswerLabelCode = function (answerInputs) {
+const hideCheckboxSingleAnswerStringCode = function (answerInputs) {
   // wrap "[single]" in <span> and hide it
   answerInputs.forEach(answerInput => {
     const answer = getAnswerInputParentDiv(answerInput)
     if (isSingleKindAnswer(answer)) {
-      const label = answer.find('span').html();
-      const newLabel = label.replace('[single]', '<span style="display: none">[single]</span>')
-      answer.find('span').html(newLabel)
+      hideStringCode(answer.find('span'), '[single]')
     }
   })
+}
+
+const hideStringCode = function (element, code) {
+  const label = element.html();
+  const newLabel = label.replace(code, `<span style="display: none">${code}</span>`)
+  element.html(newLabel)
 }
 
 const initQuizProgressIndicator = function () {
@@ -117,7 +106,6 @@ const initQuizProgressIndicator = function () {
   indicatorWrapper.find('.ojh-progress-indicator:first').find('.ojh-progress-indicator__step:first').addClass('ojh-progress-indicator__step--active');
 };
 
-
 jQuery(document).ready(function () {
   jQuery('h2.section-title, .logo h1, .slide_info h2, .cols-3 h5').each(function (index, element) {
     const heading = jQuery(element);
@@ -127,54 +115,5 @@ jQuery(document).ready(function () {
     first_part = word_array.join(' ');        // rejoin the first words together
     heading.html([first_part, ' <span>', last_word, '</span>'].join(''));
   });
-  addWatuAnswerEventListener();
-});
-
-
-// KNOWLEDGE TEST
-jQuery(document).ajaxComplete(function () {
-  if (jQuery('#knowledge-test-achieved-points').get(0)) {
-    jQuery('#knowledge-test-achieved-points').append("<div id='qresults'> </div>");
-    const question = jQuery('.show-question');
-    let i = 1;
-    const questionDivs = [];
-    const allQuestions = jQuery.each(question, function (k, v) {
-      jQuery(this).hide();
-      const questionIndex = jQuery(this).children().find("p").text().split(".")[0].trim();
-      if (jQuery.inArray(questionIndex, Watu.question_ids) != -1) {
-        var newText = i + ". " + jQuery(this).children().find("p").text().split(".")[1];
-        i++;
-        if (jQuery(this).children().find("p").text().replace(/ /g, '').indexOf("[1]") >= 0) {
-          jQuery(this).hide();
-        } else {
-          jQuery(this).show();
-          var clonedObject = jQuery.extend({}, jQuery(this));
-          questionDivs.push(clonedObject);
-        }
-        jQuery(this).hide();
-      }
-
-    });
-    i = 1;
-    jQuery('.show-question').remove();
-    jQuery.each(Watu.question_ids, function (key, questionId) {
-      jQuery.each(questionDivs, function (k, v) {
-        const questionIndex = this.children().find("p").text().split(".")[0].trim();
-        if (questionId == questionIndex) {
-          const newText = i + ". " + this.children().find("p").text().split(".")[1];
-          i++;
-          this.children().first('p').text(newText);
-          this.children().first('p').css("margin-bottom", "20px");
-          this.show();
-          jQuery('#qresults').append(this.prop('outerHTML'));
-          return false;
-        }
-
-      });
-    });
-    const unansweredQuestions = document.getElementsByClassName('unanswered');
-    while (unansweredQuestions.length > 0) {
-      unansweredQuestions[0].parentNode.removeChild(unansweredQuestions[0]);
-    }
-  }
+  addWatuAnswerEventListeners();
 });
