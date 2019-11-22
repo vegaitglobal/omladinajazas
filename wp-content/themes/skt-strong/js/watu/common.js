@@ -47,13 +47,14 @@ const addRadioButtonsEventListener = function (elements) {
 };
 
 const addCheckboxEventListener = function (elements) {
+  console.log('addCheckboxEventListener')
   elements.forEach(element => {
     element.addEventListener('click', event => {
       const answer = jQuery(event.target).parent('div:first');
       answer
         .css('background', '#7a7a7a')
         .css('color', 'white')
-      // if checkbox answer is "single" king answer, uncheck all other answers
+      // if checkbox answer is "single" kind answer, uncheck all other answers
       if (answer.find('span').html().includes(['[single]'])) {
         const siblingAnswers = answer.siblings('div:not(.question-content)');
         siblingAnswers.each(function () {
@@ -61,6 +62,7 @@ const addCheckboxEventListener = function (elements) {
           siblingAnswer.css('background', 'white').css('color', '#7a7a7a');
           siblingAnswer.find('input').prop('checked', false);
         });
+        console.log(answer.find('span').html()); // TODO: DELETE
       }
       // if checkbox answer is "one of many" kind of answer, uncheck all "single" kind answers
       else {

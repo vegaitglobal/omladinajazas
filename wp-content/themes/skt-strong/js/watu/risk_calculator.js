@@ -11,22 +11,6 @@ const initWatu = function () {
   showNextStep(Watu.current_step);
 };
 
-const addAnswerEventListener = function () {
-  const elems = document.querySelectorAll('.watu-question .answer');
-
-  elems.forEach(elem => {
-    elem.addEventListener('click', event => {
-      jQuery(event.target).parent('div:first')
-        .css('background', '#7a7a7a')
-        .css('color', 'white')
-        .siblings('div:not(.question-content)')
-        .css('background', 'white')
-        .css('color', '#7a7a7a');
-    });
-  });
-}
-
-
 const showNextStep = function (index, prevIndex) {
   Watu.filtered_questions[index].forEach(function (question_id) {
     jQuery("#" + question_id).show();
@@ -158,7 +142,6 @@ jQuery(document).ready(function () {
       initWatu();
       jQuery("#risk-calc-complete-overlay").css("display", "block").parents(".site-main").addClass("site-quiz");
       ;
-      addAnswerEventListener();
       // Hide 'submit' btn and show 'previous' & 'next' buttons:
       if (!Watu.isLastQuestion) {
         jQuery('#action-button').hide();
