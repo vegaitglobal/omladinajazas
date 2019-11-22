@@ -1,246 +1,3 @@
-/* MAIN STYLE */
-/* VARIABLES */
-/* FONT FAMILY */
-/* COLORS */
-/*
-@include box-sizing ($value);
-@include box-sizing (border-box);
-*/
-/*
-@include display-flex ();
-@include flex-direction (row);
-@include align-items (center);
-@include justify-content (center);
-*/
-/*
-@include display-flex();
-*/
-/*
-@include flex-direction ($value);
-@include flex-direction (row);
-@include flex-direction (row-reverse);
-@include flex-direction (column);
-@include flex-direction (column-reverse);
-*/
-/*
-@include justify-content ($value);
-@include justify-content (flex-start);
-@include justify-content (center);
-@include justify-content (flex-end);
-@include justify-content (space-between);
-@include justify-content (space-around);
-*/
-/*
-@include align-items ($value);
-@include align-items (flex-start);
-@include align-items (center);
-@include align-items (flex-end);
-@include align-items (stretch);
-@include align-items (baseline);
-*/
-/*
-@include flex-flow ($value1, $value2);
-@include flex-flow (row, wrap);
-@include flex-flow (row, nowrap);
-@include flex-flow (column, wrap);
-@include flex-flow (column, nowrap);
-*/
-/*
-@include align-self ($value);
-@include align-self (center);
-@include align-self (center);
-@include align-self (center);
-*/
-/*
-@include flex-wrap(wrap);
-@include flex-wrap(nowrap);
- */
-/* Flex */
-/*
-@include flex ($flex-grow, $flex-shrink, $flex-basis);
-@include flex (0, 1, auto);
-*/
-/* FONT */
-/* 
-@include font-mix (
-$color,
-$font-family, 
-$font-size, 
-$line-height, 
-$font-weight, 
-$text-transform );
-
-@include font-mix ($gray-darker, $body-font, 15px, 1, 500, none); 
-@include font-mix ($gray-darker, $body-font, 15px, 1, 500, uppercase); 
-*/
-/* BORDER RADIUS */
-/* 
-@include border-radius($radius);
-@include border-radius(50%);
-*/
-/* 
-@include border-radius-multi($radius-top-left $radius-top-right $radius-bottom-right $radius-bottom-left);
-@include border-radius-multi(3px 0px 3px 0px);
-@include border-radius-multi(0px 3px 0px 3px);
-*/
-/* BACKGROUND IMAGE */
-/*
-@include bg-image (
-$background-repeat, 
-$background-position-horizontal, $background-position-vertical, 
-$background-size);
-
-@include bg-image (no-repeat, center, top, auto);
-@include bg-image (no-repeat, center, center, cover);
-@include bg-image (no-repeat, center, bottom, contain);
-*/
-/* INPUT */
-/* 
-@include input (
-$height, $text-align,
-$vertical-padding, $horizontal-padding, 
-$border-width, $border-radius, 
-$border-color, $background-color, 
-$border-color-focus, $background-color-focus);
-
-@include input (34px, left, 5px, 10px, 1px, 0px, $gray, $gray-light, $gray, $gray-light);
-
-
-+ Font-mix ++++++++++++++++++++++++
-
-@include font-mix ($color, $font-family, $font-size, $line-height, $font-weight, $text-transform );
-
-@include font-mix ($gray-darker, $body-font, 15px, 1, 500, none); 
-@include font-mix ($gray-darker, $body-font, 15px, 1, 500, uppercase); 
-
-*/
-/* TEXTAREA */
-/* 
-@include textarea (
-$text-align,
-$vertical-padding, $horizontal-padding, 
-$border-width, $border-radius,
-$border-color, $background-color, 
-$border-color-focus, $background-color-focus);
-
-@include textarea (left, 5px, 10px, 1px, 0px, $gray, $gray-light, $gray, $gray-light);
-
-
-+ Font-mix ++++++++++++++++++++++++
-
-@include font-mix ($color, $font-family, $font-size, $line-height, $font-weight, $text-transform );
-
-@include font-mix ($gray-darker, $body-font, 15px, 1, 500, none); 
-@include font-mix ($gray-darker, $body-font, 15px, 1, 500, uppercase); 
-
-*/
-/* PLACEHOLDER */
-/*
-@include placeholder-input (
-$color,
-$font-family, 
-$font-size, 
-$line-height, 
-$font-weight, 
-$text-align, 
-$text-transform);
-
-@include placeholder-input ($gray-darker, $body-font, 15px, 1, 500, left, none); 
-@include placeholder-input ($gray-darker, $body-font, 15px, 1, 500, left, uppercase); 
-*/
-/* BUTTON */
-/*
-
-@include button (
-$font-family, 
-$font-size, 
-$line-height, 
-$font-weight, 
-$text-align, 
-$text-transform,
-
-$vertical-padding, $lateral-padding,
-$border-width, $border-radius,
-
-$color, $background-color, $border-color,
-$color-hover, $background-color-hover, $border-color-hover, 
-$color-focus, $background-color-focus, $border-color-focus,
-$color-active, $background-color-active, $border-color-active
-);
-
-
-Btn-full: 
-@include button (
-$body-font, 14px, 1, 500, center, uppercase,
-8px, 20px,
-0px, 3px,
-$white, $gray, transparent,
-$white, darken( $gray, 10% ), transparent,
-$white, lighten( $gray, 10% ), transparent,
-$white, lighten( $gray, 10% ), transparent
-); 
-
-
-Btn-outline:
-@include button (
-$body-font, 14px, 1, 500, center, uppercase,
-8px, 20px,
-1px, 3px,
-$white, transparent, $white,
-$gray, $white, $white,
-$white, lighten( $gray, 10% ), transparent,
-$white, lighten( $gray, 10% ), transparent
-); 
-
-*/
-/* TRANSITION */
-/*
-@include transition ($object, $sec, $type);
-@include transition (all, 0.3s, linear);
-*/
-/* TRANSFORM */
-/*@mixin transform ($x, $y, $z) {
--webkit-transform: translate3d($x, $y, $z)
--moz-transform: translate3d($x, $y, $z)
--o-transform: translate3d($x, $y, $z)
-transform: translate3d($x, $y, $z)
-}*/
-/*
-@include transform ($object, $sec, $type);
-@include transform (all, 0.3s, linear);
-*/
-/* TRANSLATE Y */
-/*
-@include translatey ($value);
-@include translatey (-50%);
-*/
-/* ROTATE */
-/*
-@include rotate ($deg);
-@include rotate (all);
-*/
-/* BOX SHADOW */
-/*
-
-@include box-shadow (5px, 5px, 5px, 0px, rgba(51,51,51,0.15));
-
--webkit-box-shadow: 10px 10px 5px 0px rgba(51,51,51,0.15);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(51,51,51,0.15);
-    box-shadow: 10px 10px 5px 0px rgba(51,51,51,0.15);
-
-*/
-/* BOX SHADOW INSET*/
-/*
-
-@include box-shadow (5px, 5px, 5px, 0px, rgba(51,51,51,0.15));
-
--webkit-box-shadow: 10px 10px 5px 0px rgba(51,51,51,0.15);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(51,51,51,0.15);
-    box-shadow: 10px 10px 5px 0px rgba(51,51,51,0.15);
-
-*/
-/* GENERAL STYLES */
-/* CHARSET */
 /* FONT FAMILY */
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap&subset=latin-ext");
 /* HEADLINES */
@@ -252,15 +9,6 @@ h1 {
   line-height: 1.2;
   font-weight: 400;
   text-transform: uppercase; }
-  @media (min-device-width: 576px) {
-    h1 {
-      font-size: 2rem; } }
-  @media (min-device-width: 768px) {
-    h1 {
-      font-size: 2rem; } }
-  @media (min-device-width: 1200px) {
-    h1 {
-      font-size: 2rem; } }
 
 p + p {
   margin-top: 1rem; }
@@ -463,13 +211,60 @@ input:focus {
   font-size: 18px;
   /* QUESTIONS AND ANSWERS */ }
   #watu_quiz p {
-    line-height: 25px;}
+    line-height: 24px;}
   #watu_quiz .quiz-form {
     width: 100%;
-    margin-bottom: 2.5rem; }
+    margin: 1.5rem 0 2.5rem 0; }
+    #watu_quiz .quiz-form .firstStep input[type="radio"] {
+        height: 1px;
+        left: 2px;
+        opacity: 0;
+        position: absolute;
+        top: 2px;
+        width: 1px;}
+    #watu_quiz .quiz-form .firstStep input[type="radio"]:checked ~ label::before {
+        background-color: #fff;
+        border-color: #484f5e;}
+    #watu_quiz .quiz-form .firstStep input[type="radio"]:checked ~ label::after {
+        display: inline-block;}
     #watu_quiz .quiz-form .firstStep input[type="radio"] + label {
-      display: inline-block !important;
-      margin-bottom: 15px;}
+        display: inline-block !important;
+        margin-bottom: 15px;
+        position: relative;
+        padding-left: 40px;
+        cursor: pointer;}
+    #watu_quiz .quiz-form .firstStep input[type="radio"] + label::before {
+        background-color: #fff;
+        border: 1px solid #484f5e;
+        box-sizing: border-box;
+        content: '';
+        display: inline-block;
+        left: 0;
+        height: 30px;
+        position: absolute;
+        top: -6px;
+        width: 30px;
+        border-radius: 50%;}
+    #watu_quiz .quiz-form .firstStep input[type="radio"] + label::after {
+        content: '';
+        border-radius: 50%;
+        background-color: #00c0ff;
+        height: 12px;
+        width: 12px;
+        display: none;
+        position: absolute;
+        top: 3px;
+        left: 9px;}
+    #watu_quiz .quiz-form .firstStep .question-content {
+        display: block;
+        margin: 12px 15px 0 0;}
+    #watu_quiz .quiz-form .firstStep .question-content ~ div {
+        display: inline-block;
+        margin-right: 40px;}
+    #watu_quiz .quiz-form .firstStep .radio-button {
+        display: inline-block !important;
+        background: transparent !important;
+        color: #7a7a7a !important;}
     #watu_quiz .quiz-form .watu-question {
       /*-ms-box-orient: horizontal;*/
       display: -webkit-box;
@@ -497,7 +292,9 @@ input:focus {
         font-family: 'Roboto', sans-serif;
         padding: 8px;
         font-size: 18px;
-        color: #5c5c5c;}
+        color: #5c5c5c;
+        resize: none;
+        border-color: #7a7a7a}
       #watu_quiz .quiz-form .watu-question .question-content {
         flex: 0 0 100%;
         margin-top: 0;
@@ -677,7 +474,24 @@ input:focus {
       line-height: 1;
       font-weight: 500;
       text-transform: uppercase; }
-
+  #prev-question-btn::before,
+  #test-prev-question-btn::before {
+    content: '';
+    display: inline-block;
+    width: 0.8em;
+    height: 0.8em;
+    border-right: 0.1em solid #cccccc;
+    border-top: 0.1em solid #cccccc;
+    transform: rotate(225deg);
+    margin-right: 0;
+    transition: all 0.3s linear;}
+    @media (min-device-width: 920px) {
+      #prev-question-btn::before,
+      #test-prev-question-btn::before {
+        margin-right: 6px;}}
+  #prev-question-btn:hover::before,
+  #test-prev-question-btn:hover::before {
+    border-color: #00c0ff;}
 /* Next step */
 #next-question-btn,
 #test-next-question-btn,
@@ -705,6 +519,21 @@ input:focus {
     line-height: 1;
     font-weight: 500;
     text-transform: uppercase; }
+  #next-question-btn::after,
+  #test-next-question-btn::after {
+      content: '';
+      display: inline-block;
+      width: 0.8em;
+      height: 0.8em;
+      border-right: 0.1em solid #00c0ff;
+      border-top: 0.1em solid #00c0ff;
+      transform: rotate(45deg);
+      margin-left: 0;
+      transition: all 0.3s linear;}
+      @media (min-device-width: 920px) {
+        #next-question-btn::after,
+        #test-next-question-btn::after {
+          margin-left: 6px;}}
   #next-question-btn.disabled,
   #test-next-question-btn.disabled,
   #submit-btn.disabled,

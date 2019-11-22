@@ -11,6 +11,10 @@
   &:hover {
     cursor: pointer;
     @include font-mix ($ojh-blue, $ojh-body-font, 0.8125rem, 1, 500, uppercase);
+
+    &::before {
+      border-color: $ojh-blue;
+    }
   }
 
   &.disabled {
@@ -19,6 +23,21 @@
 
     &:hover {
       @include font-mix ($ojh-medium-gray, $ojh-body-font, 0.8125rem, 1, 500, uppercase);
+    }
+  }
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 0.8em;
+    height: 0.8em;
+    border-right: 0.1em solid $ojh-lighter-gray;
+    border-top: 0.1em solid $ojh-lighter-gray;
+    transform: rotate(225deg);
+    margin-right: 0;
+    transition: all 0.3s linear;
+    @media (min-device-width: 920px) {
+      margin-right: 6px;
     }
   }
 }
@@ -46,6 +65,21 @@
 
     &:hover {
       @include font-mix ($ojh-blue, $ojh-body-font, 1.1rem, 1, 500, uppercase);
+    }
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 0.8em;
+    height: 0.8em;
+    border-right: 0.1em solid $ojh-blue;
+    border-top: 0.1em solid $ojh-blue;
+    transform: rotate(45deg);
+    margin-left: 0;
+    transition: all 0.3s linear;
+    @media (min-device-width: 920px) {
+      margin-left: 6px;
     }
   }
 }

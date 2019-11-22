@@ -446,8 +446,8 @@ transform: translate3d($x, $y, $z)
 
 @mixin box-shadow ($horizontal-length, $vertical-length, $blur, $spread, $rgba-color-and-opacity) {
 -webkit-box-shadow: $horizontal-length $vertical-length $blur $spread $rgba-color-and-opacity;
-    -moz-box-shadow: $horizontal-length $vertical-length $blur $spread $rgba-color-and-opacity;
-    box-shadow: $horizontal-length $vertical-length $blur $spread $rgba-color-and-opacity;
+  -moz-box-shadow: $horizontal-length $vertical-length $blur $spread $rgba-color-and-opacity;
+  box-shadow: $horizontal-length $vertical-length $blur $spread $rgba-color-and-opacity;
 }
 
 /*
@@ -464,8 +464,8 @@ transform: translate3d($x, $y, $z)
 
 @mixin box-shadow-inset ($horizontal-length, $vertical-length, $blur, $spread, $rgba-color-and-opacity) {
 -webkit-box-shadow: inset $horizontal-length $vertical-length $blur $spread $rgba-color-and-opacity;
-    -moz-box-shadow: inset $horizontal-length $vertical-length $blur $spread $rgba-color-and-opacity;
-    box-shadow: inset $horizontal-length $vertical-length $blur $spread $rgba-color-and-opacity;
+  -moz-box-shadow: inset $horizontal-length $vertical-length $blur $spread $rgba-color-and-opacity;
+  box-shadow: inset $horizontal-length $vertical-length $blur $spread $rgba-color-and-opacity;
 }
 
 /*
