@@ -125,30 +125,30 @@ jQuery(document).ajaxComplete(function () {
         if (jQuery(this).children().find("p").text().replace(/ /g, '').indexOf("[1]") >= 0) {
           jQuery(this).hide();
         } else {
-        jQuery(this).show();
-        var clonedObject = jQuery.extend({}, jQuery(this));
-        questionDivs.push(clonedObject);
+          jQuery(this).show();
+          var clonedObject = jQuery.extend({}, jQuery(this));
+          questionDivs.push(clonedObject);
         }
         jQuery(this).hide();
       }
 
     });
-    i = 1; 
+    i = 1;
     jQuery('.show-question').remove();
-    jQuery.each(Watu.question_ids, function(key, questionId) {
-        jQuery.each(questionDivs, function(k,v) {
+    jQuery.each(Watu.question_ids, function (key, questionId) {
+      jQuery.each(questionDivs, function (k, v) {
         var questionIndex = this.children().find("p").text().split(".")[0].trim();
-          if(questionId == questionIndex){
-            var newText = i + ". " + this.children().find("p").text().split(".")[1];
-            i++;
-            this.children().first('p').text(newText);
-            this.children().first('p').css("margin-bottom", "20px");
-            this.show();
-            jQuery('#qresults').append(this.prop('outerHTML'));
-            return false;
-          }
+        if (questionId == questionIndex) {
+          var newText = i + ". " + this.children().find("p").text().split(".")[1];
+          i++;
+          this.children().first('p').text(newText);
+          this.children().first('p').css("margin-bottom", "20px");
+          this.show();
+          jQuery('#qresults').append(this.prop('outerHTML'));
+          return false;
+        }
 
-        });
+      });
     });
     const unansweredQuestions = document.getElementsByClassName('unanswered');
     while (unansweredQuestions.length > 0) {
