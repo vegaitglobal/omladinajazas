@@ -1,0 +1,17 @@
+{
+  "name": "jazas/watu-jazas",
+  "description": "Plugin that extends Watu Quiz plugin",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Milos Roknic",
+      "email": "m.roknic@vegaitsourcing.rs"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "WatuJazas\\": "./src"
+    }
+  },
+  "require": {}
+}
