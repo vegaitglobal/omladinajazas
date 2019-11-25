@@ -11,7 +11,9 @@ namespace WatuJazas;
 final class Init {
 
   public static function get_services() {
-    return [];
+    return [
+      Enqueue::class
+    ];
   }
 
   public static function register_services() {
