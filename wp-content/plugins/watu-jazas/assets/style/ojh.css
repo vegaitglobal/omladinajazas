@@ -800,9 +800,8 @@ input:focus {
 
 .question-comment {
     background-color: #f7f7f7;
-    color: red;
-    /*margin: 1em !important;*/
-    /*padding: 1em;*/
+    color: rgb(122, 122, 122);
+    margin: 1em;
 }
 
 /*# sourceMappingURL=ojh.css.map */
