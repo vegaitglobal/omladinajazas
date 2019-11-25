@@ -470,7 +470,7 @@ input:focus {
     text-align: center;
 }
 
-#watu_quiz .quiz-form .watu-question div:not([class]) {
+#watu_quiz .quiz-form .watu-question .watu-question-wrapper {
     -webkit-align-self: flex-start;
     -moz-align-self: flex-start;
     -ms-align-self: flex-start;
@@ -523,29 +523,29 @@ input:focus {
 }
 
 @media (min-device-width: 920px) {
-    #watu_quiz .quiz-form .watu-question div:not([class]) {
+    #watu_quiz .quiz-form .watu-question .watu-question-wrapper {
         flex: 0 0 48%;
         max-width: 48%;
         cursor: pointer;
     }
 }
 
-#watu_quiz .quiz-form .watu-question div:not([class]) .answer span {
+#watu_quiz .quiz-form .watu-question .watu-question-wrapper .answer span {
     padding: 0;
 }
 
-#watu_quiz .quiz-form .watu-question div:not([class]) input[type=radio],
-#watu_quiz .quiz-form .watu-question div:not([class]) input[type=checkbox] {
+#watu_quiz .quiz-form .watu-question .watu-question-wrapper input[type=radio],
+#watu_quiz .quiz-form .watu-question .watu-question-wrapper input[type=checkbox] {
     display: none !important;
 }
 
-#watu_quiz .quiz-form .watu-question div:not([class]) label {
+#watu_quiz .quiz-form .watu-question .watu-question-wrapper label {
     display: inline-block !important;
     width: 100%;
     padding: 1.1rem;
 }
 
-#watu_quiz .quiz-form .watu-question div:not([class]):hover {
+#watu_quiz .quiz-form .watu-question .watu-question-wrapper:hover {
     background-color: #7a7a7a;
     color: #ffffff;
     font-family: "Roboto", sans-serif;
@@ -555,11 +555,11 @@ input:focus {
     text-transform: none;
 }
 
-#watu_quiz .quiz-form .watu-question div:not([class]):hover label {
+#watu_quiz .quiz-form .watu-question .watu-question-wrapper:hover label {
     cursor: pointer;
 }
 
-#watu_quiz .quiz-form .watu-question div:not([class]).checked {
+#watu_quiz .quiz-form .watu-question .watu-question-wrapper.checked {
     background-color: #7a7a7a;
     color: #ffffff;
     font-family: "Roboto", sans-serif;
@@ -796,6 +796,13 @@ input:focus {
 
 #knowledge-test-achieved-points .show-question-feedback {
     margin-top: 15px;
+}
+
+.question-comment {
+    background-color: #f7f7f7;
+    color: red;
+    /*margin: 1em !important;*/
+    /*padding: 1em;*/
 }
 
 /*# sourceMappingURL=ojh.css.map */

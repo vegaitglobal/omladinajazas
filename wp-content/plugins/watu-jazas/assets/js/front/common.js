@@ -4,21 +4,60 @@ const addWatuAnswerEventListeners = function () {
     return;
   }
 
-  // handle answer selected event in all radio buttons type questions
   const radioButtonAnswers = document.querySelectorAll(
     '.watu-question .answer[type=radio]'
   );
-  addRadioButtonsEventListener(radioButtonAnswers);
+
   const checkboxButtonAnswers = document.querySelectorAll(
     '.watu-question .answer[type=checkbox]'
   );
+
+  addCssClassToAnswers([...radioButtonAnswers, ...checkboxButtonAnswers])
+  // handle answer selected event in all radio buttons type questions
+  addRadioButtonsEventListener(radioButtonAnswers);
   // calculate max points for checkboxes
   hideAndRememberCheckboxPointsCode(checkboxButtonAnswers);
   // re-render checkbox labels
   hideCheckboxSingleAnswerStringCode(checkboxButtonAnswers);
   // handle answer selected event in all checkbox type questions
   addCheckboxEventListener(checkboxButtonAnswers);
+
+  const questions = jQuery('.watu-question');
+  prepareCommentsInQuestion(questions)
 };
+
+const addCssClassToAnswers = function (answers) {
+  answers.forEach(function (value) {
+    jQuery(value).parent().addClass('watu-question-wrapper')
+  })
+}
+
+const prepareCommentsInQuestion = function (questions) {
+  questions.each(function (index, value) {
+    const question = jQuery(value);
+    const questionElement = question.find('.question-content p');
+    const commentStart = questionElement.html().indexOf('{')
+    // abort the preparation if the question has no comment
+    if (commentStart < 0) {
+      return;
+    }
+    const commentEnd = questionElement.html().indexOf('}')
+    const comment = questionElement.html().substr(commentStart, commentEnd)
+    // remove comment from question label
+    questionElement.html(questionElement.html().replace(comment, ''))
+    // put comment to separate element in question
+    const commentElement = `<div class="question-comment-wrapper"><p class="question-comment">${comment.substr(1, comment.length - 2)}</p></div>`
+    // show comment when user chooses an answer
+    question.find('.answer').on('click', function (event) {
+      const questionComment = question.find('.question-comment')
+      if (questionComment.length) {
+        return
+      }
+      question.append(commentElement)
+      questionComment.removeAttr('style');
+    })
+  })
+}
 
 const addRadioButtonsEventListener = function (elements) {
   elements.forEach(element => {
@@ -40,7 +79,7 @@ const addCheckboxEventListener = function (elements) {
       handleAnswerSelected(answer);
       // if checkbox answer is "single" king answer, uncheck all other answers
       if (isSingleKindAnswer(answer)) {
-        const siblingAnswers = answer.siblings('div:not(.question-content)');
+        const siblingAnswers = answer.siblings('.watu-question-wrapper');
         siblingAnswers.each(function () {
           const siblingAnswer = jQuery(this);
           handleAnswerNotSelected(siblingAnswer);
@@ -48,7 +87,7 @@ const addCheckboxEventListener = function (elements) {
       }
       // if checkbox answer is "one of many" kind of answer, uncheck all "single" kind answers
       else {
-        answer.siblings('div:not(.question-content)').each(function () {
+        answer.siblings('.watu-question-wrapper').each(function () {
           const siblingAnswer = jQuery(this);
           if (isSingleKindAnswer(siblingAnswer)) {
             handleAnswerNotSelected(siblingAnswer);
@@ -64,7 +103,7 @@ const handleAnswerSelected = function (answer, uncheckSiblings) {
   answer.find('input').prop('checked', true);
   if (uncheckSiblings) {
     answer
-      .siblings('div:not(.question-content)')
+      .siblings('.watu-question-wrapper')
       .css('background', 'white')
       .css('color', '#7a7a7a');
   }
