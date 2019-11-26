@@ -249,7 +249,8 @@ jQuery(document).ajaxComplete(function () {
           const feedbackEnd = '</div>';
           const additionalQuestionFeedback = jQuery(this).find('.show-question-feedback')
 
-          const questionFeedback = feedbackStart.concat(correctAnswer.html().replace(/<[^>]*>?/gm, ''), additionalQuestionFeedback.length ? additionalQuestionFeedback.html() : '', feedbackEnd);
+          const questionFeedback = feedbackStart.concat(correctAnswer.html().replace(/<[^>]*>?/gm, ''), '. ',
+            additionalQuestionFeedback.length ? additionalQuestionFeedback.html().replace(/<[^>]*>?/gm, '') : '', feedbackEnd);
 
           jQuery(this).html(`<div class="watu-result-question">${newText}</div>`)
           jQuery(this).find('ul').remove()
