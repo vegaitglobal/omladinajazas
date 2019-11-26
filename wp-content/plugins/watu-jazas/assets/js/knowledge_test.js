@@ -200,80 +200,99 @@ jQuery(document).ready(function () {
   }
 });
 
-jQuery(document).ajaxComplete(function () {
-  if (jQuery('#knowledge-test-achieved-points').get(0)) {
-    jQuery('#knowledge-test-achieved-points').append("<div id='qresults'> </div>");
-    const questions = jQuery('.show-question');
-    let i = 1;
-    const questionDivs = [];
-    jQuery.each(questions, function (k, v) {
-      jQuery(this).hide();
-      const questionIndex = jQuery(this).children().find("p").text().split(".")[0].trim();
-      if (jQuery.inArray(questionIndex, Watu.question_ids) != -1) {
-        i++;
-        if (jQuery(this).children().find("p").text().replace(/ /g, '').indexOf("[1]") >= 0) {
-          jQuery(this).hide();
-        } else {
-          jQuery(this).show();
-          var clonedObject = jQuery.extend({}, jQuery(this));
-          questionDivs.push(clonedObject);
-        }
-        jQuery(this).hide();
-      }
+const removeQuestionComment = function (question) {
+  const commentStart = question.html().indexOf('{')
+  // abort the preparation if the question has no comment
+  if (commentStart < 0) {
+    return;
+  }
+  const commentEnd = question.html().indexOf('}')
+  const comment = question.html().substr(commentStart, commentEnd)
+  // remove comment from question label
+  question.html(question.html().replace(comment, ''))
+}
 
-    });
-    i = 1;
-    jQuery('.show-question').remove();
-    jQuery.each(Watu.question_ids, function (key, questionId) {
-      jQuery.each(questionDivs, function (k, v) {
-        const questionIndex = this.children().find("p").text().split(".")[0].trim();
-        if (questionId == questionIndex) {
-
-          const question = this.children().find("p");
-          const newText = i + '. ' + question.html().replace(/<[^>]*>?/gm, '').split('.')[1];
-          i++;
-
-          let isAnsweredCorrectly = null;
-          if (jQuery(this).find('.answer.correct-answer.user-answer').length) {
-            isAnsweredCorrectly = true
-          } else if (jQuery(this).find('.answer.user-answer').length) {
-            isAnsweredCorrectly = false;
-          }
-
-          const correctAnswerMessage = '<div class="watu-correct-answer">ODGOVORILI STE TAČNO</div>';
-          const incorrectAnswerMessage = '<div class="watu-incorrect-answer">ODGOVORILI STE NETAČNO</div>';
-          const unansweredMessage = '<div class="watu-incorrect-answer">NISTE ODGOVORILI NA OVO PITANJE</div>';
-
-          const correctAnswer = jQuery(this).find('.answer.correct-answer');
-          const feedbackStart = '<div class="watu-correct-answer-msg">TAČAN ODGOVOR JE: ';
-          const feedbackEnd = '</div>';
-          const additionalQuestionFeedback = jQuery(this).find('.show-question-feedback')
-
-          const questionFeedback = feedbackStart.concat(correctAnswer.html().replace(/<[^>]*>?/gm, ''), '. ',
-            additionalQuestionFeedback.length ? additionalQuestionFeedback.html().replace(/<[^>]*>?/gm, '') : '', feedbackEnd);
-
-          jQuery(this).html(`<div class="watu-result-question">${newText}</div>`)
-          jQuery(this).find('ul').remove()
-
-          if (isAnsweredCorrectly) {
-            jQuery(this).append(correctAnswerMessage)
-          } else if (isAnsweredCorrectly === false) {
-            jQuery(this).append(incorrectAnswerMessage)
-          } else {
-            jQuery(this).append(unansweredMessage)
-          }
-          jQuery(this).append(questionFeedback)
-
-          this.children().first('p').css("margin-bottom", "20px");
-          this.show();
-          jQuery('#qresults').append(this.prop('outerHTML'));
-          return false;
-        }
-      });
-    });
-    const unansweredQuestions = document.getElementsByClassName('unanswered');
-    while (unansweredQuestions.length > 0) {
-      unansweredQuestions[0].parentNode.removeChild(unansweredQuestions[0]);
+const getTakenQuestionsOnly = function (questions) {
+  let i = 1;
+  const questionDivs = [];
+  jQuery.each(questions, function (k, v) {
+    const questionIndex = jQuery(this).children().find("p").text().split(".")[0].trim();
+    if (jQuery.inArray(questionIndex, Watu.question_ids) !== -1 && jQuery(this).children().find("p").text().replace(/ /g, '').indexOf("[1]") < 0) {
+      i++;
+      const clonedObject = jQuery.extend({}, jQuery(this));
+      questionDivs.push(clonedObject);
     }
+  });
+  return questionDivs;
+}
+
+const getAnswerStatusMessage = function (question) {
+  let isAnsweredCorrectly = null;
+  if (question.find('.answer.correct-answer.user-answer').length) {
+    isAnsweredCorrectly = true
+  } else if (question.find('.answer.user-answer').length) {
+    isAnsweredCorrectly = false;
+  }
+
+  const correctAnswerMessage = '<div class="watu-correct-answer">ODGOVORILI STE TAČNO</div>';
+  const incorrectAnswerMessage = '<div class="watu-incorrect-answer">ODGOVORILI STE NETAČNO</div>';
+  const unansweredMessage = '<div class="watu-incorrect-answer">NISTE ODGOVORILI NA OVO PITANJE</div>';
+  if (isAnsweredCorrectly) {
+    return correctAnswerMessage;
+  } else if (isAnsweredCorrectly === false) {
+    return incorrectAnswerMessage
+  } else {
+    return unansweredMessage
+  }
+}
+
+const getQuestionFeedback = function (question) {
+  const correctAnswer = question.find('.answer.correct-answer');
+  const feedbackStart = '<div class="watu-correct-answer-msg">TAČAN ODGOVOR JE: ';
+  const feedbackEnd = '</div>';
+  const additionalQuestionFeedback = question.find('.show-question-feedback')
+
+  return feedbackStart.concat(correctAnswer.html().replace(/<[^>]*>?/gm, ''), '. ',
+    additionalQuestionFeedback.length ? additionalQuestionFeedback.html().replace(/<[^>]*>?/gm, '') : '', feedbackEnd);
+}
+
+const getQuestionText = function (question, questionNumber) {
+  const questionText = question.children().find("p");
+  return questionNumber + '. ' + questionText.html().replace(/<[^>]*>?/gm, '').split('.')[1];
+}
+
+const renderQuestionAndAnswerWithFeedback = function (questionElement, questionNumber) {
+  const questionText = getQuestionText(questionElement, questionNumber)
+  const answerStatusMessage = getAnswerStatusMessage(questionElement);
+  const questionFeedback = getQuestionFeedback(questionElement)
+  questionElement.html(`<div class="watu-result-question">${questionText}</div>`);
+  removeQuestionComment(questionElement.find('.watu-result-question'));
+  questionElement.append(answerStatusMessage).append(questionFeedback)
+  jQuery('#qresults').append(questionElement.prop('outerHTML'));
+}
+
+const showQuestionAndAnswerWithFeedback = function (questionDivs) {
+  let i = 1;
+  jQuery.each(Watu.question_ids, function (key, questionId) {
+    jQuery.each(questionDivs, function () {
+      const questionIndex = this.children().find("p").text().split(".")[0].trim();
+      if (questionId == questionIndex) {
+        const questionNumber = i++;
+        const questionElement = jQuery(this);
+        renderQuestionAndAnswerWithFeedback(questionElement, questionNumber);
+        return false;
+      }
+    });
+  });
+}
+
+jQuery(document).ajaxComplete(function () {
+  const achievedPoint = jQuery('#knowledge-test-achieved-points');
+  if (achievedPoint.get(0)) {
+    achievedPoint.append("<div id='qresults'> </div>");
+    const questions = jQuery('.show-question');
+    const questionDivs = getTakenQuestionsOnly(questions);
+    questions.remove();
+    showQuestionAndAnswerWithFeedback(questionDivs);
   }
 });
