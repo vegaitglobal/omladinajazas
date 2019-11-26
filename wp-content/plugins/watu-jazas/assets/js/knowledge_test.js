@@ -229,7 +229,8 @@ jQuery(document).ajaxComplete(function () {
         const questionIndex = this.children().find("p").text().split(".")[0].trim();
         if (questionId == questionIndex) {
 
-          const newText = i + ". " + this.children().find("p").text().split(".")[1];
+          const question = this.children().find("p");
+          const newText = i + '. ' + question.html().replace(/<[^>]*>?/gm, '').split('.')[1];
           i++;
 
           let isAnsweredCorrectly = null;
@@ -247,7 +248,9 @@ jQuery(document).ajaxComplete(function () {
           const feedbackStart = '<div class="watu-correct-answer-msg">TAČAN ODGOVOR JE: ';
           const feedbackEnd = '</div>';
           const additionalQuestionFeedback = jQuery(this).find('.show-question-feedback')
-          const questionFeedback = feedbackStart + correctAnswer.html() + additionalQuestionFeedback.length ? additionalQuestionFeedback.html() : '' + feedbackEnd
+
+          const questionFeedback = feedbackStart.concat(correctAnswer.html().replace(/<[^>]*>?/gm, ''), '. ',
+            additionalQuestionFeedback.length ? additionalQuestionFeedback.html().replace(/<[^>]*>?/gm, '') : '', feedbackEnd);
 
           jQuery(this).html(`<div class="watu-result-question">${newText}</div>`)
           jQuery(this).find('ul').remove()
