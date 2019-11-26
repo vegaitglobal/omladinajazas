@@ -250,24 +250,26 @@ const getQuestionFeedback = function (question) {
   const correctAnswer = question.find('.answer.correct-answer');
   const feedbackStart = '<div class="watu-correct-answer-msg">TAČAN ODGOVOR JE: ';
   const feedbackEnd = '</div>';
-  const additionalQuestionFeedback = question.find('.show-question-feedback')
+  const additionalQuestionFeedback = question.find('.show-question-feedback');
 
   return feedbackStart.concat(correctAnswer.html().replace(/<[^>]*>?/gm, ''), '. ',
     additionalQuestionFeedback.length ? additionalQuestionFeedback.html().replace(/<[^>]*>?/gm, '') : '', feedbackEnd);
 }
 
 const getQuestionText = function (question, questionNumber) {
-  const questionText = question.children().find("p");
-  return questionNumber + '. ' + questionText.html().replace(/<[^>]*>?/gm, '').split('.')[1];
+  let questionText = question.children().find("p").html().replace(/<[^>]*>?/gm, '');
+  // remove original question number from question parts
+  questionText = questionText.slice((questionText.length - questionText.indexOf('.') - 1) * -1);
+  return questionNumber + '. ' + questionText;
 }
 
 const renderQuestionAndAnswerWithFeedback = function (questionElement, questionNumber) {
-  const questionText = getQuestionText(questionElement, questionNumber)
+  const questionText = getQuestionText(questionElement, questionNumber);
   const answerStatusMessage = getAnswerStatusMessage(questionElement);
   const questionFeedback = getQuestionFeedback(questionElement)
   questionElement.html(`<div class="watu-result-question">${questionText}</div>`);
   removeQuestionComment(questionElement.find('.watu-result-question'));
-  questionElement.append(answerStatusMessage).append(questionFeedback)
+  questionElement.append(answerStatusMessage).append(questionFeedback);
   jQuery('#qresults').append(questionElement.prop('outerHTML'));
 }
 
