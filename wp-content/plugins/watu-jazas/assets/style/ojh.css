@@ -803,4 +803,19 @@ input:focus {
     margin: 2em 0;
 }
 
+.watu-correct-answer {
+    color: #00c0ff;
+}
+
+.watu-incorrect-answer {
+    color: red;
+    font-weight: bold;
+}
+
+.watu-correct-answer,
+.watu-incorrect-answer {
+    font-weight: bold;
+    margin: 1em 0;
+}
+
 /*# sourceMappingURL=ojh.css.map */
