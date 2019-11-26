@@ -819,13 +819,12 @@ input:focus {
     transform: rotate(-45deg);
     height: 6px;
     width: 9px;
-    top: 3px;
-    left: 6px;
+    top: 4px;
+    left: 7px;
 }
 
 .watu-incorrect-answer {
     color: #FF5733;
-    font-weight: bold;
 }
 
 .watu-incorrect-answer::before {
@@ -835,7 +834,7 @@ input:focus {
 .watu-incorrect-answer::after {
     color: #FF5733;
     content: '\00d7';
-    font-size: 23px;
+    font-size: 24px;
     top: 0;
     left: 6px;
 }
@@ -858,8 +857,8 @@ input:focus {
     left: 0px;
     border-radius: 50%;
     border: 2px solid;
-    width: 20px;
-    height: 20px;
+    width: 21px;
+    height: 21px;
     -webkit-box-shadow: 0 0 1px 0px #fff;
 	box-shadow: 0 0 1px 0px #fff;
 }
