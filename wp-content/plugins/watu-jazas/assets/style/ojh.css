@@ -807,15 +807,67 @@ input:focus {
     color: #00c0ff;
 }
 
+.watu-correct-answer::before {
+  border-color: #00c0ff;
+}
+
+.watu-correct-answer::after {
+    color: #00c0ff;
+    content: '';
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+    transform: rotate(-45deg);
+    height: 6px;
+    width: 9px;
+    top: 3px;
+    left: 6px;
+}
+
 .watu-incorrect-answer {
-    color: red;
+    color: #FF5733;
     font-weight: bold;
+}
+
+.watu-incorrect-answer::before {
+    border-color: #FF5733;
+}
+
+.watu-incorrect-answer::after {
+    color: #FF5733;
+    content: '\00d7';
+    font-size: 23px;
+    top: 0;
+    left: 6px;
 }
 
 .watu-correct-answer,
 .watu-incorrect-answer {
     font-weight: bold;
-    margin: 1em 0;
+    margin: 1.4em 0 1.2em;
+    font-size: 1.1em;
+    position: relative;
+    padding-left: 33px;
+}
+
+.watu-correct-answer::before,
+.watu-incorrect-answer::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -3px;
+    left: 0px;
+    border-radius: 50%;
+    border: 2px solid;
+    width: 20px;
+    height: 20px;
+    -webkit-box-shadow: 0 0 1px 0px #fff;
+	box-shadow: 0 0 1px 0px #fff;
+}
+
+.watu-correct-answer::after,
+.watu-incorrect-answer::after {
+    display: block;
+    position: absolute;
 }
 
 /*# sourceMappingURL=ojh.css.map */
