@@ -13,21 +13,41 @@ const initWatu = function () {
 
 const showNextStep = function (index, prevIndex) {
   Watu.filtered_questions[index].forEach(function (question_id) {
-    jQuery('#' + question_id).show();
+    jQuery('#' + question_id).show().addClass('current-question');
   });
   if (index > 1) {
     Watu.filtered_questions[prevIndex].forEach(function (question_id) {
-      jQuery('#' + question_id).hide();
+      jQuery('#' + question_id).hide().removeClass('current-question');
     });
   }
+  handleNextStepButtons();
 };
+
+const handleNextStepButtons = function () {
+  let isNextStepDisabled = false;
+  jQuery('.watu-question.current-question').each(function () {
+    if (jQuery(this).find('.required').length) {
+      if (!jQuery(this).find('input:checked').length) {
+        isNextStepDisabled = true;
+        return false;
+      }
+    }
+  })
+  if (isNextStepDisabled) {
+    jQuery('#next-question-btn').addClass('disabled')
+    jQuery('#submit-btn').addClass('disabled')
+  } else {
+    jQuery('#next-question-btn').removeClass('disabled')
+    jQuery('#submit-btn').removeClass('disabled')
+  }
+}
 
 const showPrevStep = function (index, nextIndex) {
   Watu.filtered_questions[index].forEach(function (question_id) {
-    jQuery('#' + question_id).show();
+    jQuery('#' + question_id).show().addClass('current-question');
   });
   Watu.filtered_questions[nextIndex].forEach(function (question_id) {
-    jQuery('#' + question_id).hide();
+    jQuery('#' + question_id).hide().removeClass('current-question');
   });
 };
 
@@ -163,6 +183,15 @@ jQuery(document).ready(function () {
         jQuery('#action-button').hide();
       }
       initQuizProgressIndicator();
+
+      // answer event listener
+      document.querySelectorAll('.watu-question .answer').forEach(function (value) {
+        jQuery(value).on('click', function () {
+          handleNextStepButtons()
+        })
+      });
+
+
     }, 100);
   }
 });

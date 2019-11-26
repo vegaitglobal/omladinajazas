@@ -869,4 +869,9 @@ input:focus {
     position: absolute;
 }
 
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+}
+
 /*# sourceMappingURL=ojh.css.map */
